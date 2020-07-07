@@ -7,7 +7,7 @@
 !*.md
 !esphome/*.yaml
 !includes/*
-!python_scripts/*
+!./python_scripts/*
 !www/*
 
 # Ignore folders.
