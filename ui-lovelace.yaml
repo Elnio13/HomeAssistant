@@ -1,0 +1,39 @@
+title: Home
+custom_header:
+  #header_text: '{{ time }} {{ date }}'
+  button_text:
+    options: "{{ time }}<br>{{ date }}"
+  compact_mode: true
+  footer_mode: true
+  hide_help: true
+  disable_sidebar: true
+  #kiosk_mode: true
+  #hide_header: true
+  #split_mode: true
+  exceptions:
+    - conditions:
+        user: Ennio
+      config:
+        kiosk_mode: false
+        disable_sidebar: false
+views:
+  - !include includes/lovelace/home.yaml
+  - !include includes/lovelace/media.yaml
+  #  - !include includes/lovelace/climate.yaml
+  #  - !include includes/lovelace/livingroom.yaml
+  #  - !include includes/lovelace/kitchen.yaml
+  #  - !include includes/lovelace/master_bedroom.yaml
+  #  - !include includes/lovelace/bedroom.yaml
+  #  - !include includes/lovelace/hallway.yaml
+  #  - !include includes/lovelace/balcony.yaml
+  - !include includes/lovelace/vacuum.yaml
+  #  - !include includes/lovelace/ring.yaml
+  #  - !include includes/lovelace/heating.yaml
+  #  - !include includes/lovelace/battery.yaml
+  #  - !include includes/lovelace/rf_bridge.yaml
+  - !include includes/lovelace/energy.yaml
+  - !include includes/lovelace/system.yaml
+  - !include includes/lovelace/network.yaml
+  - !include includes/lovelace/energy_input.yaml
+  - !include includes/lovelace/3d.yaml
+  - !include includes/lovelace/covid.yaml
