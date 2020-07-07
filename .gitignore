@@ -5,10 +5,10 @@
 !*.yaml
 !.gitignore
 !*.md
-!esphome/*.yaml
-!includes/*
-!./python_scripts/*
-!www/*
+!/esphome/*.yaml
+!/includes/*
+!/python_scripts/*
+!/www/*
 
 # Ignore folders.
 .storage
