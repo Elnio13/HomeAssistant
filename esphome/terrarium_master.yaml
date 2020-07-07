@@ -1,0 +1,185 @@
+substitutions:
+  plug_name: terrarium_master
+
+esphome:
+  name: ${plug_name}
+  platform: ESP32
+  board: esp32doit-devkit-v1
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+logger:
+#  level: VERBOSE
+
+api:
+  password: !secret api_passwd
+ota:
+  password: !secret ota_passwd
+
+web_server:
+  port: 80
+  auth:
+    username: !secret web_user
+    password: !secret web_passwd
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+dallas:
+  - pin: 14
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  id: bus_a
+
+light:
+  - platform: binary
+    name: "${plug_name}_Pomp"
+    output: ${plug_name}_light_1
+    restore_mode: ALWAYS_ON
+    
+  - platform: binary
+    name: "${plug_name}_Lamp"
+    output: ${plug_name}_light_2
+
+output:
+  - platform: gpio
+    id: "${plug_name}_light_1"
+    inverted: true
+    pin: 25
+
+  - platform: gpio
+    id: "${plug_name}_light_2"
+    inverted: true
+    pin: 27
+
+binary_sensor:
+  - platform: status
+    name: "${plug_name}_Status"
+
+  - platform: gpio
+    name: "${plug_name}_WaterLeak1"
+    pin:
+      number: 18
+      inverted: True
+      mode: INPUT_PULLUP
+    filters:
+     - delayed_off: 3h
+
+  - platform: gpio
+    name: "${plug_name}_WaterLeak2"
+    pin:
+      number: 19
+      inverted: True
+      mode: INPUT_PULLUP
+    filters:
+      - delayed_off: 3h
+
+remote_transmitter:
+  pin:
+    number: 26
+  carrier_duty_percent: 50%
+
+#remote_receiver:
+#  pin:
+#    number: 13
+#    inverted: yes
+#    mode: INPUT_PULLUP
+#  dump: all
+#  filter: 50us
+
+sensor:
+  - platform: dallas
+    address: 0x9201144A6CB0AA28
+    name: "${plug_name}_Aqua_Temp"
+
+  - platform: uptime
+    name: "${plug_name}_Uptime"
+    unit_of_measurement: days
+    update_interval: 600s
+    filters:
+      - multiply: 0.000011574
+
+  - platform: wifi_signal
+    name: "${plug_name}_WiFi_Signal"
+    update_interval: 600s
+
+  - platform: bme280
+    temperature:
+      name: "${plug_name}_BME280 Temperature"
+      id: ${plug_name}_bme280_temperature
+    pressure:
+      name: "${plug_name}_BME280 Pressure"
+      id: ${plug_name}_bme280_pressure
+    humidity:
+      name: "${plug_name}_BME280 Relative Humidity"
+      id: ${plug_name}_bme280_humidity
+    address: 0x76
+    update_interval: 60s
+
+  - platform: template
+    name: "${plug_name}_Pressure mmHg"
+    unit_of_measurement: 'mmHg'
+    icon: mdi:altimeter
+#    filters:
+#      - multiply: 0.750061683
+    lambda: |-
+      const float STANDARD_SEA_LEVEL_PRESSURE_MM = 760;
+      const float STANDARD_SEA_LEVEL_PRESSURE_PA = 1013.25;
+      return id(${plug_name}_bme280_pressure).state * STANDARD_SEA_LEVEL_PRESSURE_MM / STANDARD_SEA_LEVEL_PRESSURE_PA; // in hPa
+    update_interval: 60s
+
+  - platform: bh1750
+    name: "${plug_name}_BH1750 Illuminance"
+    address: 0x23
+    update_interval: 60s
+    
+text_sensor:
+  - platform: version
+    name: "${plug_name}_firmware_version"
+    
+switch:
+  - platform: restart
+    name: "${plug_name}_restart"
+
+  - platform: template
+    name: "${plug_name}_LG TV power on"
+    turn_on_action:
+      - remote_transmitter.transmit_lg:
+          data: 0x20DF10EF
+          nbits: 32
+  - platform: template
+    name: "${plug_name}_Edifire UP"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x1E70
+          command: 0x807F
+  - platform: template
+    name: "${plug_name}_Edifire DOWN"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x1E70
+          command: 0x40BF
+  - platform: template
+    name: "${plug_name}_Edifire MUTE"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x1E70
+          command: 0x906F
+  - platform: template
+    name: "${plug_name}_Edifire PC/AUX"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x1E70
+          command: 0x00FF
+  - platform: template
+    name: "${plug_name}_Edifire OPT/COX"
+    turn_on_action:
+      - remote_transmitter.transmit_nec:
+          address: 0x1E70
+          command: 0xC03F

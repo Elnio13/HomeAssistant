@@ -1,0 +1,101 @@
+substitutions:
+  plug_name: bathroom_warm_floor
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret api_passwd
+ota:
+  password: !secret ota_passwd
+
+web_server:
+  port: 80
+  auth:
+    username: !secret web_user
+    password: !secret web_passwd
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+    
+sensor:
+  # Same as before:
+  - platform: ntc
+    sensor: "${plug_name}_resistance_sensor"
+    calibration:
+      b_constant: 3950
+      reference_temperature: 25°C
+      reference_resistance: 10kOhm
+    name: "${plug_name}_NTC_Temperature"
+    on_value_range: # OFF HEATING
+        - above: 29.0
+          then:
+            - switch.turn_off: "${plug_name}_Warm_floor"
+    
+  - platform: resistance
+    id: "${plug_name}_resistance_sensor"
+    sensor: "${plug_name}_source_sensor"
+    configuration: DOWNSTREAM
+    resistor: 9968Ohm
+    reference_voltage: 1v
+    name: "${plug_name}_resistance_sensor"
+
+  - platform: adc
+    pin: A0
+    id: "${plug_name}_source_sensor"
+    # Added:
+    update_interval: never
+
+  - platform: uptime
+    name: "${plug_name}_Uptime"
+    unit_of_measurement: days
+    update_interval: 600s
+    filters:
+      - multiply: 0.000011574
+
+  - platform: wifi_signal
+    name: "${plug_name}_WiFi_Signal"
+    update_interval: 600s
+
+
+binary_sensor:
+  - platform: status
+    name: "${plug_name}_Status"
+
+
+text_sensor:
+  - platform: version
+    name: "${plug_name}_firmware_version"
+
+switch:
+  - platform: restart
+    name: "${plug_name}_restart"
+
+  - platform: gpio
+    pin: D5
+    id: "${plug_name}_ntc_vcc"
+
+  - platform: gpio
+    name: "${plug_name}_Warm_floor"
+    id: "${plug_name}_Warm_floor"
+    pin: 
+      number: D7
+      inverted: no
+    restore_mode: ALWAYS_OFF
+    
+interval:
+  - interval: 60s
+    then:
+      - switch.turn_on: "${plug_name}_ntc_vcc"
+      - component.update: "${plug_name}_source_sensor"
+      - switch.turn_off: "${plug_name}_ntc_vcc"

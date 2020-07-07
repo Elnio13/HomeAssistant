@@ -859,3 +859,7 @@ https://github.com/hacs/integration/issues
 2020-07-07 13:37:10 INFO (MainThread) [homeassistant.components.automation] Executing PAPA is now home
 2020-07-07 13:37:10 INFO (MainThread) [homeassistant.components.automation] PAPA is now home: Running script
 2020-07-07 13:37:10 INFO (MainThread) [homeassistant.components.automation] PAPA is now home: Executing step call service
+2020-07-07 15:18:52 INFO (MainThread) [aioesphomeapi.connection] digma_100s_tvps4.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 15:18:52 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for digma_100s_tvps4.local
+2020-07-07 15:18:53 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_100s_tvps4.local
+2020-07-07 15:18:55 INFO (MainThread) [aioesphomeapi.connection] digma_100s_tvps4.local: Ping Failed!

@@ -1,0 +1,119 @@
+substitutions:
+  plug_name: 'power_meter_impulse_counter'
+esphome:
+  name: ${plug_name}
+  platform: ESP32
+  board: lolin32
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+logger:
+
+api:
+  password: !secret api_passwd
+
+ota:
+  password: !secret ota_passwd
+
+web_server:
+  port: 80
+  auth:
+    username: !secret web_user
+    password: !secret web_passwd
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+globals:
+  - id: '${plug_name}_save_impulse'
+    type: int
+    restore_value: yes
+    initial_value: '0'
+
+sensor:
+  - platform: template
+    name: '${plug_name}_save_impulse_tmp'
+#    update_interval: 60s
+    lambda: |-
+      return id(${plug_name}_save_impulse);
+
+  - platform: pulse_counter
+    pin: 32
+    name: '${plug_name}_pulse_counter'
+    id: '${plug_name}_pulse_counter'
+    internal_filter: 13us # debonce filter
+    update_interval: 60s
+    
+  - platform: homeassistant
+    name: '${plug_name}_ha_power_meter_indicator_total_impulse'
+    id: '${plug_name}_ha_power_meter_indicator_total_impulse'
+    entity_id: sensor.power_meter_translate_value
+    
+  - platform: template
+    name: '${plug_name}_total_impulse'
+    unit_of_measurement: 'pulses'
+    update_interval: 60s
+    lambda: |-
+
+      static int result = 0;
+
+      if (id(${plug_name}_pulse_counter).state > 0) {
+
+        if (id(${plug_name}_ha_power_meter_indicator_total_impulse).state > 0) {
+
+          result = id(${plug_name}_pulse_counter).state + id(${plug_name}_ha_power_meter_indicator_total_impulse).state + id(${plug_name}_save_impulse);
+
+        }  
+
+        else  {
+
+          id(${plug_name}_save_impulse) = id(${plug_name}_save_impulse) + id(${plug_name}_pulse_counter).state; // save imp on flash
+
+        }
+      }
+
+      if (result > 0) {
+
+          id(${plug_name}_save_impulse) = 0;
+
+      }
+      
+      return result;
+
+  - platform: uptime
+    name: '${plug_name}_Uptime'
+    unit_of_measurement: days
+    update_interval: 600s
+    filters:
+      - multiply: 0.000011574
+
+  - platform: wifi_signal
+    name: '${plug_name}_WiFi_Signal'
+    update_interval: 600s
+
+binary_sensor:
+  - platform: status
+    name: '${plug_name}_Status'
+    
+text_sensor:
+  - platform: version
+    name: '${plug_name}_firmware_version'
+    
+switch:
+  - platform: restart
+    name: '${plug_name}_restart'
+    
+  - platform: template
+    name: '${plug_name}_save_null'
+    on_press:
+      then:
+        - lambda: |-
+          id(${plug_name}_save_impulse) = 0;
+#    on_press:
+#      then:
+#          - switch.toggle: 
+#    lambda: |-
+#      id(${plug_name}_save_impulse) = 0;
