@@ -3,7 +3,6 @@
 *
 # You can whitelist files/folders with !, these will not be ignored.
 !*.yaml
-!.gitignore
 !*.md
 !/esphome/*.yaml
 !/includes/*
@@ -21,3 +20,4 @@ secrets.yaml
 known_devices.yaml
 webostv.conf
 .ps4-games.0CFE452BA350_c7b7.json
+.gitignore
