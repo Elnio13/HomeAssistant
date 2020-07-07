@@ -1,0 +1,119 @@
+title: "LAN"
+icon: "mdi:lan"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:web
+        layout: icon_name
+        size: 20%
+        name: "Monitor NETWORK"
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "WAN"
+            icon: mdi:ethernet
+            entities:
+              - sensor.rb3011_eth1_rx
+              - sensor.rb3011_eth1_tx
+            #height: 300
+            hour24: true
+            line_color: red
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              legend: false
+
+          - type: custom:mini-graph-card
+            name: "CPU"
+            icon: mdi:cpu-64-bit
+            entities:
+              - sensor.rb3011_cpu_1
+              - sensor.rb3011_cpu_2
+            #height: 300
+            hour24: true
+            line_color: green
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              legend: false
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "FLASH"
+            icon: mdi:micro-sd
+            entities:
+              - sensor.rb3011_used_hdd
+            hour24: true
+            line_color: red
+            hours_to_show: 24
+            points_per_hour: 4
+
+          - type: custom:mini-graph-card
+            name: "RAM"
+            icon: mdi:memory
+            entities:
+              - sensor.rb3011_used_mem
+            hour24: true
+            hours_to_show: 24
+            points_per_hour: 4
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.rb3011_need_update
+            show_name: true
+            name: '[[[ return states["sensor.routeros_latest_release"].state; ]]]'
+            icon: mdi:update
+            color: rgb(28, 128, 199)
+            state:
+              - value: "off"
+                color: red
+
+          - type: custom:button-card
+            entity: binary_sensor.google_dns
+            show_name: true
+            name: "Google"
+            icon: mdi:google-downasaur
+            color: rgb(28, 128, 199)
+            state:
+              - value: "off"
+                color: red
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:network-router
+        layout: icon_name
+        size: 20%
+        name: "RB3011"
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - sensor.rb3011_firmware
+          - sensor.rb3011_uptime
+          - sensor.rb3011_temperature
+          - switch.rb3011_eth1
+          - switch.rb3011_eth2
+          - switch.rb3011_eth3
+          - switch.rb3011_eth4
+          - switch.rb3011_eth5
+          - switch.rb3011_eth6
+          - switch.rb3011_eth7
+          - switch.rb3011_eth8
+          - switch.rb3011_eth9
+          - switch.rb3011_eth10
+

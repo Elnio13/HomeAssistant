@@ -1,0 +1,52 @@
+title: "3D"
+icon: "mdi:printer-3d-nozzle"
+cards:
+
+  - type: vertical-stack
+    cards:
+
+      - type: gauge
+        title: Printing
+        entity: sensor.duplicator_6_job_percentage
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "Temperature"
+            icon: "mdi:printer-3d-nozzle"
+            entities:
+              - sensor.duplicator_6_actual_bed_temp
+              - sensor.duplicator_6_target_bed_temp
+              - sensor.duplicator_6_actual_tool0_temp
+              - sensor.duplicator_6_target_tool0_temp
+            #height: 300
+            hour24: true
+            line_color: red
+            hours_to_show: 1
+            points_per_hour: 3600
+            show:
+              legend: false
+
+  - type: vertical-stack
+    cards:
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.duplicator_6_current_state
+              - entity: sensor.duplicator_6_job_percentage
+              - entity: sensor.duplicator_6_time_elapsed
+              - entity: sensor.duplicator_6_time_remaining
+              - entity: binary_sensor.duplicator_6_printing
+              - entity: binary_sensor.duplicator_6_printing_error
+
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: picture-glance
+            title: Livimg
+            entities:
+              - camera.octoprint
+            camera_view: live
+            camera_image: camera.octoprint

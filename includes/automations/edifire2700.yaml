@@ -1,0 +1,27 @@
+- id: Edifire 2700 ON
+  alias: Edifire 2700 ON
+  trigger:
+    - platform: state
+      entity_id:  media_player.tv_living_room
+      to: 'on'
+  condition:
+#    - condition: state
+#      entity_id:  media_player.tv_living_room
+#      to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.hiper_iot04_edifire2700_relay
+
+- id: Edifire 2700 OFF
+  alias: Edifire 2700 OFF
+  trigger:
+    - platform: state
+      entity_id:  media_player.tv_living_room
+      to: 'off'
+  condition:
+#    - condition: state
+#      entity_id:  media_player.tv_living_room
+#      to: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.hiper_iot04_edifire2700_relay

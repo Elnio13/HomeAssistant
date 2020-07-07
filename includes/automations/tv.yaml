@@ -1,0 +1,64 @@
+#- id: TV Living room ON
+#  alias: TV Living room ON
+#  trigger:
+#  - at: '13:23'
+#    platform: time
+#  action:
+#    - service: switch.turn_on
+#      data:
+#        entity_id: switch.terrarium_master_lg_tv_power_on
+
+- id: TV Living room BACK
+  alias: TV Living room BACK
+  trigger:
+  - at: '00:24:45'
+    platform: time
+  condition:
+    - condition: state
+      entity_id: input_boolean.livingroom_tv_off
+      state: "on"
+  action:
+    - service: webostv.button
+      data:
+        entity_id:  media_player.tv_living_room
+        button: "BACK"
+
+- id: TV Living room OFF
+  alias: TV Living room OFF
+  trigger:
+  - at: '00:25'
+    platform: time
+  condition:
+    - condition: state
+      entity_id: input_boolean.livingroom_tv_off
+      state: "on"
+  action:
+    - service: webostv.command
+      data:
+        entity_id: media_player.tv_living_room
+        command: system/turnOff
+
+#- id: TV Kitchen room ON
+#  alias: TV Kitchen room ON
+#  trigger:
+#  - at: '13:23'
+#    platform: time
+#  action:
+#    - service: switch.turn_on
+#      data:
+#        entity_id: switch.kitchen_ir_lg_tv_power_on
+
+- id: TV LivKitchen ing room OFF
+  alias: TV Kitchen room OFF
+  trigger:
+  - at: '00:15'
+    platform: time
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_tv_off
+      state: "on"
+  action:
+    - service: webostv.command
+      data:
+        entity_id: media_player.tv_kitchen
+        command: system/turnOff

@@ -1,0 +1,738 @@
+title: "Мультимедия"
+icon: "mdi:television"
+cards:
+#  - type: vertical-stack
+#    cards:
+      #      - type: custom:button-card
+      #        icon: mdi:monitor-clean
+      #        layout: icon_name
+      #        size: 20%
+      #        show_label: false
+      #        show_name: true
+      #        name: "TV в зале"
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
+
+      #      - type: conditional
+      #        conditions:
+      #          - entity: media_player.tv_living_room
+      #            state_not: "unavailable"
+      #        card:
+      #          type: media-control
+      #          entity: media_player.tv_living_room
+      #      - type: horizontal-stack
+      #        cards:
+      #          - type: custom:button-card
+      #            entity: switch.terrarium_master_lg_tv_power_on
+      #            icon: mdi:power
+      #            name: "Push the buttom"
+      #            show_name: false
+      #            aspect_ratio: 4/1
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: yellow
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "YELLOW"
+          - type: custom:button-card
+            icon: mdi:reply-outline
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "BACK"
+          - type: custom:button-card
+            icon: mdi:arrow-up-thick
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "UP"
+          - type: custom:button-card
+            icon: mdi:home
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "HOME"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: green
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "GREEN"
+          - type: custom:button-card
+            icon: mdi:arrow-left-thick
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "LEFT"
+          - type: custom:button-card
+            icon: mdi:compass-rose
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "ENTER"
+          - type: custom:button-card
+            icon: mdi:arrow-right-thick
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "RIGHT"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: red
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "RED"
+          - type: custom:button-card
+            icon: mdi:window-close
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "EXIT"
+          - type: custom:button-card
+            icon: mdi:arrow-down-thick
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "DOWN"
+          - type: custom:button-card
+            icon: mdi:arrow-up-bold-outline
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "CHANNELUP"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: blue
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "BLUE"
+          - type: custom:button-card
+            icon: mdi:information-outline
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "INFO"
+          - type: custom:button-card
+            icon: mdi:menu-open
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "DASH"
+          - type: custom:button-card
+            icon: mdi:arrow-down-bold-outline
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_living_room
+                button: "CHANNELDOWN"
+
+      #      - type: custom:button-card
+      #        icon: mdi:speaker
+      #        layout: icon_name
+      #        size: 10%
+      #        show_label: false
+      #        show_name: true
+      #        name: "Edifire 2700"
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
+
+      - type: horizontal-stack
+        cards:
+          #          - type: "custom:button-card"
+          #            entity: switch.terrarium_master_edifire_pc_aux
+          #            icon: mdi:resistor
+          #            size: 80%
+          #            show_name: false
+          #            styles:
+          #              card:
+          #                - background-color: '#041729'
+          #              icon:
+          #                - color: yellow
+          #            state:
+          #              - value: "off"
+
+          - type: "custom:button-card"
+            entity: switch.terrarium_master_edifire_opt_cox
+            icon: mdi:transit-connection-variant
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#041729"
+              icon:
+                - color: green
+            state:
+              - value: "off"
+
+          - type: custom:button-card
+            entity: switch.terrarium_master_edifire_down
+            icon: mdi:volume-minus
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#041729"
+              icon:
+                - color: rgb(28, 128, 199)
+            state:
+              - value: "off"
+
+          - type: custom:button-card
+            entity: switch.terrarium_master_edifire_mute
+            icon: mdi:volume-off
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#041729"
+              icon:
+                - color: rgb(28, 128, 199)
+            state:
+              - value: "off"
+
+          - type: custom:button-card
+            entity: switch.terrarium_master_edifire_up
+            icon: mdi:volume-plus
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#041729"
+              icon:
+                - color: rgb(28, 128, 199)
+            state:
+              - value: "off"
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_living_room
+            state_not: "unavailable"
+        card:
+          type: custom:mini-media-player
+          entity: media_player.tv_living_room
+          name: "TV в зале"
+          scale: 1.8
+          show_source: true
+          artwork: cover
+          source: full
+          power: true
+
+  - type: vertical-stack
+#  - type: custom:vertical-stack-in-card
+    cards:
+      #      - type: custom:button-card
+      #        icon: mdi:monitor-clean
+      #        layout: icon_name
+      #        size: 20%
+      #        show_label: false
+      #        show_name: true
+      #        name: "TV на кухне"
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
+
+      #      - type: conditional
+      #        conditions:
+      #          - entity: media_player.tv_kitchen
+      #            state_not: "unavailable"
+      #        card:
+      #          type: media-control
+      #          entity: media_player.tv_kitchen
+
+      #      - type: horizontal-stack
+      #        cards:
+      #          - type: custom:button-card
+      #            entity: switch.kitchen_ir_lg_tv_power_on
+      #            icon: mdi:power
+      #            name: "Push the buttom"
+      #            show_name: false
+      #            aspect_ratio: 4/1
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: yellow
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "YELLOW"
+          - type: custom:button-card
+            icon: mdi:reply-outline
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "BACK"
+          - type: custom:button-card
+            icon: mdi:arrow-up-thick
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "UP"
+          - type: custom:button-card
+            icon: mdi:home
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "HOME"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: green
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "GREEN"
+          - type: custom:button-card
+            icon: mdi:arrow-left-thick
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "LEFT"
+          - type: custom:button-card
+            icon: mdi:compass-rose
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "ENTER"
+          - type: custom:button-card
+            icon: mdi:arrow-right-thick
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "RIGHT"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: red
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "RED"
+          - type: custom:button-card
+            icon: mdi:window-close
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "EXIT"
+          - type: custom:button-card
+            icon: mdi:arrow-down-thick
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "DOWN"
+          - type: custom:button-card
+            icon: mdi:arrow-up-bold-outline
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "CHANNELUP"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:window-minimize
+            size: 80%
+            show_name: false
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: blue
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "BLUE"
+          - type: custom:button-card
+            icon: mdi:information-outline
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "INFO"
+          - type: custom:button-card
+            icon: mdi:menu-open
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "DASH"
+          - type: custom:button-card
+            icon: mdi:arrow-down-bold-outline
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "CHANNELDOWN"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            color_type: blank-card
+          - type: custom:button-card
+            icon: mdi:volume-minus
+            styles:
+              card:
+                - background-color: "#11192b"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "VOLUMEDOWN"
+          - type: custom:button-card
+            icon: mdi:volume-off
+            styles:
+              card:
+                - background-color: "#11192b"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "MUTE"
+          - type: custom:button-card
+            icon: mdi:volume-plus
+            styles:
+              card:
+                - background-color: "#11192b"
+              icon:
+                - color: rgb(28, 128, 199)
+            size: 80%
+            show_name: false
+            tap_action:
+              action: call-service
+              service: webostv.button
+              service_data:
+                entity_id: media_player.tv_kitchen
+                button: "VOLUMEUP"
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_kitchen
+            state_not: "unavailable"
+        card:
+          type: custom:mini-media-player
+          entity: media_player.tv_kitchen
+          name: "TV на кухне"
+          scale: 1.8
+          show_source: true
+          artwork: cover
+          source: full
+          power: true
+
+  - type: vertical-stack
+    cards:
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - input_boolean.livingroom_tv_off
+              - input_boolean.kitchen_tv_off
+
+#  - type: custom:vertical-stack-in-card
+#    cards:
+      - type: custom:mini-media-player
+        entity: media_player.playstation_4

@@ -1,0 +1,362 @@
+title: "Home"
+icon: "mdi:home-assistant"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:account-multiple-outline
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Сейчас дома"
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: group.device_tracker_papa_miphone
+            show_name: true
+            name: "ПАПА"
+            icon: mdi:face
+            color: rgb(28, 128, 199)
+            state:
+              - value: "not_home"
+                color: grey
+
+          - type: custom:button-card
+            entity: group.device_tracker_mama_miphone
+            show_name: true
+            name: "МАМА"
+            icon: mdi:face
+            color: rgb(28, 128, 199)
+            state:
+              - value: "not_home"
+                color: grey
+
+          - type: custom:button-card
+            entity: group.device_tracker_serega_miphone
+            show_name: true
+            name: "СЕРГО"
+            icon: mdi:face
+            color: rgb(28, 128, 199)
+            state:
+              - value: "not_home"
+                color: grey
+
+          - type: custom:button-card
+            entity: group.device_tracker_zasha_miphone
+            show_name: true
+            name: "САША"
+            icon: mdi:face
+            color: rgb(28, 128, 199)
+            state:
+              - value: "not_home"
+                color: grey
+
+      - type: custom:weather-card
+        show_header_toggle: false
+        entity: weather.gismeteo
+        current: true
+        details: true
+        forecast: false
+
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.floor_bathroom
+          - type: thermostat
+            entity: climate.floor_balkoon
+
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - input_boolean.floor_bathroom_schedule
+              - input_boolean.floor_balkoon_schedule
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:zodiac-aquarius
+        name: "Terrarium Livigroom"
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: light.terrarium_master_lamp
+            icon: mdi:desk-lamp
+            name: "Лампа"
+            hold_action:
+              action: more-info
+          - type: custom:button-card
+            entity: light.terrarium_master_pomp
+            icon: mdi:engine
+            name: "Помпа"
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            entity: binary_sensor.terrarium_master_waterleak2
+            show_name: true
+            name: Течь внутри
+            icon: mdi:fishbowl
+            color: red
+            state:
+              - value: "OFF"
+                color: grey
+
+          - type: custom:button-card
+            entity: binary_sensor.terrarium_master_waterleak1
+            show_name: true
+            name: Течь снаружи
+            icon: mdi:fishbowl-outline
+            color: red
+            state:
+              - value: "OFF"
+                color: grey
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "Воздух"
+            entities:
+              - sensor.terrarium_master_bme280_temperature
+            hour24: true
+            line_color: red
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+          - type: custom:mini-graph-card
+            name: "Вода"
+            entities:
+              - sensor.terrarium_master_aqua_temp
+            hour24: true
+            line_color: rgb(28, 128, 199)
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+          - type: custom:mini-graph-card
+            name: "Свет"
+            entities:
+              - sensor.terrarium_master_bh1750_illuminance
+            hour24: true
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "Давление"
+            entities:
+              - sensor.terrarium_master_bme280_pressure
+            hour24: true
+            line_color: red
+            font_size: 90
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+          - type: custom:mini-graph-card
+            name: "Давление"
+            entities:
+              - sensor.terrarium_master_pressure_mmhg
+            hour24: true
+            font_size: 90
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+          - type: custom:mini-graph-card
+            name: "Влажность"
+            entities:
+              - sensor.terrarium_master_bme280_relative_humidity
+            hour24: true
+            line_color: rgb(28, 128, 199)
+            font_size: 90
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+      - type: horizontal-stack
+        cards:
+          - type: picture-glance
+            title: Livimg
+            entities:
+              - camera.mycam_profile0
+            camera_view: live
+            camera_image: camera.mycam_profile0
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:zodiac-aquarius
+        name: "Terrarium Bedroom"
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: light.terrarium_bedroom_lamp
+            icon: mdi:desk-lamp
+            name: "Лампа"
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            entity: light.terrarium_bedroom_pomp
+            icon: mdi:engine
+            name: "Помпа"
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            entity: binary_sensor.terrarium_bedroom_waterleak1
+            show_name: true
+            name: Течь
+            icon: mdi:fishbowl
+            color: red
+            state:
+              - value: "OFF"
+                color: grey
+
+          - type: custom:button-card
+            entity: binary_sensor.terrarium_bedroom_waterleak1
+            show_name: true
+            name: Течь
+            icon: mdi:fishbowl
+            color: red
+            state:
+              - value: "OFF"
+                color: grey
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "Вода"
+            entities:
+              - sensor.terrarium_bedroom_aqua_temp
+            hour24: true
+            line_color: rgb(28, 128, 199)
+            height: 65
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+          - type: custom:mini-graph-card
+            name: "Воздух"
+            entities:
+              - sensor.terrarium_bedroom_ambient_temp
+            hour24: true
+            line_color: red
+            height: 65
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+      - type: vertical-stack
+        cards:
+          - type: custom:button-card
+            icon: mdi:bank-outline
+            name: "Balkoon"
+            layout: icon_name
+            aspect_ratio: 8/1
+            show_label: false
+            show_name: true
+            styles:
+              card:
+                - background-color: "#203040"
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: "Воздух"
+                entities:
+                  - sensor.balkoon_warm_floor_bme280_temperature
+                hour24: true
+                hours_to_show: 24
+                points_per_hour: 60
+                line_color: red
+                font_size: 90
+                height: 65
+                show:
+                  icon: true
+                  name: true
+
+              - type: custom:mini-graph-card
+                name: "Свет"
+                entities:
+                  - sensor.balkoon_warm_floor_bh1750_illuminance
+                hour24: true
+                hours_to_show: 24
+                points_per_hour: 60
+                font_size: 90
+                height: 65
+                show:
+                  icon: true
+                  name: true
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: "Давление"
+                entities:
+                  - sensor.balkoon_warm_floor_bme280_pressure
+                hour24: true
+                line_color: red
+                font_size: 90
+                height: 65
+                hours_to_show: 24
+                points_per_hour: 60
+                show:
+                  icon: true
+                  name: true
+
+              - type: custom:mini-graph-card
+                name: "Влажность"
+                entities:
+                  - sensor.balkoon_warm_floor_bme280_relative_humidity
+                hour24: true
+                line_color: rgb(28, 128, 199)
+                font_size: 90
+                height: 65
+                hours_to_show: 24
+                points_per_hour: 60
+                show:
+                  icon: true
+                  name: true

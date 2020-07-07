@@ -1,0 +1,131 @@
+db_url: !secret db_connect_url
+purge_keep_days: 365
+auto_purge: true
+#include:
+#  entities:
+#    # POWER RELAY
+#    - sensor.power_meter_relay_digma100s_balkoon_current
+#    - sensor.power_meter_relay_digma100s_balkoon_power
+#    - sensor.power_meter_relay_digma100s_balkoon_total_daily_energy
+#    - sensor.power_meter_relay_digma100s_balkoon_uptime
+#    - sensor.power_meter_relay_digma100s_balkoon_voltage
+#    - sensor.power_meter_relay_digma100s_ps4_current
+#    - sensor.power_meter_relay_digma100s_ps4_power
+#    - sensor.power_meter_relay_digma100s_ps4_total_daily_energy
+#    - sensor.power_meter_relay_digma100s_ps4_uptime
+#    - sensor.power_meter_relay_digma100s_ps4_voltage
+#    - sensor.power_meter_relay_digma160m_bathroom_current
+#    - sensor.power_meter_relay_digma160m_bathroom_power
+#    - sensor.power_meter_relay_digma160m_bathroom_total_daily_energy
+#    - sensor.power_meter_relay_digma160m_bathroom_uptime
+#    - sensor.power_meter_relay_digma160m_bathroom_voltage
+#    - sensor.power_meter_relay_digma160m_dishwasher_current
+#    - sensor.power_meter_relay_digma160m_dishwasher_power
+#    - sensor.power_meter_relay_digma160m_dishwasher_total_daily_energy
+#    - sensor.power_meter_relay_digma160m_dishwasher_uptime
+#    - sensor.power_meter_relay_digma160m_dishwasher_voltage
+#    # utility meter
+#    - sensor.power_meter_power
+#    - sensor.power_meter_indicator
+#    - sensor.energy_hourly_impulse_counter_stnd
+#    - sensor.energy_daily_impulse_counter_stnd
+#    - sensor.energy_monthly_impulse_counter_stnd
+#    - sensor.energy_yearly_impulse_counter_stnd
+#    - sensor.energy_hourly_ps4_stnd
+#    - sensor.energy_daily_ps4_stnd
+#    - sensor.energy_monthly_ps4_stnd
+#    - sensor.energy_yearly_ps4_stnd
+#    - sensor.energy_hourly_balkoon_stnd
+#    - sensor.energy_daily_balkoon_stnd
+#    - sensor.energy_monthly_balkoon_stnd
+#    - sensor.energy_yearly_balkoon_stnd
+#    - sensor.energy_hourly_dishwasher_stnd
+#    - sensor.energy_daily_dishwasher_stnd
+#    - sensor.energy_monthly_dishwasher_stnd
+#    - sensor.energy_yearly_dishwasher_stnd
+#    # SELF MONITOR
+#    - sensor.processor_use
+#    - sensor.cpu_temperature
+#    - sensor.memory_use_percent
+#    - sensor.swap_use_percent
+#    - sensor.disk_use_percent
+#    - sensor.dbsize
+#    - sensor.disk_use_percent
+#    # Terrarium livingroom ESP
+#    - sensor.terrarium_master_uptime
+#    - sensor.terrarium_master_wifi_signal
+#    - sensor.terrarium_master_absolute_humidity
+#    - sensor.terrarium_master_altitude
+#    - sensor.terrarium_master_bme280_relative_humidity
+#    - sensor.terrarium_master_bme280_pressure
+#    - sensor.terrarium_master_pressure_mmhg
+#    - sensor.terrarium_master_bh1750_illuminance
+#    - binary_sensor.terrarium_master_status
+#    - sensor.terrarium_master_bme280_temperature
+#    - sensor.terrarium_master_aqua_temp
+#    - light.terrarium_master_lamp
+#    - light.terrarium_master_pomp
+#    # Terrarium bedroom ESP
+#    - sensor.terrarium_bedroom_uptime
+#    - sensor.terrarium_bedroom_wifi_signal
+#    - binary_sensor.terrarium_bedroom_status
+#    - sensor.terrarium_bedroom_aqua_temp
+#    - sensor.terrarium_bedroom_ambient_temp
+#    - light.terrarium_bedroom_lamp
+#    - light.terrarium_bedroom_pomp
+#    # MIKROTIK
+#    - sensor.rb3011_wan_rx
+#    - sensor.rb3011_wan_tx
+#    - sensor.rb3011_cpu_1
+#    - sensor.rb3011_cpu_2
+#    - sensor.rb3011_used_hdd
+#    - sensor.rb3011_used_mem
+#    # DeviceTracker
+#    - device_tracker.mama_miphone
+#    - device_tracker.papa_miphone
+#    - device_tracker.serega_miphone
+#    - device_tracker.zasha_miphone
+#    # covid
+#    - sensor.russia_coronavirus_confirmed
+#    - sensor.russia_coronavirus_current
+#    - sensor.russia_coronavirus_deaths
+#    - sensor.russia_coronavirus_recovered
+#    # balkoon
+#    - sensor.balkoon_warm_floor_bh1750_illuminance
+#    - sensor.balkoon_warm_floor_bme280_pressure
+#    - sensor.balkoon_warm_floor_bme280_relative_humidity
+#    - sensor.balkoon_warm_floor_bme280_temperature
+#    - sensor.balkoon_warm_floor_ntc_temperature
+#    - sensor.balkoon_warm_floor_pressure_mmhg
+#    # octoprint
+#    - sensor.duplicator_6_actual_bed_temp
+#    - sensor.duplicator_6_target_bed_temp
+#    - sensor.duplicator_6_actual_tool0_temp
+#    - sensor.duplicator_6_target_tool0_temp
+
+exclude:
+  entities:
+    - sensor.uptime
+    - sensor.time
+    - sensor.date
+    - sensor.date_time
+    - sensor.xiaomi_map
+    - sensor.test_uptime_sensor
+    - binary_sensor.test
+  domains:
+    - automation
+#    - binary_sensor
+    - camera
+    - device_tracker
+    - input_boolean
+    - input_select
+    - light
+    - media_player
+    - person
+    - script
+#    - sensor
+    - sun
+    - switch
+    - vacuum
+    - weather
+    - zone

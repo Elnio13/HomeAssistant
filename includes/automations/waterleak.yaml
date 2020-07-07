@@ -1,0 +1,35 @@
+- alias: "Water Leak Livinroom into"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.terrarium_master_waterleak2
+      to: "on"
+  action:
+    - service: notify.telegram
+      data:
+        title: "Протечка воды!!!"
+        message: "Течет вода из аквариума в зале (внутри)"
+
+- alias: "Water Leak Livinroom out"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.terrarium_master_waterleak1
+      to: "on"
+  action:
+    - service: notify.telegram
+      data:
+        title: "Протечка воды!!!"
+        message: "Течет вода из аквариума в зале (снаружи)"
+
+- alias: "Water Leak Bedroom"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.terrarium_bedroom_waterleak1
+      to: "on"
+  action:
+    - service: notify.telegram
+      data:
+        title: "Протечка воды!!!"
+        message: "Течет вода из аквариума в спальне (снаружи)"

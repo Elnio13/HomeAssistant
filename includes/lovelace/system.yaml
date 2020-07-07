@@ -1,0 +1,147 @@
+title: "Система"
+icon: "mdi:memory"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: iframe
+        url: /config/server_control
+        aspect_ratio: 260%
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        name: "Raspberry Pi 4"
+        icon: mdi:raspberry-pi
+        layout: icon_name
+        size: 20%
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "CPU temp"
+            icon: mdi:thermometer
+            hour24: true
+            line_color: red
+            entities:
+              - sensor.cpu_temperature
+            font_size: 75
+            height: 75
+            hours_to_show: 24
+            points_per_hour: 4
+          - type: custom:mini-graph-card
+            name: "CPU use"
+            #icon: mdi:gauge
+            icon: mdi:cpu-64-bit
+            hour24: true
+            entities:
+              - sensor.processor_use
+            font_size: 75
+            height: 75
+            hours_to_show: 24
+            points_per_hour: 4
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "RAM"
+            icon: mdi:memory
+            hour24: true
+            line_color: red
+            entities:
+              - sensor.memory_use_percent
+            font_size: 75
+            height: 75
+            hours_to_show: 24
+            points_per_hour: 4
+          - type: custom:mini-graph-card
+            name: "SWAP"
+            icon: mdi:file-swap
+            hour24: true
+            entities:
+              - sensor.swap_use_percent
+            font_size: 75
+            height: 75
+            hours_to_show: 24
+            points_per_hour: 4
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "SSD"
+            icon: mdi:micro-sd
+            hour24: true
+            line_color: red
+            entities:
+              - sensor.disk_use_percent
+            font_size: 75
+            height: 75
+            hours_to_show: 24
+            points_per_hour: 4
+          - type: custom:mini-graph-card
+            name: "BD size"
+            icon: mdi:database
+            hour24: true
+            entities:
+              - sensor.dbsize
+            font_size: 75
+            height: 75
+            hours_to_show: 24
+            points_per_hour: 4
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:visual-studio-code
+        layout: icon_name
+        size: 20%
+        show_label: false
+        show_name: true
+        name: "Home Assistant"
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.last_boot
+                format: total
+              - entity: sensor.ha_init
+              - entity: sensor.ha_current
+              - entity: sensor.ha_latest
+              - entity: sensor.hacs
+      #        - entity: sensor.smart_ssd
+      #              - entity: sensor.dbsize
+
+      - type: custom:button-card
+        name: "Время"
+        icon: mdi:satellite-variant
+        layout: icon_name
+        size: 20%
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - sensor.date_time
+          - sensor.sun_dawn
+          - sensor.sun_dusk
+          - sun.sun
+          - sensor.sun_elevation
+
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - input_boolean.backup_shedule

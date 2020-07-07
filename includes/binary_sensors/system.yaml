@@ -1,0 +1,23 @@
+- platform: template
+  sensors:
+    update_available:
+      value_template: >
+        {% if states('sensor.ha_latest') in ['unavailable', 'unknown', 'none'] or states('sensor.ha_current') ==  states('sensor.ha_latest')%}
+          false
+        {% else %}
+          true
+        {% endif %}
+    rb3011_need_update:
+      value_template: "{{ states.sensor.rb3011_firmware.state | regex_search(states.sensor.routeros_latest_release.state, ignorecase=true) }}"
+
+- platform: ping
+  host: 8.8.4.4
+  name: Google DNS
+  count: 1
+  scan_interval: 10
+
+#- platform: ping
+#  host: 77.88.8.1
+#  name: Yandex DNS
+#  count: 1
+#  scan_interval: 15

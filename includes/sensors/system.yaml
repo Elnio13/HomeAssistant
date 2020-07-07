@@ -1,0 +1,58 @@
+- platform: systemmonitor
+  resources:
+    - type: last_boot
+    - type: processor_use
+    - type: memory_use_percent
+    - type: swap_use_percent
+    - type: disk_use_percent
+      arg: /
+
+#- platform: command_line
+#  name: Smart SSD
+#  command: 'smartctl -H /dev/sda' # | grep "^SMART" | grep -oP "[A-Z]+$"
+#  scan_interval: 21600
+
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | multiply(0.001) }}"
+  scan_interval: 60
+
+- platform: version
+  name: HA Current
+  scan_interval: 3600
+
+- platform: rest
+  resource: https://version.home-assistant.io/stable.json
+  name: "HA Latest"
+  value_template: "{{ value_json.homeassistant.default }}"
+  scan_interval: 3600
+
+- platform: command_line
+  name: HA Init
+  command: 'cat /config/home-assistant.log | grep -o "initialized[[:space:]]in[[:space:]][0-9]\+.[0-9]\+" | grep -o "[0-9]\+.[0-9]\+$" || echo -1'
+  unit_of_measurement: "сек"
+  scan_interval: 180
+
+- platform: uptime
+  name: ha_uptime
+  unit_of_measurement: minutes
+  scan_interval: 3600
+
+- platform: template
+  sensors:
+    ha_uptime_dt:
+      icon_template: "mdi:clock"
+      friendly_name: HA Uptime
+      device_class: timestamp
+      value_template: "{{ (as_timestamp(now()) - (states('sensor.ha_uptime') | float * 60)) | timestamp_custom('%Y-%m-%d %H:%M:%S%z', true) }}"
+
+- platform: sql
+  db_url: !secret db_connect_url
+  scan_interval: 1800
+  queries:
+    - name: DBsize
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1024 / 1024, 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+      column: "value"
+      unit_of_measurement: MB

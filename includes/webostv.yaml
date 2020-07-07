@@ -1,0 +1,29 @@
+- name: TV Kitchen
+  host: !secret tv_kitchen_ip
+  turn_on_action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.kitchen_ir_lg_tv_power_on
+  customize:
+    sources:
+      - vTuner
+      - LiveTV
+      - SmartShare
+      - Netflix
+      - HDMI-1
+      - HDMI-2
+
+- name: TV Living Room
+  host: !secret tv_living_ip
+  turn_on_action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.terrarium_master_lg_tv_power_on
+  customize:
+    sources:
+      - vTuner
+      - LiveTV
+      - SmartShare
+      - Netflix
+      - HDMI-1
+      - HDMI-2

@@ -1,0 +1,17 @@
+- platform: generic_thermostat
+  name: Floor balkoon
+  heater: switch.balkoon_warm_floor_warm_floor
+  target_sensor: sensor.balkoon_warm_floor_ntc_temperature
+  min_temp: 15
+  max_temp: 30
+  ac_mode: false
+  target_temp: 15
+  cold_tolerance: 1
+  hot_tolerance: 0.5
+  min_cycle_duration:
+    seconds: 60
+  keep_alive:
+    minutes: 1
+  initial_hvac_mode: "off"
+  away_temp: 15
+  precision: 0.1

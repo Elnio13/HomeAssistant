@@ -1,0 +1,265 @@
+- platform: feedparser
+  name: "RouterOS Latest"
+  feed_url: "https://mikrotik.com/current.rss"
+  inclusions:
+    - title
+  show_topn: 1
+  scan_interval: 21600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  #auth_protocol: !secret snmp_auth_protocol
+  #priv_protocol: !secret snmp_priv_protocol
+  baseoid: 1.3.6.1.4.1.14988.1.1.17.1.1.4.1
+  name: rb3011_firmware
+  accept_errors: true
+  scan_interval: 86400
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.2.1.1.3.0
+  name: rb3011_uptime
+  accept_errors: true
+  # Вааще ХЗ почему считает на день больше...
+  value_template: "{{ ((value | float  / 100) - 86400) | timestamp_custom('%dd %H:%M:%S',False) }}"
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  #auth_protocol: !secret snmp_auth_protocol
+  #priv_protocol: !secret snmp_priv_protocol
+  baseoid: 1.3.6.1.2.1.25.2.3.1.6.65536
+  name: rb3011_used_memory
+  accept_errors: true
+  scan_interval: 60
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.2.1.25.2.3.1.5.65536
+  name: rb3011_total_memory
+  accept_errors: true
+  scan_interval: 60
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.2.1.25.3.3.1.2.1
+  name: rb3011_cpu_1
+  accept_errors: true
+  unit_of_measurement: "%"
+  scan_interval: 60
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.2.1.25.3.3.1.2.2
+  name: rb3011_cpu_2
+  accept_errors: true
+  unit_of_measurement: "%"
+  scan_interval: 60
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.2.1.25.2.3.1.6.131072 # name: 1.3.6.1.2.1.25.2.3.1.3
+  name: rb3011_used_hdd_space
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.2.1.25.2.3.1.5.131072
+  name: rb3011_total_hdd_space
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: 1.3.6.1.4.1.14988.1.1.3.10.0
+  name: rb3011_temperature
+  accept_errors: true
+  value_template: "{{((value | int) / 10) | int}}"
+  unit_of_measurement: "°C"
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.3
+  name: rb3011_eth1_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.3
+  name: rb3011_eth1_out
+  accept_errors: true
+  scan_interval: 10
+
+########################################
+#name=.1.3.6.1.2.1.2.2.1.2.3 actual-mtu=.1.3.6.1.2.1.2.2.1.4.3 mac-address=.1.3.6.1.2.1.2.2.1.6.3 admin-status=.1.3.6.1.2.1.2.2.1.7.3 
+#       oper-status=.1.3.6.1.2.1.2.2.1.8.3 bytes-in=.1.3.6.1.2.1.31.1.1.1.6.3 packets-in=.1.3.6.1.2.1.31.1.1.1.7.3 discards-in=.1.3.6.1.2.1.2.2.1.13.3 
+#       errors-in=.1.3.6.1.2.1.2.2.1.14.3 bytes-out=.1.3.6.1.2.1.31.1.1.1.10.3 packets-out=.1.3.6.1.2.1.31.1.1.1.11.3 
+#       discards-out=.1.3.6.1.2.1.2.2.1.19.3 errors-out=.1.3.6.1.2.1.2.2.1.20.3
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.3
+  name: rb3011_status_eth1
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.4
+  name: rb3011_status_eth2
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.5
+  name: rb3011_status_eth3
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.6
+  name: rb3011_status_eth4
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.10
+  name: rb3011_status_eth5
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.12
+  name: rb3011_status_eth6
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.13
+  name: rb3011_status_eth7
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.14
+  name: rb3011_status_eth8
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.15
+  name: rb3011_status_eth9
+  accept_errors: true
+  scan_interval: 600
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  auth_key: !secret snmp_auth_key
+  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.2.2.1.7.16
+  name: rb3011_status_eth10
+  accept_errors: true
+  scan_interval: 600
+
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth1_in
+  name: rb3011_eth1_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth1_out
+  name: rb3011_eth1_out_stats
+  sampling_size: 2
+
+- platform: template
+  sensors:
+    rb3011_eth1_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth1_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth1_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth1_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_used_mem:
+      value_template: "{{ (100*(states.sensor.rb3011_used_memory.state)|float/(states.sensor.rb3011_total_memory.state)|float)|round(2) }}"
+      unit_of_measurement: "%"
+
+    rb3011_used_hdd:
+      value_template: "{{ (100*(states.sensor.rb3011_used_hdd_space.state)|float/(states.sensor.rb3011_total_hdd_space.state)|float)|round(2) }}"
+      unit_of_measurement: "%"
+
+    routeros_latest_release:
+      value_template: "{{ state_attr('sensor.routeros_latest', 'entries') | regex_findall_index('[\\d\\.]+', index=0, ignorecase=False) }}"

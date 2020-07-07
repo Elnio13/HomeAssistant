@@ -1,0 +1,81 @@
+title: Input Power Meter indicator
+visible: false
+icon: "mdi:power-socket-eu"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:counter
+        layout: icon_name
+        size: 20%
+        name: "Прибор учета"
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+          name:
+            - justify-self: start
+
+      - type: entities
+        entities:
+          - entity: input_number.energy_indicator_value
+            name: Новые показания
+            icon: mdi:counter
+          - entity: script.write_energy_indicator
+            icon: mdi:memory
+            name: Внести новые показания
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        icon: mdi:counter
+        layout: icon_name
+        size: 20%
+        name: "Текущие значения"
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+          name:
+            - justify-self: start
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: "Энегрия"
+            decimals: 1
+            #height: 50
+            entities:
+              - sensor.power_meter_indicator
+            hour24: true
+            line_color: red
+            hours_to_show: 72
+            points_per_hour: 60
+            show:
+              icon: false
+              name: false
+
+          - type: custom:button-card
+            show_name: true
+            #show_icon: true
+            show_label: true
+            #show_state: true
+            name: Показания, кВтч
+            aspect_ratio: 1.45/1
+            trigger_update: sensor.power_meter_translate_value # Расчет происходит после изменения сенсора
+            label: >
+              [[[
+                return Math.trunc(states['sensor.power_meter_translate_value'].state * 10 / 3200) / 10;
+              ]]]
+            styles:
+              label:
+                - font-size: 200%
+              name:
+                - font-size: 100%
+              grid:
+                - grid-template-areas: '"n" "i" "l"'
+                - grid-template-rows: 0.5fr 0.2fr 1fr
+                #- grid-template-columns: 1fr

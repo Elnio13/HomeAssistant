@@ -1,0 +1,91 @@
+- alias: "MAMA is now home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_mama_miphone
+    from: "not_home"
+    to: "home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Мама дома!**"
+      title: "_tracker_"
+- alias: "MAMA is now not home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_mama_miphone
+    from: "home"
+    to: "not_home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Мама ушла из дома**"
+      title: "_tracker_"
+
+- alias: "PAPA is now home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_papa_miphone
+    from: "not_home"
+    to: "home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Папа дома!**"
+      title: "_tracker_"
+- alias: "PAPA is now not home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_papa_miphone
+    from: "home"
+    to: "not_home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Папа ушел из дома**"
+      title: "_tracker_"
+
+- alias: "ZASHA is now home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_zasha_miphone
+    from: "not_home"
+    to: "home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Саша дома!**"
+      title: "_tracker_"
+- alias: "ZASHA is now not home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_zasha_miphone
+    from: "home"
+    to: "not_home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Саша ушел из дома**"
+      title: "_tracker_"
+
+- alias: "SEREGA is now home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_serega_miphone
+    from: "not_home"
+    to: "home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Сережа дома!**"
+      title: "_tracker_"
+- alias: "SEREGA is now not home"
+  trigger:
+    platform: state
+    entity_id: group.device_tracker_serega_miphone
+    from: "home"
+    to: "not_home"
+  action:
+    service: notify.telegram
+    data:
+      message: "**Сережа ушел из дома**"
+      title: "_tracker_"

@@ -1,0 +1,75 @@
+title: "COVID"
+icon: "mdi:heart-pulse"
+cards:
+  - type: vertical-stack
+    cards:
+          - type: custom:button-card
+            name: "COVID-2019"
+            icon: mdi:heart-flash
+            layout: icon_name
+            size: 20%
+            show_label: false
+            show_name: true
+            styles:
+              card:
+                - background-color: "#203040"
+
+          - type: horizontal-stack
+            cards:
+
+              - type: custom:mini-graph-card
+                name: "Заболевших"
+                entities:
+                  - sensor.russia_coronavirus_confirmed
+                hour24: true
+                line_color: red
+                #font_size: 90
+                #height: 150
+                hours_to_show: 360
+                points_per_hour: 1
+                show:
+                  icon: true
+                  name: true
+
+              - type: custom:mini-graph-card
+                name: "Всего больных"
+                entities:
+                  - sensor.russia_coronavirus_current
+                hour24: true
+                #font_size: 90
+                #height: 150
+                hours_to_show: 360
+                points_per_hour: 1
+                show:
+                  icon: true
+                  name: true
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: "Погибло"
+                entities:
+                  - sensor.russia_coronavirus_deaths
+                hour24: true
+                line_color: red
+                #font_size: 90
+                #height: 150
+                hours_to_show: 360
+                points_per_hour: 1
+                show:
+                  icon: true
+                  name: true
+
+              - type: custom:mini-graph-card
+                name: "Вылечелись"
+                entities:
+                  - sensor.russia_coronavirus_recovered
+                hour24: true
+                line_color: red
+                #font_size: 90
+                #height: 150
+                hours_to_show: 360
+                points_per_hour: 1
+                show:
+                  icon: true
+                  name: true

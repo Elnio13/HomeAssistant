@@ -1,0 +1,79 @@
+- id: Terratium Living room Light ON 08:00
+  alias: Terratium Living room Light ON
+  trigger:
+  - at: '08:00'
+    platform: time
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.terrarium_master_lamp
+
+- id: Terratium Living room Light OFF 12:00
+  alias: Terratium Living room Light OFF
+  trigger:
+  - at: '12:00'
+    platform: time
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.terrarium_master_lamp
+
+- id: Terratium Living room Light ON 18:00
+  alias: Terratium Living room Light ON
+  trigger:
+  - at: '18:00'
+    platform: time
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.terrarium_master_lamp
+
+- id: Terratium Living room Light OFF 23:59
+  alias: Terratium Living room Light OFF
+  trigger:
+  - at: '23:59'
+    platform: time
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.terrarium_master_lamp
+
+- id: Terratium Bed room Light ON 08:00
+  alias: Terratium Bed room Light ON
+  trigger:
+  - at: '08:00'
+    platform: time
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.terrarium_bedroom_lamp
+
+- id: Terratium Bed room Light OFF 12:00
+  alias: Terratium Bed room Light OFF
+  trigger:
+  - at: '12:00'
+    platform: time
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.terrarium_bedroom_lamp
+
+- id: Terratium Bed room Light ON 18:00
+  alias: Terratium Bed room Light ON
+  trigger:
+  - at: '18:00'
+    platform: time
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.terrarium_bedroom_lamp
+
+- id: Terratium Bed room Light OFF 23:59
+  alias: Terratium Bed room Light OFF
+  trigger:
+  - at: '23:59'
+    platform: time
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.terrarium_bedroom_lamp

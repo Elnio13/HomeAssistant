@@ -1,0 +1,861 @@
+2020-07-07 10:06:20 WARNING (SyncWorker_1) [homeassistant.util.yaml.loader] YAML file /config/configuration.yaml contains duplicate key "script". Check lines 106 and 116.
+2020-07-07 10:06:21 WARNING (MainThread) [homeassistant.loader] You are using a custom integration for auto_backup which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant.
+2020-07-07 10:06:21 WARNING (MainThread) [homeassistant.loader] You are using a custom integration for mikrotik which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant.
+2020-07-07 10:06:21 WARNING (MainThread) [homeassistant.loader] You are using a custom integration for hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up http
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain logger took 0.6 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.0 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up system_log
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain system_log took 0.0 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain recorder took 0.2 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 1: {'onboarding', 'api', 'search', 'hassio', 'config', 'lovelace', 'system_log', 'auth', 'http', 'person', 'device_automation', 'frontend', 'websocket_api'}
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up lovelace
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up person
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up device_automation
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up api
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up hassio
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up config
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up auth
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain device_automation took 0.1 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up websocket_api
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain api took 0.1 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain auth took 0.1 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain websocket_api took 0.1 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain lovelace took 0.2 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain config took 0.1 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up search
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain search took 0.0 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain person took 0.2 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up onboarding
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain onboarding took 0.0 seconds.
+2020-07-07 10:06:22 INFO (SyncWorker_1) [homeassistant.loader] Loaded scene from homeassistant.components.scene
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up frontend
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain frontend took 0.0 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setup of domain hassio took 0.3 seconds.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 2: {'python_script', 'zone', 'coronavirus', 'telegram_bot', 'auto_backup', 'webostv', 'stream', 'utility_meter', 'input_boolean', 'weather', 'device_tracker', 'input_select', 'history', 'sun', 'esphome', 'system_health', 'ps4', 'ffmpeg', 'sensor', 'camera', 'mqtt', 'persistent_notification', 'binary_sensor', 'mikrotik', 'notify', 'climate', 'automation', 'mobile_app', 'media_player', 'switch', 'group', 'input_number', 'vacuum', 'webhook', 'updater', 'hacs', 'configurator', 'script', 'onvif', 'octoprint'}
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up python_script
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up zone
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up coronavirus
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up auto_backup
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up utility_meter
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up input_boolean
+2020-07-07 10:06:22 WARNING (MainThread) [homeassistant.loader] You are using a custom integration for gismeteo which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant.
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up weather
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up input_select
+2020-07-07 10:06:22 INFO (MainThread) [homeassistant.setup] Setting up sun
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up ps4
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up ffmpeg
+2020-07-07 10:06:23 INFO (SyncWorker_15) [homeassistant.loader] Loaded template from homeassistant.components.template
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up mikrotik
+2020-07-07 10:06:23 INFO (SyncWorker_2) [homeassistant.loader] Loaded telegram from homeassistant.components.telegram
+2020-07-07 10:06:23 INFO (SyncWorker_14) [homeassistant.loader] Loaded generic_thermostat from homeassistant.components.generic_thermostat
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up group
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up input_number
+2020-07-07 10:06:23 INFO (SyncWorker_6) [homeassistant.loader] Loaded xiaomi_miio from homeassistant.components.xiaomi_miio
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up updater
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up configurator
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up script
+2020-07-07 10:06:23 INFO (MainThread) [homeassistant.setup] Setting up octoprint
+2020-07-07 10:06:24 INFO (SyncWorker_4) [homeassistant.loader] Loaded zeroconf from homeassistant.components.zeroconf
+2020-07-07 10:06:24 WARNING (MainThread) [homeassistant.loader] You are using a custom integration for feedparser which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant.
+2020-07-07 10:06:24 INFO (SyncWorker_7) [homeassistant.loader] Loaded snmp from homeassistant.components.snmp
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setting up gismeteo
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setup of domain weather took 1.6 seconds.
+2020-07-07 10:06:24 INFO (SyncWorker_11) [custom_components.gismeteo] Version 2.0.14
+2020-07-07 10:06:24 INFO (SyncWorker_11) [custom_components.gismeteo] If you have ANY issues with this, please report them here: https://github.com/Limych/ha-gismeteo/issues
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setting up history
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setup of domain sun took 1.6 seconds.
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setting up system_health
+2020-07-07 10:06:24 INFO (SyncWorker_15) [homeassistant.loader] Loaded ping from homeassistant.components.ping
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setting up switch
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setup of domain mikrotik took 0.8 seconds.
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setting up media_player
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setting up webhook
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setup of domain updater took 0.8 seconds.
+2020-07-07 10:06:24 INFO (MainThread) [homeassistant.setup] Setup of domain configurator took 1.0 seconds.
+2020-07-07 10:06:25 INFO (SyncWorker_6) [homeassistant.loader] Loaded statistics from homeassistant.components.statistics
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setting up binary_sensor
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.switch] Setting up switch.template
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setting up climate
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setting up telegram_bot
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setting up stream
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain gismeteo took 0.9 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain history took 0.9 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain system_health took 0.9 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain python_script took 2.6 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setting up mqtt
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain switch took 1.3 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain media_player took 1.3 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain webhook took 1.3 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setting up hacs
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.setup] Setup of domain script took 2.2 seconds.
+2020-07-07 10:06:25 INFO (MainThread) [homeassistant.components.telegram_bot] Setting up telegram_bot.polling
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain ps4 took 2.7 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.template
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.ping
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain auto_backup took 3.5 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.components.weather] Setting up weather.gismeteo
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain binary_sensor took 1.1 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain ffmpeg took 2.7 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain climate took 1.1 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setting up notify
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain telegram_bot took 1.0 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain stream took 1.0 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain mqtt took 0.5 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setting up esphome
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain hacs took 0.5 seconds.
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setup of domain zone took 3.8 seconds.
+2020-07-07 10:06:26 INFO (SyncWorker_18) [homeassistant.loader] Loaded systemmonitor from homeassistant.components.systemmonitor
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setting up vacuum
+2020-07-07 10:06:26 INFO (MainThread) [homeassistant.setup] Setting up webostv
+2020-07-07 10:06:27 INFO (SyncWorker_9) [homeassistant.loader] Loaded mjpeg from homeassistant.components.mjpeg
+2020-07-07 10:06:27 INFO (MainThread) [homeassistant.components.media_player] Setting up media_player.ps4
+2020-07-07 10:06:27 ERROR (SyncWorker_12) [homeassistant.components.octoprint] Endpoint: printer Failed to update OctoPrint status. Error: HTTPConnectionPool(host='192.168.10.30', port=80): Max retries exceeded with url: /api/printer (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff78722f50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2020-07-07 10:06:27 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.updater
+2020-07-07 10:06:28 INFO (MainThread) [homeassistant.setup] Setup of domain esphome took 1.9 seconds.
+2020-07-07 10:06:28 INFO (SyncWorker_2) [homeassistant.loader] Loaded command_line from homeassistant.components.command_line
+2020-07-07 10:06:28 INFO (MainThread) [homeassistant.setup] Setting up xiaomi_miio
+2020-07-07 10:06:28 INFO (MainThread) [homeassistant.setup] Setup of domain vacuum took 1.7 seconds.
+2020-07-07 10:06:28 INFO (MainThread) [homeassistant.setup] Setting up camera
+2020-07-07 10:06:28 INFO (MainThread) [homeassistant.components.notify] Setting up notify.telegram
+2020-07-07 10:06:28 INFO (MainThread) [homeassistant.setup] Setting up device_tracker
+2020-07-07 10:06:28 INFO (MainThread) [hacs] 
+-------------------------------------------------------------------
+HACS (Home Assistant Community Store)
+
+Version: 1.1.2
+This is a custom integration
+If you have any issues with this you need to open an issue here:
+https://github.com/hacs/integration/issues
+-------------------------------------------------------------------
+
+2020-07-07 10:06:28 INFO (SyncWorker_7) [homeassistant.loader] Loaded version from homeassistant.components.version
+2020-07-07 10:06:29 INFO (MainThread) [homeassistant.setup] Setting up onvif
+2020-07-07 10:06:29 INFO (MainThread) [homeassistant.setup] Setup of domain group took 5.6 seconds.
+2020-07-07 10:06:29 INFO (MainThread) [homeassistant.setup] Setup of domain xiaomi_miio took 0.7 seconds.
+2020-07-07 10:06:30 INFO (SyncWorker_5) [homeassistant.loader] Loaded rest from homeassistant.components.rest
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setup of domain coronavirus took 7.3 seconds.
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.vacuum] Setting up vacuum.xiaomi_miio
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setup of domain onvif took 0.9 seconds.
+2020-07-07 10:06:30 ERROR (SyncWorker_12) [homeassistant.components.octoprint] Endpoint: job Failed to update OctoPrint status. Error: HTTPConnectionPool(host='192.168.10.30', port=80): Max retries exceeded with url: /api/job (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff733e2890>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setup of domain input_boolean took 7.4 seconds.
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setup of domain input_select took 7.4 seconds.
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.xiaomi_miio.vacuum] Initializing with host 192.168.10.99 (token 58533...)
+2020-07-07 10:06:30 INFO (SyncWorker_16) [homeassistant.loader] Loaded uptime from homeassistant.components.uptime
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setup of domain input_number took 6.6 seconds.
+2020-07-07 10:06:30 INFO (Thread-2) [homeassistant.components.mqtt] Connected to MQTT server 192.168.10.100:1883 (0)
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setup of domain notify took 4.0 seconds.
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.camera] Setting up camera.mjpeg
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.setup] Setting up automation
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.esphome
+2020-07-07 10:06:30 INFO (MainThread) [homeassistant.components.switch] Setting up switch.esphome
+2020-07-07 10:06:31 INFO (MainThread) [homeassistant.setup] Setup of domain camera took 3.4 seconds.
+2020-07-07 10:06:31 INFO (MainThread) [homeassistant.components.device_tracker] Setting up device_tracker.legacy
+2020-07-07 10:06:32 INFO (SyncWorker_14) [homeassistant.loader] Loaded sql from homeassistant.components.sql
+2020-07-07 10:06:32 INFO (SyncWorker_17) [homeassistant.loader] Loaded light from homeassistant.components.light
+2020-07-07 10:06:32 INFO (MainThread) [homeassistant.setup] Setup of domain octoprint took 8.1 seconds.
+2020-07-07 10:06:32 INFO (SyncWorker_11) [miio.vacuum] model: roborock.vacuum.s5
+2020-07-07 10:06:32 INFO (MainThread) [homeassistant.components.updater] Submitted analytics to Home Assistant servers. Information submitted includes {}
+2020-07-07 10:06:32 INFO (MainThread) [homeassistant.setup] Setting up light
+2020-07-07 10:06:32 WARNING (MainThread) [aiohttp.websocket] websocket connection is closing.
+2020-07-07 10:06:32 INFO (SyncWorker_2) [homeassistant.loader] Loaded time_date from homeassistant.components.time_date
+2020-07-07 10:06:32 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.octoprint
+2020-07-07 10:06:32 WARNING (MainThread) [homeassistant.setup] Setup of utility_meter is taking over 10 seconds.
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.setup] Setting up sensor
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: vacuum valetudo_rockrobo
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.vacuum] Setting up vacuum.mqtt
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: camera valetudo_rockrobo_map
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.feedparser
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.snmp
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.statistics
+2020-07-07 10:06:33 INFO (SyncWorker_10) [homeassistant.loader] Loaded cloud from homeassistant.components.cloud
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.statistics
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.systemmonitor
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.command_line
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.version
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.rest
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.command_line
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.uptime
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.sql
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.time_date
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mqtt
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.gismeteo
+2020-07-07 10:06:33 INFO (MainThread) [homeassistant.setup] Setup of domain webostv took 6.6 seconds.
+2020-07-07 10:06:33 WARNING (MainThread) [homeassistant.components.template] Template sensor 'domains_in_use' has no entity ids configured to track nor were we able to extract the entities to track from the value template(s). This entity will only be able to be updated manually.
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.setup] Setup of domain sensor took 11.3 seconds.
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.setup] Setup of domain light took 11.7 seconds.
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.setup] Setup of domain automation took 13.4 seconds.
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.media_player] Setting up media_player.webostv
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.notify] Setting up notify.webostv
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.media_player] Setting up media_player.webostv
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.notify] Setting up notify.webostv
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.binary_sensor] Setup of binary_sensor platform octoprint is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform feedparser is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform snmp is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform statistics is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform statistics is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform systemmonitor is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform command_line is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform version is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform rest is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform command_line is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform uptime is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform sql is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform time_date is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform mqtt is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform template is taking over 10 seconds.
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform gismeteo is taking over 10 seconds.
+2020-07-07 10:06:44 INFO (SyncWorker_15) [homeassistant.loader] Loaded alexa from homeassistant.components.alexa
+2020-07-07 10:06:44 INFO (SyncWorker_9) [homeassistant.loader] Loaded google_assistant from homeassistant.components.google_assistant
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.coronavirus
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.camera] Setting up camera.mqtt
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.light] Setting up light.esphome
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.light] Setting up light.esphome
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.components.onvif] Couldn't connect to camera 'MyCAM', but will retry later. Error: None
+2020-07-07 10:06:44 WARNING (MainThread) [homeassistant.config_entries] Config entry for onvif not ready yet. Retrying in 5 seconds.
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.auto_backup
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.climate] Setting up climate.generic_thermostat
+2020-07-07 10:06:44 INFO (MainThread) [homeassistant.components.climate] Setting up climate.generic_thermostat
+2020-07-07 10:06:45 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.octoprint
+2020-07-07 10:06:46 INFO (MainThread) [homeassistant.setup] Setup of domain device_tracker took 17.3 seconds.
+2020-07-07 10:06:48 ERROR (MainThread) [homeassistant.core] Error doing job: Unclosed client session
+2020-07-07 10:06:49 INFO (MainThread) [homeassistant.setup] Setting up mobile_app
+2020-07-07 10:06:51 INFO (MainThread) [homeassistant.setup] Setup of domain mobile_app took 2.2 seconds.
+2020-07-07 10:06:51 INFO (MainThread) [homeassistant.components.notify] Setting up notify.mobile_app
+2020-07-07 10:06:51 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mobile_app
+2020-07-07 10:06:51 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.mobile_app
+2020-07-07 10:06:51 INFO (MainThread) [homeassistant.components.device_tracker] Setting up device_tracker.mobile_app
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to bathroom_warm_floor.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_edifire2700.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_100s_pc.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_water_heater.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_4.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_5.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to kitchen_ir.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_100s_tvps4.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_washer.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to terrarium_master.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to power_meter_impulse_counter.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to terrarium_bedroom.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_160m_dishwasher.local
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.setup] Setup of domain utility_meter took 29.7 seconds.
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.utility_meter
+2020-07-07 10:06:52 INFO (MainThread) [homeassistant.components.generic_thermostat.climate] Obtained current and target temperature. Generic thermostat active. 23.7, 20.0
+2020-07-07 10:06:53 INFO (MainThread) [homeassistant.components.generic_thermostat.climate] Obtained current and target temperature. Generic thermostat active. 26.2, 15.0
+2020-07-07 10:06:53 INFO (MainThread) [hacs.repository.integration.hacs.integration] Registration complete
+2020-07-07 10:06:53 INFO (MainThread) [hacs.data] Restore started
+2020-07-07 10:06:55 WARNING (MainThread) [homeassistant.components.sensor] Setup of sensor platform octoprint is taking over 10 seconds.
+2020-07-07 10:06:55 INFO (MainThread) [hacs.data] Restore done
+2020-07-07 10:06:55 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.hacs
+2020-07-07 10:07:09 INFO (MainThread) [homeassistant.bootstrap] Home Assistant initialized in 48.18s
+2020-07-07 10:07:09 INFO (MainThread) [homeassistant.core] Starting Home Assistant
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.core] Timer:starting
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Executing Raise thermostat bathroom target temperature
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Raise thermostat bathroom target temperature: Running script
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Raise thermostat bathroom target temperature: Executing step call service
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Thermostat bathroom ON
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Thermostat bathroom OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Raise thermostat bathroom target temperature
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Lower thermostat bathroom target temperature
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger MAMA is now home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger MAMA is now not home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger PAPA is now home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger PAPA is now not home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger ZASHA is now home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger ZASHA is now not home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger SEREGA is now home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger SEREGA is now not home
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Edifire 2700 ON
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Edifire 2700 OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Living room Light ON
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Living room Light OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Living room Light ON
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Living room Light OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Bed room Light ON
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Bed room Light OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Bed room Light ON
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Terratium Bed room Light OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger TV Living room BACK
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger TV Living room OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger TV Kitchen room OFF
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger HACS Persistent Notification
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger HA Persistent Notification
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger HA Persistent Notification
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Уборка пылесосом по выходным
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Уборка пылесосом в будни
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Vacuum Cleaning
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Vacuum Returning
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Vacuum Docked
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Vacuum Cleaner Error
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Vacuum Cleaner Error Solved
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Start Cleaning Room
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Water Leak Livinroom into
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Water Leak Livinroom out
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Water Leak Bedroom
+2020-07-07 10:07:10 INFO (MainThread) [homeassistant.components.automation] Initialized trigger Backup Everyday
+2020-07-07 10:07:13 INFO (MainThread) [hacs] Loading known repositories
+2020-07-07 10:07:21 INFO (MainThread) [homeassistant.components.camera] Setting up camera.onvif
+2020-07-07 10:07:21 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up binary_sensor.onvif
+2020-07-07 10:07:21 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.onvif
+2020-07-07 10:07:21 INFO (MainThread) [homeassistant.components.camera] Not adding entity MyCAM - profile1 because it's disabled
+2020-07-07 11:03:39 INFO (MainThread) [homeassistant.components.automation] Executing ZASHA is now home
+2020-07-07 11:03:39 INFO (MainThread) [homeassistant.components.automation] ZASHA is now home: Running script
+2020-07-07 11:03:39 INFO (MainThread) [homeassistant.components.automation] ZASHA is now home: Executing step call service
+2020-07-07 11:29:53 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:29:53 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:29:53 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:30:04 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:30:09 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:30:14 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:30:14 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:30:20 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:30:25 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:30:30 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:30:30 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:30:47 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:30:54 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:30:59 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:30:59 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:30:59 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:31:15 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:31:15 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:31:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:31:21 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:31:21 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:31:21 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:31:24 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:32:14 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:32:14 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:32:14 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:32:15 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:32:20 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:32:25 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:32:25 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:32:28 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Error resolving IP address: [Errno -2] Name does not resolve
+2020-07-07 11:32:28 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:32:33 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:32:48 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:32:48 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:32:48 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:32:52 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:32:53 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:32:58 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:32:58 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:33:04 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:33:04 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:33:04 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:33:06 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:33:12 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:33:17 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:33:17 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:33:19 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:33:38 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:33:38 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:33:39 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:33:46 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:33:46 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:33:46 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:33:50 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:33:55 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:34:00 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:34:00 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:34:06 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:34:06 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:34:06 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:34:18 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:34:46 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:34:46 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:34:47 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:34:51 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:41:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:41:19 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:41:19 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:41:23 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:42:45 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:42:45 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:42:45 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:42:46 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:44:47 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:44:47 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:44:51 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:44:53 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:45:08 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 11:45:08 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:45:09 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:45:13 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:45:14 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:45:19 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:45:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 8 bytes read on a total of 126 expected bytes
+2020-07-07 11:45:21 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:49:17 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:49:17 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:49:17 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:49:50 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 11:49:50 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:49:57 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:50:02 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:50:07 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:50:07 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:50:12 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:50:32 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:50:32 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:50:32 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:50:40 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:50:40 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:50:41 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:51:06 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:51:06 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 11:51:21 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:51:21 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:51:45 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:51:45 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 6 seconds
+2020-07-07 11:51:45 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:51:51 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:51:56 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:52:01 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:52:01 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:52:18 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:52:23 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:52:28 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:52:28 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:53:03 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 11:53:03 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 11:53:03 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:53:36 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 11:53:36 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 11:53:49 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:55:41 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:55:41 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:55:41 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:55:45 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:58:20 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 11:58:20 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:58:20 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:58:21 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:58:26 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:58:31 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:58:31 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:58:31 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:58:36 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:58:41 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:58:41 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:58:42 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 11:58:48 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 11:58:50 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 11:58:50 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 11:58:50 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Executing Lower thermostat bathroom target temperature
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Lower thermostat bathroom target temperature: Running script
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Lower thermostat bathroom target temperature: Executing step call service
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Executing Terratium Living room Light OFF
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Terratium Living room Light OFF: Running script
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Terratium Living room Light OFF: Executing step call service
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Executing Terratium Bed room Light OFF
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Terratium Bed room Light OFF: Running script
+2020-07-07 12:00:00 INFO (MainThread) [homeassistant.components.automation] Terratium Bed room Light OFF: Executing step call service
+2020-07-07 12:07:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:07:19 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:07:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:07:20 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:07:25 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:07:30 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:07:30 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:07:37 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:07:37 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:07:47 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:07:47 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:07:48 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:07:52 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:07:52 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:07:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:08:08 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:08:08 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:08:09 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:08:11 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] Executing MAMA is now not home
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] MAMA is now not home: Running script
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] MAMA is now not home: Executing step call service
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] Executing Thermostat bathroom OFF
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] Thermostat bathroom OFF: Running script
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] Thermostat bathroom OFF: Executing step call service
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] Executing PAPA is now not home
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] PAPA is now not home: Running script
+2020-07-07 12:10:45 INFO (MainThread) [homeassistant.components.automation] PAPA is now not home: Executing step call service
+2020-07-07 12:11:15 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:11:15 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:11:15 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:11:19 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:11:24 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:11:29 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:11:29 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:11:30 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:13:20 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:13:20 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:13:20 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:13:23 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:13:28 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:13:33 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:13:33 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:13:35 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:14:57 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:14:57 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:14:57 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:15:03 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:15:03 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:15:03 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:15:09 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:15:21 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:15:21 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:15:51 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:15:51 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:16:14 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:16:14 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:16:14 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:16:20 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Error connecting to ('192.168.10.49', 6053): [Errno 113] Connect call failed ('192.168.10.49', 6053)
+2020-07-07 12:16:20 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 6 seconds
+2020-07-07 12:16:29 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Error resolving IP address: [Errno -2] Name does not resolve
+2020-07-07 12:16:29 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 10 seconds
+2020-07-07 12:16:45 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:16:45 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 19 seconds
+2020-07-07 12:16:45 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:17:11 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:17:11 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 34 seconds
+2020-07-07 12:17:11 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:17:46 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:20:21 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:20:21 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:20:21 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:20:22 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:22:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:22:19 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:22:24 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:22:38 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:22:38 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:22:43 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:22:46 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:22:46 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:22:46 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:23:19 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:23:19 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:23:25 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:23:30 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:23:35 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:23:35 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:23:36 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:23:56 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:23:56 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:23:56 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:24:02 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:24:08 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:24:13 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:24:13 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:24:17 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:24:37 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:24:37 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:24:37 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:24:48 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:24:48 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:24:48 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:25:21 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:25:21 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:25:27 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:25:33 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:25:38 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:25:38 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:26:12 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:26:12 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:26:20 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:26:20 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:26:24 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:26:29 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:26:34 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:26:34 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:26:35 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:26:35 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:27:04 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:27:04 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:27:10 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:27:30 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:27:30 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:27:30 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:27:36 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:27:36 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:27:36 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:27:40 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:27:45 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:27:50 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:27:50 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:27:58 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:28:09 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:28:09 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:28:10 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:28:14 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:28:45 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:28:45 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:28:45 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:28:45 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:29:01 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:29:01 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:29:01 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:29:05 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:33:52 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:33:52 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:33:52 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:33:56 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:34:01 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:34:06 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:34:06 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:34:07 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:34:18 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:34:18 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:34:23 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:34:54 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:34:54 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:34:54 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:34:58 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:35:03 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:35:08 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:35:08 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:35:31 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while waiting for API response!
+2020-07-07 12:35:31 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:35:46 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:35:46 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:35:52 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:36:57 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:36:57 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:36:57 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:36:58 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:39:18 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:39:18 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:39:19 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:39:26 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:43:08 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:43:08 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:43:08 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:43:10 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:43:15 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:43:15 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:43:15 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:43:33 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:43:49 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:43:49 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:43:53 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:43:53 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:44:23 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: [Errno 104] Connection reset by peer
+2020-07-07 12:44:23 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:44:28 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:44:28 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:44:34 WARNING (MainThread) [homeassistant.components.esphome] Error getting initial data: Timeout while waiting for API response!
+2020-07-07 12:44:39 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:44:39 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:45:10 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:45:10 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:45:16 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:49:11 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:49:11 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:49:11 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:49:13 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_5.local: Ping Failed!
+2020-07-07 12:50:11 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for hiper_iot04_5.local
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_5.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_4.local: Ping Failed!
+2020-07-07 12:50:11 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for hiper_iot04_4.local
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_4.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_water_heater.local: Ping Failed!
+2020-07-07 12:50:11 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for hiper_iot04_water_heater.local
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_water_heater.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] digma_100s_pc.local: Ping Failed!
+2020-07-07 12:50:11 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for digma_100s_pc.local
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] digma_100s_pc.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] digma_100s_tvps4.local: Ping Failed!
+2020-07-07 12:50:11 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for digma_100s_tvps4.local
+2020-07-07 12:50:11 INFO (MainThread) [aioesphomeapi.connection] digma_100s_tvps4.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:12 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_edifire2700.local: Ping Failed!
+2020-07-07 12:50:12 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for hiper_iot04_edifire2700.local
+2020-07-07 12:50:12 INFO (MainThread) [aioesphomeapi.connection] hiper_iot04_edifire2700.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:18 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Ping Failed!
+2020-07-07 12:50:18 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for balkoon_warm_floor.local
+2020-07-07 12:50:18 INFO (MainThread) [aioesphomeapi.connection] balkoon_warm_floor.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:18 INFO (MainThread) [aioesphomeapi.connection] terrarium_master.local: Ping Failed!
+2020-07-07 12:50:18 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for terrarium_master.local
+2020-07-07 12:50:18 INFO (MainThread) [aioesphomeapi.connection] terrarium_master.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:50:19 WARNING (MainThread) [homeassistant.helpers.entity] Update of vacuum.xiaomi_vacuum_cleaner is taking over 10 seconds
+2020-07-07 12:50:19 ERROR (SyncWorker_15) [miio.miioprotocol] Unable to discover a device at address 192.168.10.99
+2020-07-07 12:50:19 WARNING (SyncWorker_15) [homeassistant.components.xiaomi_miio.vacuum] Got exception while fetching the state: Unable to discover the device 192.168.10.99
+2020-07-07 12:50:21 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to terrarium_master.local
+2020-07-07 12:50:30 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_5.local
+2020-07-07 12:50:30 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_water_heater.local
+2020-07-07 12:50:31 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_4.local
+2020-07-07 12:50:31 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_100s_tvps4.local
+2020-07-07 12:50:31 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to hiper_iot04_edifire2700.local
+2020-07-07 12:50:35 ERROR (SyncWorker_2) [miio.miioprotocol] Unable to discover a device at address 192.168.10.99
+2020-07-07 12:50:35 WARNING (SyncWorker_2) [homeassistant.components.xiaomi_miio.vacuum] Got exception while fetching the state: Unable to discover the device 192.168.10.99
+2020-07-07 12:50:44 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for digma_100s_pc.local: Timeout while connecting to ('192.168.10.51', 6053)
+2020-07-07 12:50:44 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:50:51 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_100s_pc.local
+2020-07-07 12:50:51 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Timeout while connecting to ('192.168.10.49', 6053)
+2020-07-07 12:50:51 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:50:59 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Error connecting to ('192.168.10.49', 6053): [Errno 113] Connect call failed ('192.168.10.49', 6053)
+2020-07-07 12:50:59 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:51:08 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for balkoon_warm_floor.local: Error connecting to ('192.168.10.49', 6053): [Errno 113] Connect call failed ('192.168.10.49', 6053)
+2020-07-07 12:51:08 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 6 seconds
+2020-07-07 12:51:14 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to balkoon_warm_floor.local
+2020-07-07 12:51:23 INFO (MainThread) [aioesphomeapi.connection] digma_100s_pc.local: Ping Failed!
+2020-07-07 12:51:23 INFO (MainThread) [homeassistant.components.esphome] Disconnected from ESPHome API for digma_100s_pc.local
+2020-07-07 12:51:23 INFO (MainThread) [aioesphomeapi.connection] digma_100s_pc.local: Error while reading incoming messages: Error while receiving data: 0 bytes read on a total of 1 expected bytes
+2020-07-07 12:51:26 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for digma_100s_pc.local: Error resolving IP address: [Errno -2] Name does not resolve
+2020-07-07 12:51:26 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 2 seconds
+2020-07-07 12:51:31 INFO (MainThread) [homeassistant.components.esphome] Can't connect to ESPHome API for digma_100s_pc.local: Error resolving IP address: [Errno -2] Name does not resolve
+2020-07-07 12:51:31 INFO (MainThread) [homeassistant.components.esphome] Trying to reconnect in 3 seconds
+2020-07-07 12:51:34 INFO (MainThread) [homeassistant.components.esphome] Successfully connected to digma_100s_pc.local
+2020-07-07 12:51:43 WARNING (MainThread) [homeassistant.helpers.entity] Update of vacuum.xiaomi_vacuum_cleaner is taking over 10 seconds
+2020-07-07 13:36:09 INFO (MainThread) [homeassistant.components.automation] Executing SEREGA is now home
+2020-07-07 13:36:09 INFO (MainThread) [homeassistant.components.automation] SEREGA is now home: Running script
+2020-07-07 13:36:09 INFO (MainThread) [homeassistant.components.automation] SEREGA is now home: Executing step call service
+2020-07-07 13:37:10 INFO (MainThread) [homeassistant.components.automation] Executing PAPA is now home
+2020-07-07 13:37:10 INFO (MainThread) [homeassistant.components.automation] PAPA is now home: Running script
+2020-07-07 13:37:10 INFO (MainThread) [homeassistant.components.automation] PAPA is now home: Executing step call service

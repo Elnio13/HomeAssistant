@@ -1,0 +1,7 @@
+input_boolean:
+  floor_bathroom_schedule:
+    name: "Подогрев пола в ванной по рассписанию"
+    icon: "mdi:timer"
+  floor_balkoon_schedule:
+    name: "Подогрев пола на балконе по рассписанию"
+    icon: "mdi:timer"

@@ -1,0 +1,92 @@
+- alias: Thermostat bathroom ON
+  trigger:
+    - platform: time
+      at: "07:30:00"
+    - platform: time
+      at: "18:00:00"
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_papa_miphone
+      to: "home"
+  condition:
+    #    condition: and
+    #    conditions:
+    #      - condition: time
+    #        after: "07:30:00"
+    #        before: "10:00:00"
+    #      - condition: time
+    #        after: "18:00:00"
+    #        before: "22:00:00"
+    - condition: state
+      entity_id: 'input_boolean.floor_bathroom_schedule'
+      state: 'on'
+    - condition: state
+      entity_id: group.device_tracker_papa_miphone
+      state: "home"
+  action:
+    service: climate.turn_on
+    entity_id: climate.floor_bathroom
+
+- alias: Thermostat bathroom OFF
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_papa_miphone
+      to: "not_home"
+  condition:
+    #    condition: and
+    #    conditions:
+    - condition: state
+      entity_id: group.device_tracker_papa_miphone
+      state: "not_home"
+  action:
+    service: climate.turn_off
+    entity_id: climate.floor_bathroom
+
+- alias: Raise thermostat bathroom target temperature
+  trigger:
+    - platform: time
+      at: "07:30:00"
+    - platform: time
+      at: "18:00:00"
+    - platform: homeassistant
+      event: start
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        after: "07:30:00"
+        before: "12:00:00"
+      - condition: time
+        after: "18:00:00"
+        before: "23:00:00"
+  action:
+    service: climate.set_temperature
+    entity_id: climate.floor_bathroom
+    data:
+      temperature: 26
+
+- alias: Lower thermostat bathroom target temperature
+  trigger:
+    - platform: time
+      at: "12:00:00"
+    - platform: time
+      at: "23:00:00"
+    - platform: homeassistant
+      event: start
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        after: "12:00:00"
+        before: "18:00:00"
+      - condition: time
+        after: "23:00:00"
+        before: "07:30:00"
+  action:
+    service: climate.set_temperature
+    entity_id: climate.floor_bathroom
+    data:
+      temperature: 15
