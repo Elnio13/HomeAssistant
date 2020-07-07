@@ -2,6 +2,7 @@
 # An * ensures that everything will be ignored.
 #*
 # You can whitelist files/folders with !, these will not be ignored.
+/esphome
 !*.yaml
 !*.md
 !/esphome/*.yaml
@@ -9,7 +10,6 @@
 !/python_scripts/*
 !/includes/*
 
-/esphome/*
 
 # Ignore folders.
 .storage
