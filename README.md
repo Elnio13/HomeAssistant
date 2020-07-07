@@ -1,4 +1,7 @@
 # HomeAssistant
+
+## Прибор учета
+
 Для считывания импульсов с прибора учета использую готовый фотомодуль с компаратором LM393:
 
 https://arduinomaster.ru/datchiki-arduino/photorezistor-arduino-datchik-sveta/
