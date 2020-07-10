@@ -8,7 +8,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   #auth_protocol: !secret snmp_auth_protocol
@@ -20,7 +20,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.2.1.1.3.0
@@ -32,7 +32,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   #auth_protocol: !secret snmp_auth_protocol
@@ -44,7 +44,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.2.1.25.2.3.1.5.65536
@@ -54,7 +54,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.2.1.25.3.3.1.2.1
@@ -65,7 +65,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.2.1.25.3.3.1.2.2
@@ -76,7 +76,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.2.1.25.2.3.1.6.131072 # name: 1.3.6.1.2.1.25.2.3.1.3
@@ -86,7 +86,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.2.1.25.2.3.1.5.131072
@@ -96,7 +96,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: 1.3.6.1.4.1.14988.1.1.3.10.0
@@ -106,11 +106,12 @@
   unit_of_measurement: "°C"
   scan_interval: 600
 
+# SNMP V3 работает через жопу!!!!
+
 - platform: snmp
   host: !secret mikrotik_ip
   community: !secret snmp_community
-  auth_key: !secret snmp_auth_key
-  priv_key: !secret snmp_priv_key
+  version: 2c
   baseoid: .1.3.6.1.2.1.31.1.1.1.6.3
   name: rb3011_eth1_in
   accept_errors: true
@@ -119,8 +120,8 @@
 - platform: snmp
   host: !secret mikrotik_ip
   community: !secret snmp_community
-  auth_key: !secret snmp_auth_key
-  priv_key: !secret snmp_priv_key
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.3
+  version: 2c
   baseoid: .1.3.6.1.2.1.31.1.1.1.10.3
   name: rb3011_eth1_out
   accept_errors: true
@@ -134,7 +135,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.3
@@ -144,7 +145,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.4
@@ -154,7 +155,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.5
@@ -164,7 +165,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.6
@@ -174,7 +175,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.10
@@ -184,7 +185,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.12
@@ -194,7 +195,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.13
@@ -204,7 +205,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.14
@@ -214,7 +215,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.15
@@ -224,7 +225,7 @@
 
 - platform: snmp
   host: !secret mikrotik_ip
-  community: !secret snmp_community
+  community: !secret snmp_user
   auth_key: !secret snmp_auth_key
   priv_key: !secret snmp_priv_key
   baseoid: .1.3.6.1.2.1.2.2.1.7.16

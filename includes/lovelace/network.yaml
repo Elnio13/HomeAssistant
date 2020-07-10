@@ -87,6 +87,14 @@ cards:
               - value: "off"
                 color: red
 
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - sensor.rb3011_eth1_in
+          - sensor.rb3011_eth1_out
+          - sensor.rb3011_status_eth1
+          - sensor.rb3011_eth1
+
   - type: vertical-stack
     cards:
       - type: custom:button-card
