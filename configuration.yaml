@@ -65,7 +65,7 @@ device_tracker:
   - platform: snmp
     host: !secret mikrotik_ip
 #    username: public
-    community: !secret snmp_community
+    community: !secret snmp_user
     auth_key: !secret snmp_auth_key
     priv_key: !secret snmp_priv_key
     #auth_protocol: !secret snmp_auth_protocol
