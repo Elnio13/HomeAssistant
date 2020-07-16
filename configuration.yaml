@@ -115,7 +115,7 @@ group:          !include includes/groups.yaml
 #media_player:   !include includes/media_player.yaml
 #yeelight:       !include includes/yeelight.yaml
 script:         !include includes/scripts.yaml
-#input_boolean:  !include includes/input_boolean.yaml
+input_boolean:  !include includes/input_boolean.yaml
 #input_number:   !include includes/input_number.yaml
 #input_select:   !include includes/input_select.yaml
 #panel_iframe:   !include includes/panel_iframe.yaml

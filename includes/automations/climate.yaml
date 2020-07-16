@@ -19,8 +19,8 @@
     #        after: "18:00:00"
     #        before: "22:00:00"
     - condition: state
-      entity_id: 'input_boolean.floor_bathroom_schedule'
-      state: 'on'
+      entity_id: "input_boolean.floor_bathroom_schedule"
+      state: "on"
     - condition: state
       entity_id: group.device_tracker_papa_miphone
       state: "home"
@@ -90,3 +90,34 @@
     entity_id: climate.floor_bathroom
     data:
       temperature: 15
+
+- alias: Fan ON
+  trigger:
+    - platform: time
+      at: "08:00:00"
+    - platform: homeassistant
+      event: start
+  condition:
+    - condition: time
+      after: "08:00:00"
+      before: "23:00:00"
+    - condition: state
+      entity_id: "input_boolean.fan_schedule"
+      state: "on"
+  action:
+    service: switch.turn_on
+    entity_id: switch.hiper_iot04_5_relay
+
+- alias: Fan OFF
+  trigger:
+    - platform: time
+      at: "23:00:00"
+    - platform: homeassistant
+      event: start
+  condition:
+    - condition: time
+      after: "23:00:00"
+      before: "08:00:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.hiper_iot04_5_relay

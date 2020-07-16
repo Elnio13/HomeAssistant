@@ -360,3 +360,12 @@ cards:
                 show:
                   icon: true
                   name: true
+
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - input_boolean.fan_schedule
+              - input_boolean.terrarium_bedroom_lamp
+              - input_boolean.terrarium_master_lamp
