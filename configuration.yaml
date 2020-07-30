@@ -104,7 +104,6 @@ mikrotik:
   username: !secret mikrotik_user
   password: !secret mikrotik_pass
 
-script:         !include scripts.yaml
 switch:         !include_dir_merge_list includes/switches
 sensor:         !include_dir_merge_list includes/sensors
 binary_sensor:  !include_dir_merge_list includes/binary_sensors

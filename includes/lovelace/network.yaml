@@ -90,7 +90,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: custom:button-card
-        icon: mdi:network-router
+        icon: mdi:router-network
         layout: icon_name
         size: 20%
         name: "RB3011"

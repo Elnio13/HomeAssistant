@@ -45,7 +45,7 @@ cards:
       - type: horizontal-stack
         cards:
           - type: picture-glance
-            title: Livimg
+            title: OctoCam
             entities:
               - camera.octoprint
             camera_view: live

@@ -96,7 +96,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: custom:button-card
-        icon: mdi:visual-studio-code
+        icon: mdi:microsoft-visual-studio-code
         layout: icon_name
         size: 20%
         show_label: false

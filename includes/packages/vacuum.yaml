@@ -20,7 +20,7 @@ input_select:
 input_boolean:
   vacuum_schedule:
     name: "Регулярная уборка роботом"
-    icon: "mdi:timer"
+    icon: "mdi:timer-outline"
   vacuum_notification:
     name: "Сообщения от робота"
     icon: "mdi:bell"

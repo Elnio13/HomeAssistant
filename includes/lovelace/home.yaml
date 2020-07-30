@@ -203,10 +203,17 @@ cards:
               icon: true
               name: true
 
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - input_boolean.terrarium_master_lamp
+
       - type: horizontal-stack
         cards:
           - type: picture-glance
-            title: Livimg
+            title: Living
             entities:
               - camera.mycam_profile0
             camera_view: live
@@ -264,6 +271,19 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
+            name: "Воздух"
+            entities:
+              - sensor.terrarium_bedroom_ambient_temp
+            hour24: true
+            line_color: red
+            height: 65
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+
+          - type: custom:mini-graph-card
             name: "Вода"
             entities:
               - sensor.terrarium_bedroom_aqua_temp
@@ -276,18 +296,12 @@ cards:
               icon: true
               name: true
 
-          - type: custom:mini-graph-card
-            name: "Воздух"
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: entities
+            show_header_toggle: false
             entities:
-              - sensor.terrarium_bedroom_ambient_temp
-            hour24: true
-            line_color: red
-            height: 65
-            hours_to_show: 24
-            points_per_hour: 60
-            show:
-              icon: true
-              name: true
+              - input_boolean.terrarium_bedroom_lamp
 
       - type: vertical-stack
         cards:
@@ -367,5 +381,3 @@ cards:
             show_header_toggle: false
             entities:
               - input_boolean.fan_schedule
-              - input_boolean.terrarium_bedroom_lamp
-              - input_boolean.terrarium_master_lamp

@@ -1,7 +1,7 @@
 input_boolean:
   backup_shedule:
     name: "Регулярное резервное копирование"
-    icon: "mdi:timer"
+    icon: "mdi:timer-outline"
 
 automation:
   - alias: Backup Everyday
