@@ -1,59 +1,69 @@
-- id: Terratium Living room Light ON
-  alias: Terratium Living room Light ON
+- id: Terratium Livingroom Light ON
+  alias: Terratium Livingroom Light ON
   trigger:
-    - platform: time
-      at: "8:00:00"
-    - platform: time
-      at: "18:00:00"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: state
+      entity_id: "input_boolean.terrarium_living_lamp"
+      to: "on"
     - platform: homeassistant
       event: start
   condition:
     - condition: state
-      entity_id: "input_boolean.terrarium_master_lamp"
+      entity_id: "input_boolean.terrarium_living_lamp"
       state: "on"
     - condition: or
       conditions:
-        - condition: time
-          after: "08:00:00"
-          before: "12:00:00"
-        - condition: time
-          after: "18:00:00"
-          before: "00:00:00"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.on_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.off_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.on_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.off_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   action:
     - service: light.turn_on
       data:
         entity_id: light.terrarium_master_lamp
 
-- id: Terratium Living room Light OFF
-  alias: Terratium Living room Light OFF
+- id: Terratium Livingroom Light OFF
+  alias: Terratium Livingroom Light OFF
   trigger:
-    - platform: time
-      at: "12:00:00"
-    - platform: time
-      at: "00:00:00"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: state
+      entity_id: "input_boolean.terrarium_living_lamp"
+      to: "off"
     - platform: homeassistant
       event: start
   condition:
     condition: or
     conditions:
-      - condition: time
-        after: "12:00:00"
-        before: "18:00:00"
-      - condition: time
-        after: "00:00:00"
-        before: "08:00:00"
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.off_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.off_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: state
+        entity_id: "input_boolean.terrarium_living_lamp"
+        state: "off"
   action:
     - service: light.turn_off
       data:
         entity_id: light.terrarium_master_lamp
 
-- id: Terratium Bed room Light ON
-  alias: Terratium Bed room Light ON
+#################################################################
+
+- id: Terratium Bedroom Light ON
+  alias: Terratium Bedroom Light ON
   trigger:
-    - platform: time
-      at: "8:00:00"
-    - platform: time
-      at: "18:00:00"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: state
+      entity_id: "input_boolean.terrarium_bedroom_lamp"
+      to: "on"
     - platform: homeassistant
       event: start
   condition:
@@ -62,97 +72,38 @@
       state: "on"
     - condition: or
       conditions:
-        - condition: time
-          after: "08:00:00"
-          before: "12:00:00"
-        - condition: time
-          after: "18:00:00"
-          before: "00:00:00"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.on_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.off_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.on_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.off_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   action:
     - service: light.turn_on
       data:
         entity_id: light.terrarium_bedroom_lamp
 
-- id: Terratium Bed room Light OFF
-  alias: Terratium Bed room Light OFF
+- id: Terratium Bedroom Light OFF
+  alias: Terratium Bedroom Light OFF
   trigger:
-    - platform: time
-      at: "12:00:00"
-    - platform: time
-      at: "00:00:00"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: state
+      entity_id: "input_boolean.terrarium_bedroom_lamp"
+      to: "off"
     - platform: homeassistant
       event: start
   condition:
     condition: or
     conditions:
-      - condition: time
-        after: "12:00:00"
-        before: "18:00:00"
-      - condition: time
-        after: "00:00:00"
-        before: "08:00:00"
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.off_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.off_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: state
+        entity_id: "input_boolean.terrarium_bedroom_lamp"
+        state: "off"
   action:
     - service: light.turn_off
       data:
         entity_id: light.terrarium_bedroom_lamp
-
-
-#- id: Terratium Living room Light ON 18:00
-#  alias: Terratium Living room Light ON
-#  trigger:
-#  - at: '18:00'
-#    platform: time
-#  action:
-#    - service: light.turn_on
-#      data:
-#        entity_id: light.terrarium_master_lamp
-
-#- id: Terratium Living room Light OFF 23:59
-#  alias: Terratium Living room Light OFF
-#  trigger:
-#  - at: '23:59'
-#    platform: time
-#  action:
-#    - service: light.turn_off
-#      data:
-#        entity_id: light.terrarium_master_lamp
-#
-#- id: Terratium Bed room Light ON 08:00
-#  alias: Terratium Bed room Light ON
-#  trigger:
-#  - at: '08:00'
-#    platform: time
-#  action:
-#    - service: light.turn_on
-#      data:
-#        entity_id: light.terrarium_bedroom_lamp
-#
-#- id: Terratium Bed room Light OFF 12:00
-#  alias: Terratium Bed room Light OFF
-#  trigger:
-#  - at: '12:00'
-#    platform: time
-#  action:
-#    - service: light.turn_off
-#      data:
-#        entity_id: light.terrarium_bedroom_lamp
-#
-#- id: Terratium Bed room Light ON 18:00
-#  alias: Terratium Bed room Light ON
-#  trigger:
-#  - at: '18:00'
-#    platform: time
-#  action:
-#    - service: light.turn_on
-#      data:
-#        entity_id: light.terrarium_bedroom_lamp
-#
-#- id: Terratium Bed room Light OFF 23:59
-#  alias: Terratium Bed room Light OFF
-#  trigger:
-#  - at: '23:59'
-#    platform: time
-#  action:
-#    - service: light.turn_off
-#      data:
-#        entity_id: light.terrarium_bedroom_lamp

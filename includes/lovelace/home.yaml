@@ -63,20 +63,59 @@ cards:
         details: true
         forecast: false
 
-      - type: horizontal-stack
+      - type: vertical-stack
+        name: Климат
         cards:
-          - type: thermostat
-            entity: climate.floor_bathroom
-          - type: thermostat
-            entity: climate.floor_balkoon
+          - type: horizontal-stack
+            cards:
+              - type: thermostat
+                entity: climate.floor_bathroom
+                name: "Пол в ванной"
+              - type: thermostat
+                entity: climate.floor_balkoon
+                name: "Пол на балконе"
 
-      - type: custom:vertical-stack-in-card
-        cards:
-          - type: entities
-            show_header_toggle: false
-            entities:
-              - input_boolean.floor_bathroom_schedule
-              - input_boolean.floor_balkoon_schedule
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: input_boolean.floor_bathroom_schedule
+                icon: mdi:shower
+                name: "Пол в ванной"
+                hold_action:
+                  action: navigate
+                  navigation_path: /lovelace/9/
+
+              - type: custom:button-card
+                entity: input_boolean.floor_balkoon_schedule
+                icon: mdi:castle
+                name: "Пол на балконе"
+                hold_action:
+                  action: navigate
+                  navigation_path: /lovelace/9/
+
+              - type: custom:button-card
+                entity: input_boolean.fan_schedule
+                icon: mdi:fan
+                name: "Вентилятор"
+                hold_action:
+                  action: navigate
+                  navigation_path: /lovelace/9/
+
+              - type: custom:button-card
+                entity: input_boolean.terrarium_living_lamp
+                icon: mdi:zodiac-aquarius
+                name: "Террариум гостинная"
+                hold_action:
+                  action: navigate
+                  navigation_path: /lovelace/9/
+
+              - type: custom:button-card
+                entity: input_boolean.terrarium_bedroom_lamp
+                icon: mdi:zodiac-aquarius
+                name: "Террариум спальня"
+                hold_action:
+                  action: navigate
+                  navigation_path: /lovelace/9/
 
   - type: vertical-stack
     cards:
@@ -203,12 +242,12 @@ cards:
               icon: true
               name: true
 
-      - type: custom:vertical-stack-in-card
-        cards:
-          - type: entities
-            show_header_toggle: false
-            entities:
-              - input_boolean.terrarium_master_lamp
+      #      - type: custom:vertical-stack-in-card
+      #        cards:
+      #          - type: entities
+      #            show_header_toggle: false
+      #            entities:
+      #              - input_boolean.terrarium_master_lamp
 
       - type: horizontal-stack
         cards:
@@ -296,12 +335,12 @@ cards:
               icon: true
               name: true
 
-      - type: custom:vertical-stack-in-card
-        cards:
-          - type: entities
-            show_header_toggle: false
-            entities:
-              - input_boolean.terrarium_bedroom_lamp
+      #      - type: custom:vertical-stack-in-card
+      #        cards:
+      #          - type: entities
+      #            show_header_toggle: false
+      #            entities:
+      #              - input_boolean.terrarium_bedroom_lamp
 
       - type: vertical-stack
         cards:
@@ -374,10 +413,9 @@ cards:
                 show:
                   icon: true
                   name: true
-
-      - type: custom:vertical-stack-in-card
-        cards:
-          - type: entities
-            show_header_toggle: false
-            entities:
-              - input_boolean.fan_schedule
+#      - type: custom:vertical-stack-in-card
+#        cards:
+#          - type: entities
+#            show_header_toggle: false
+#            entities:
+#              - input_boolean.fan_schedule

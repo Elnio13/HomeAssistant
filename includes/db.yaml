@@ -1,5 +1,5 @@
 db_url: !secret db_connect_url
-purge_keep_days: 365
+purge_keep_days: 14
 auto_purge: true
 #include:
 #  entities:
