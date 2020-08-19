@@ -43,7 +43,7 @@
       - condition: template
         value_template: "{{ (state_attr('input_datetime.off_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
       - condition: template
-        value_template: "{{ (state_attr('input_datetime.off_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        value_template: "{{ (state_attr('input_datetime.off_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
       - condition: state
         entity_id: "input_boolean.terrarium_living_lamp"
         state: "off"
@@ -99,7 +99,7 @@
       - condition: template
         value_template: "{{ (state_attr('input_datetime.off_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
       - condition: template
-        value_template: "{{ (state_attr('input_datetime.off_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        value_template: "{{ (state_attr('input_datetime.off_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
       - condition: state
         entity_id: "input_boolean.terrarium_bedroom_lamp"
         state: "off"

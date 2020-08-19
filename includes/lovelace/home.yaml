@@ -75,48 +75,6 @@ cards:
                 entity: climate.floor_balkoon
                 name: "Пол на балконе"
 
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                entity: input_boolean.floor_bathroom_schedule
-                icon: mdi:shower
-                name: "Пол в ванной"
-                hold_action:
-                  action: navigate
-                  navigation_path: /lovelace/9/
-
-              - type: custom:button-card
-                entity: input_boolean.floor_balkoon_schedule
-                icon: mdi:castle
-                name: "Пол на балконе"
-                hold_action:
-                  action: navigate
-                  navigation_path: /lovelace/9/
-
-              - type: custom:button-card
-                entity: input_boolean.fan_schedule
-                icon: mdi:fan
-                name: "Вентилятор"
-                hold_action:
-                  action: navigate
-                  navigation_path: /lovelace/9/
-
-              - type: custom:button-card
-                entity: input_boolean.terrarium_living_lamp
-                icon: mdi:zodiac-aquarius
-                name: "Террариум гостинная"
-                hold_action:
-                  action: navigate
-                  navigation_path: /lovelace/9/
-
-              - type: custom:button-card
-                entity: input_boolean.terrarium_bedroom_lamp
-                icon: mdi:zodiac-aquarius
-                name: "Террариум спальня"
-                hold_action:
-                  action: navigate
-                  navigation_path: /lovelace/9/
-
   - type: vertical-stack
     cards:
       - type: custom:button-card

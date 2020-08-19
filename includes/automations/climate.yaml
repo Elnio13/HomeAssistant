@@ -83,7 +83,7 @@
       - condition: template
         value_template: "{{ (state_attr('input_datetime.cool_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.heat_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
       - condition: template
-        value_template: "{{ (state_attr('input_datetime.cool_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.heat_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        value_template: "{{ (state_attr('input_datetime.cool_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
       - condition: state
         entity_id: group.device_tracker_papa_miphone
         state: "not_home"
@@ -172,7 +172,7 @@
       - condition: template
         value_template: "{{ (state_attr('input_datetime.cool_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.heat_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
       - condition: template
-        value_template: "{{ (state_attr('input_datetime.cool_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.heat_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        value_template: "{{ (state_attr('input_datetime.cool_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
       - condition: state
         entity_id: group.device_tracker_papa_miphone
         state: "not_home"
@@ -226,7 +226,7 @@
       - condition: template
         value_template: "{{ (state_attr('input_datetime.off_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
       - condition: template
-        value_template: "{{ (state_attr('input_datetime.off_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        value_template: "{{ (state_attr('input_datetime.off_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
       - condition: state
         entity_id: "input_boolean.fan_schedule"
         state: "off"
