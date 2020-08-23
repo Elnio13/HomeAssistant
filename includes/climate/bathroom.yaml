@@ -3,7 +3,7 @@
   heater: switch.bathroom_warm_floor_warm_floor
   target_sensor: sensor.bathroom_warm_floor_ntc_temperature
   min_temp: 15
-  max_temp: 30
+  max_temp: 29
   ac_mode: false
   target_temp: 20
   cold_tolerance: 1

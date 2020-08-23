@@ -3,7 +3,7 @@
   heater: switch.balkoon_warm_floor_warm_floor
   target_sensor: sensor.balkoon_warm_floor_ntc_temperature
   min_temp: 15
-  max_temp: 30
+  max_temp: 29
   ac_mode: false
   target_temp: 15
   cold_tolerance: 1

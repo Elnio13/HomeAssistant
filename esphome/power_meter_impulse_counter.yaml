@@ -36,7 +36,6 @@ globals:
 sensor:
   - platform: template
     name: '${plug_name}_save_impulse_tmp'
-#    update_interval: 60s
     lambda: |-
       return id(${plug_name}_save_impulse);
 
@@ -106,14 +105,9 @@ switch:
   - platform: restart
     name: '${plug_name}_restart'
     
-  - platform: template
-    name: '${plug_name}_save_null'
-    on_press:
-      then:
-        - lambda: |-
-          id(${plug_name}_save_impulse) = 0;
+#  - platform: template
+#    name: '${plug_name}_save_null'
 #    on_press:
 #      then:
-#          - switch.toggle: 
-#    lambda: |-
-#      id(${plug_name}_save_impulse) = 0;
+#        - lambda: |-
+#            id(${plug_name}_save_impulse) = 0;
