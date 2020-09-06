@@ -23,4 +23,4 @@ views:
   - !include includes/lovelace/energy_input.yaml
   - !include includes/lovelace/3d.yaml
   - !include includes/lovelace/covid.yaml
-  - !include includes/lovelace/climate.yaml
+  - !include includes/lovelace/settings.yaml

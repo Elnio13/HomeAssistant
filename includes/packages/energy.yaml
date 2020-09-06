@@ -1,7 +1,6 @@
 #Обязательно нужны ТАРИФЫ!!! Иначе счетчики нельзя обнулять!!!
 
 utility_meter:
-
   energy_hourly_edifire2700:
     source: sensor.hiper_iot04_edifire2700_total_daily_energy
     cycle: hourly
@@ -87,7 +86,7 @@ utility_meter:
     cycle: yearly
     tariffs: stnd
 
-###############################################################################
+  ###############################################################################
   energy_hourly_tvps4:
     source: sensor.digma_100s_tvps4_total_daily_energy
     cycle: hourly
@@ -156,47 +155,47 @@ utility_meter:
     cycle: yearly
     tariffs: stnd
 
-sensor:
-  - platform: template
-    sensors:
-      power_meter_translate_value:
-        unit_of_measurement: "imp"
-        # Если получаем значение от счетчика, учитываем его
-        # Если не получаем, оставляем прежнее значение
-        value_template: >-
-          {% if (states.sensor.power_meter_impulse_counter_total_impulse.state |int > 0) %}
-            {{ states.sensor.power_meter_impulse_counter_total_impulse.state }}
-          {% else %}
-            {{ states.sensor.power_meter_translate_value.state }}
-          {% endif %}
+#sensor:
+#  - platform: template
+#    sensors:
+#      power_meter_translate_value:
+#        unit_of_measurement: "imp"
+#        # Если получаем значение от счетчика, учитываем его
+#        # Если не получаем, оставляем прежнее значение
+#        value_template: >-
+#          {% if (states.sensor.power_meter_impulse_counter_total_impulse.state |int > 0) %}
+#            {{ states.sensor.power_meter_impulse_counter_total_impulse.state }}
+#          {% else %}
+#            {{ states.sensor.power_meter_translate_value.state }}
+#          {% endif %}
+#
+#  - platform: template
+#    sensors:
+#      power_meter_indicator:
+#        # Полное значение энергии в импульсах приводим к кВтч
+#        value_template: "{{ states.sensor.power_meter_translate_value.state |float / 3200.0 }}"
+#        unit_of_measurement: "kWh"
+#
+#  - platform: template
+#    sensors:
+#      power_meter_power:
+#        # Среднюю мощность в импульсах за предыдущую минуту преобразуем кВт
+#        value_template: "{{ states.sensor.power_meter_impulse_counter_pulse_counter.state |float * 60.0 / 3200.0 }}"
+#        unit_of_measurement: "kW"
 
-  - platform: template
-    sensors:
-      power_meter_indicator:
-        # Полное значение энергии в импульсах приводим к кВтч
-        value_template: "{{ states.sensor.power_meter_translate_value.state |float / 3200.0 }}"
-        unit_of_measurement: "kWh"
+#input_number:
+#  energy_indicator_value:
+#    name: Energy Indicator Value
+#    #initial: "{{ states.sensor.power_meter_indicator.state | float }}"
+#    min: 0
+#    max: 999999.9
+#    step: 0.1
+#    mode: box
 
-  - platform: template
-    sensors:
-      power_meter_power:
-        # Среднюю мощность в импульсах за предыдущую минуту преобразуем кВт
-        value_template: "{{ states.sensor.power_meter_impulse_counter_pulse_counter.state |float * 60.0 / 3200.0 }}"
-        unit_of_measurement: "kW"
-
-input_number:
-  energy_indicator_value:
-    name: Energy Indicator Value
-    #initial: "{{ states.sensor.power_meter_indicator.state | float }}"
-    min: 0
-    max: 999999.9
-    step: 0.1
-    mode: box
-
-script:
-  write_energy_indicator:
-    sequence:
-      service: python_script.set_state
-      data_template:
-        entity_id: sensor.power_meter_impulse_counter_total_impulse
-        state: "{{ states.input_number.energy_indicator_value.state | float * 3200.0 }}"
+#script:
+#  write_energy_indicator:
+#    sequence:
+#      service: python_script.set_state
+#      data_template:
+#        entity_id: sensor.power_meter_impulse_counter_total_impulse
+#        state: "{{ states.input_number.energy_indicator_value.state | float * 3200.0 }}"

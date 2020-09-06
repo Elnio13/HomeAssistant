@@ -1,16 +1,21 @@
 device_tracker_papa_miphone:
   entities:
-#    - device_tracker.papa_mi_24g
+    #    - device_tracker.papa_mi_24g
     - device_tracker.papa_mi_5g
 device_tracker_mama_miphone:
-  entities: 
+  entities:
     - device_tracker.mama_mi_24g
     - device_tracker.mama_mi_5g
 device_tracker_serega_miphone:
   entities:
-#    - device_tracker.serega_mi_24g
+    #    - device_tracker.serega_mi_24g
     - device_tracker.serega_mi_5g
 device_tracker_zasha_miphone:
   entities:
     - device_tracker.zasha_mi_24g
 #    - device_tracker.zasha_mi_5g
+device_tracker_parents:
+  entities:
+    - device_tracker.mama_mi_24g
+    - device_tracker.mama_mi_5g
+    - device_tracker.papa_mi_5g

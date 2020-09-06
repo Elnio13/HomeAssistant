@@ -104,6 +104,14 @@ mikrotik:
   username: !secret mikrotik_user
   password: !secret mikrotik_pass
 
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_ip
+    token: !secret xiaomi_vacuum_token
+
+weather:
+  - platform: gismeteo
+
 switch: !include_dir_merge_list includes/switches
 sensor: !include_dir_merge_list includes/sensors
 binary_sensor: !include_dir_merge_list includes/binary_sensors
@@ -115,8 +123,9 @@ group: !include includes/groups.yaml
 #yeelight:       !include includes/yeelight.yaml
 script: !include includes/scripts.yaml
 input_boolean: !include includes/input_boolean.yaml
-#input_number:   !include includes/input_number.yaml
-#input_select:   !include includes/input_select.yaml
+input_number: !include includes/input_number.yaml
+input_datetime: !include includes/input_datetime.yaml
+input_select: !include includes/input_select.yaml
 #panel_iframe:   !include includes/panel_iframe.yaml
 #timer:          !include includes/timer.yaml
 #scene:          !include includes/scenes.yaml

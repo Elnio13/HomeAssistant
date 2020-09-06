@@ -1,7 +1,0 @@
-input_boolean:
-  livingroom_tv_off:
-    name: "Выключить ТВ в зале по рассписанию"
-    icon: "mdi:timer-outline"
-  kitchen_tv_off:
-    name: "Выключить ТВ на кухне по рассписанию"
-    icon: "mdi:timer-outline"

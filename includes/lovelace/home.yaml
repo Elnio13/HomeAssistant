@@ -3,16 +3,16 @@ icon: "mdi:home-assistant"
 cards:
   - type: vertical-stack
     cards:
-      - type: custom:button-card
-        icon: mdi:account-multiple-outline
-        layout: icon_name
-        aspect_ratio: 8/1
-        show_label: false
-        show_name: true
-        name: "Сейчас дома"
-        styles:
-          card:
-            - background-color: "#203040"
+      #      - type: custom:button-card
+      #        icon: mdi:account-multiple-outline
+      #        layout: icon_name
+      #        aspect_ratio: 8/1
+      #        show_label: false
+      #        show_name: true
+      #        name: "Сейчас дома"
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
 
       - type: horizontal-stack
         cards:
@@ -25,6 +25,8 @@ cards:
             state:
               - value: "not_home"
                 color: grey
+            tap_action:
+              action: more-info
 
           - type: custom:button-card
             entity: group.device_tracker_mama_miphone
@@ -35,6 +37,8 @@ cards:
             state:
               - value: "not_home"
                 color: grey
+            tap_action:
+              action: more-info
 
           - type: custom:button-card
             entity: group.device_tracker_serega_miphone
@@ -45,6 +49,8 @@ cards:
             state:
               - value: "not_home"
                 color: grey
+            tap_action:
+              action: more-info
 
           - type: custom:button-card
             entity: group.device_tracker_zasha_miphone
@@ -55,16 +61,17 @@ cards:
             state:
               - value: "not_home"
                 color: grey
+            tap_action:
+              action: more-info
 
       - type: custom:weather-card
         show_header_toggle: false
         entity: weather.gismeteo
         current: true
         details: true
-        forecast: false
+        forecast: true
 
       - type: vertical-stack
-        name: Климат
         cards:
           - type: horizontal-stack
             cards:
@@ -79,7 +86,7 @@ cards:
     cards:
       - type: custom:button-card
         icon: mdi:zodiac-aquarius
-        name: "Terrarium Livigroom"
+        name: "Террариум в гостинной"
         layout: icon_name
         aspect_ratio: 8/1
         show_label: false
@@ -102,7 +109,6 @@ cards:
             name: "Помпа"
             hold_action:
               action: more-info
-
           - type: custom:button-card
             entity: binary_sensor.terrarium_master_waterleak2
             show_name: true
@@ -112,7 +118,6 @@ cards:
             state:
               - value: "OFF"
                 color: grey
-
           - type: custom:button-card
             entity: binary_sensor.terrarium_master_waterleak1
             show_name: true
@@ -122,7 +127,6 @@ cards:
             state:
               - value: "OFF"
                 color: grey
-
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
@@ -136,7 +140,6 @@ cards:
             show:
               icon: true
               name: true
-
           - type: custom:mini-graph-card
             name: "Вода"
             entities:
@@ -148,18 +151,17 @@ cards:
             show:
               icon: true
               name: true
-
           - type: custom:mini-graph-card
             name: "Свет"
             entities:
               - sensor.terrarium_master_bh1750_illuminance
             hour24: true
+            line_color: red
             hours_to_show: 24
             points_per_hour: 60
             show:
               icon: true
               name: true
-
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
@@ -174,23 +176,10 @@ cards:
             show:
               icon: true
               name: true
-
           - type: custom:mini-graph-card
             name: "Давление"
             entities:
               - sensor.terrarium_master_pressure_mmhg
-            hour24: true
-            font_size: 90
-            hours_to_show: 24
-            points_per_hour: 60
-            show:
-              icon: true
-              name: true
-
-          - type: custom:mini-graph-card
-            name: "Влажность"
-            entities:
-              - sensor.terrarium_master_bme280_relative_humidity
             hour24: true
             line_color: rgb(28, 128, 199)
             font_size: 90
@@ -199,13 +188,25 @@ cards:
             show:
               icon: true
               name: true
+          - type: custom:mini-graph-card
+            name: "Влажность"
+            entities:
+              - sensor.terrarium_master_bme280_relative_humidity
+            hour24: true
+            line_color: red
+            font_size: 90
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
 
-      #      - type: custom:vertical-stack-in-card
-      #        cards:
-      #          - type: entities
-      #            show_header_toggle: false
-      #            entities:
-      #              - input_boolean.terrarium_master_lamp
+          #      - type: custom:vertical-stack-in-card
+          #        cards:
+          #          - type: entities
+          #            show_header_toggle: false
+          #            entities:
+          #              - input_boolean.terrarium_master_lamp
 
       - type: horizontal-stack
         cards:
@@ -220,7 +221,7 @@ cards:
     cards:
       - type: custom:button-card
         icon: mdi:zodiac-aquarius
-        name: "Terrarium Bedroom"
+        name: "Террариум в спальной"
         layout: icon_name
         aspect_ratio: 8/1
         show_label: false
@@ -228,7 +229,7 @@ cards:
         styles:
           card:
             - background-color: "#203040"
-
+            
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -237,14 +238,12 @@ cards:
             name: "Лампа"
             hold_action:
               action: more-info
-
           - type: custom:button-card
             entity: light.terrarium_bedroom_pomp
             icon: mdi:engine
             name: "Помпа"
             hold_action:
               action: more-info
-
           - type: custom:button-card
             entity: binary_sensor.terrarium_bedroom_waterleak1
             show_name: true
@@ -254,7 +253,6 @@ cards:
             state:
               - value: "OFF"
                 color: grey
-
           - type: custom:button-card
             entity: binary_sensor.terrarium_bedroom_waterleak1
             show_name: true
@@ -264,7 +262,6 @@ cards:
             state:
               - value: "OFF"
                 color: grey
-
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
@@ -279,7 +276,6 @@ cards:
             show:
               icon: true
               name: true
-
           - type: custom:mini-graph-card
             name: "Вода"
             entities:
@@ -293,18 +289,17 @@ cards:
               icon: true
               name: true
 
-      #      - type: custom:vertical-stack-in-card
-      #        cards:
-      #          - type: entities
-      #            show_header_toggle: false
-      #            entities:
-      #              - input_boolean.terrarium_bedroom_lamp
-
+        #      - type: custom:vertical-stack-in-card
+        #        cards:
+        #          - type: entities
+        #            show_header_toggle: false
+        #            entities:
+        #              - input_boolean.terrarium_bedroom_lamp
       - type: vertical-stack
         cards:
           - type: custom:button-card
             icon: mdi:bank-outline
-            name: "Balkoon"
+            name: "Балкон"
             layout: icon_name
             aspect_ratio: 8/1
             show_label: false

@@ -724,13 +724,53 @@ cards:
 
   - type: vertical-stack
     cards:
+#      - type: custom:vertical-stack-in-card
+#        cards:
+#          - type: entities
+#            show_header_toggle: false
+#            entities:
+#              - input_boolean.livingroom_tv_off
+#              - input_boolean.kitchen_tv_off
+      - type: custom:button-card
+        icon: mdi:television-stop
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Автовыключение ТВ"
+        styles:
+          card:
+            - background-color: "#203040"
+
       - type: custom:vertical-stack-in-card
         cards:
           - type: entities
             show_header_toggle: false
             entities:
-              - input_boolean.livingroom_tv_off
-              - input_boolean.kitchen_tv_off
+              - input_datetime.tv_kitchen_off
+              - input_datetime.tv_livingroom_off
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: input_boolean.kitchen_tv_off
+            icon: mdi:television-box
+            name: "ТВ на кухне"
+          - type: custom:button-card
+            entity: input_boolean.livingroom_tv_off
+            icon: mdi:television-box
+            name: "ТВ в гостинной"
+
+      - type: custom:button-card
+        icon: mdi:sony-playstation
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Playstation"
+        styles:
+          card:
+            - background-color: "#203040"
 
 #  - type: custom:vertical-stack-in-card
 #    cards:
