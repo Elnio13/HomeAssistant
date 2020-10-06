@@ -126,10 +126,172 @@
   accept_errors: true
   scan_interval: 10
 
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.4
+  name: rb3011_eth2_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.4
+  name: rb3011_eth2_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.5
+  name: rb3011_eth3_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.5
+  name: rb3011_eth3_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.6
+  name: rb3011_eth4_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.6
+  name: rb3011_eth4_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.7
+  name: rb3011_eth5_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.7
+  name: rb3011_eth5_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.8
+  name: rb3011_eth6_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.8
+  name: rb3011_eth6_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.9
+  name: rb3011_eth7_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.9
+  name: rb3011_eth7_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.10
+  name: rb3011_eth8_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.10
+  name: rb3011_eth8_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.11
+  name: rb3011_eth9_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.11
+  name: rb3011_eth9_out
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.6.12
+  name: rb3011_eth10_in
+  accept_errors: true
+  scan_interval: 10
+
+- platform: snmp
+  host: !secret mikrotik_ip
+  community: !secret snmp_community
+  version: 2c
+  baseoid: .1.3.6.1.2.1.31.1.1.1.10.12
+  name: rb3011_eth10_out
+  accept_errors: true
+  scan_interval: 10
+
 ########################################
-#name=.1.3.6.1.2.1.2.2.1.2.3 actual-mtu=.1.3.6.1.2.1.2.2.1.4.3 mac-address=.1.3.6.1.2.1.2.2.1.6.3 admin-status=.1.3.6.1.2.1.2.2.1.7.3 
-#       oper-status=.1.3.6.1.2.1.2.2.1.8.3 bytes-in=.1.3.6.1.2.1.31.1.1.1.6.3 packets-in=.1.3.6.1.2.1.31.1.1.1.7.3 discards-in=.1.3.6.1.2.1.2.2.1.13.3 
-#       errors-in=.1.3.6.1.2.1.2.2.1.14.3 bytes-out=.1.3.6.1.2.1.31.1.1.1.10.3 packets-out=.1.3.6.1.2.1.31.1.1.1.11.3 
+#name=.1.3.6.1.2.1.2.2.1.2.3 actual-mtu=.1.3.6.1.2.1.2.2.1.4.3 mac-address=.1.3.6.1.2.1.2.2.1.6.3 admin-status=.1.3.6.1.2.1.2.2.1.7.3
+#       oper-status=.1.3.6.1.2.1.2.2.1.8.3 bytes-in=.1.3.6.1.2.1.31.1.1.1.6.3 packets-in=.1.3.6.1.2.1.31.1.1.1.7.3 discards-in=.1.3.6.1.2.1.2.2.1.13.3
+#       errors-in=.1.3.6.1.2.1.2.2.1.14.3 bytes-out=.1.3.6.1.2.1.31.1.1.1.10.3 packets-out=.1.3.6.1.2.1.31.1.1.1.11.3
 #       discards-out=.1.3.6.1.2.1.2.2.1.19.3 errors-out=.1.3.6.1.2.1.2.2.1.20.3
 
 - platform: snmp
@@ -232,7 +394,6 @@
   accept_errors: true
   scan_interval: 600
 
-
 - platform: statistics
   entity_id: sensor.rb3011_eth1_in
   name: rb3011_eth1_in_stats
@@ -243,16 +404,98 @@
   name: rb3011_eth1_out_stats
   sampling_size: 2
 
+- platform: statistics
+  entity_id: sensor.rb3011_eth2_in
+  name: rb3011_eth2_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth2_out
+  name: rb3011_eth2_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth3_in
+  name: rb3011_eth3_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth3_out
+  name: rb3011_eth3_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth4_in
+  name: rb3011_eth4_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth4_out
+  name: rb3011_eth4_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth5_in
+  name: rb3011_eth5_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth5_out
+  name: rb3011_eth5_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth6_in
+  name: rb3011_eth6_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth6_out
+  name: rb3011_eth6_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth7_in
+  name: rb3011_eth7_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth7_out
+  name: rb3011_eth7_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth8_in
+  name: rb3011_eth8_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth8_out
+  name: rb3011_eth8_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth9_in
+  name: rb3011_eth9_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth9_out
+  name: rb3011_eth9_out_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth10_in
+  name: rb3011_eth10_in_stats
+  sampling_size: 2
+
+- platform: statistics
+  entity_id: sensor.rb3011_eth10_out
+  name: rb3011_eth10_out_stats
+  sampling_size: 2
+
 - platform: template
   sensors:
-    rb3011_eth1_rx:
-      value_template: "{{ (state_attr('sensor.rb3011_eth1_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
-
-    rb3011_eth1_tx:
-      value_template: "{{ (state_attr('sensor.rb3011_eth1_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
-
     rb3011_used_mem:
       value_template: "{{ (100*(states.sensor.rb3011_used_memory.state)|float/(states.sensor.rb3011_total_memory.state)|float)|round(2) }}"
       unit_of_measurement: "%"
@@ -263,3 +506,83 @@
 
     routeros_latest_release:
       value_template: "{{ state_attr('sensor.routeros_latest', 'entries') | regex_findall_index('[\\d\\.]+', index=0, ignorecase=False) }}"
+
+    rb3011_eth1_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth1_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth1_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth1_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth2_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth2_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth2_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth2_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth2_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth2_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth3_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth3_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth3_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth3_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth3_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth3_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth4_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth4_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth4_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth4_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth4_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth4_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth5_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth5_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth5_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth5_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth5_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth5_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth6_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth6_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth6_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth6_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth6_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth6_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth7_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth7_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth7_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth7_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth7_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth7_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth8_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth8_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth8_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth8_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth8_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth8_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth9_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth9_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth9_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth9_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth9_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth9_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth10_rx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth10_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth10_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"
+
+    rb3011_eth10_tx:
+      value_template: "{{ (state_attr('sensor.rb3011_eth10_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth10_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
+      unit_of_measurement: "Mbps"

@@ -52,7 +52,7 @@ frontend:
 
 auto_backup:
   auto_purge: true
-  keep_days: 5
+#  keep_days: 7
 
 octoprint:
   host: !secret octoprint_ip

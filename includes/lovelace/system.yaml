@@ -145,3 +145,4 @@ cards:
             show_header_toggle: false
             entities:
               - input_boolean.backup_shedule
+              - sensor.auto_backup

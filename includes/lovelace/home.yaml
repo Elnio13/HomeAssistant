@@ -3,17 +3,6 @@ icon: "mdi:home-assistant"
 cards:
   - type: vertical-stack
     cards:
-      #      - type: custom:button-card
-      #        icon: mdi:account-multiple-outline
-      #        layout: icon_name
-      #        aspect_ratio: 8/1
-      #        show_label: false
-      #        show_name: true
-      #        name: "Сейчас дома"
-      #        styles:
-      #          card:
-      #            - background-color: "#203040"
-
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -69,31 +58,323 @@ cards:
         entity: weather.gismeteo
         current: true
         details: true
-        forecast: true
+        forecast: false
 
-      - type: vertical-stack
+      - type: horizontal-stack
         cards:
-          - type: horizontal-stack
-            cards:
-              - type: thermostat
-                entity: climate.floor_bathroom
-                name: "Пол в ванной"
-              - type: thermostat
-                entity: climate.floor_balkoon
-                name: "Пол на балконе"
+          - type: custom:button-card
+            icon: mdi:power
+            name: "TV в гостинной"
+            layout: icon_name
+            #aspect_ratio: 8/1
+            show_label: false
+            show_name: true
+            styles:
+              card:
+                - background-color: "#022027"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: switch.turn_on
+              service_data:
+                entity_id: switch.terrarium_master_lg_tv_power_on
+            hold_action:
+              action: call-service
+              service: media_player.turn_off
+              service_data:
+                entity_id: media_player.tv_living_room
+
+          - type: custom:button-card
+            icon: mdi:power
+            name: "TV на кухне"
+            layout: icon_name
+            #aspect_ratio: 8/1
+            show_label: false
+            show_name: true
+            styles:
+              card:
+                - background-color: "#1a162a"
+              icon:
+                - color: rgb(28, 128, 199)
+            tap_action:
+              action: call-service
+              service: switch.turn_on
+              service_data:
+                entity_id: switch.kitchen_ir_lg_tv_power_on
+            hold_action:
+              action: call-service
+              service: media_player.turn_off
+              service_data:
+                entity_id: media_player.tv_kitchen
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_living_room
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              icon: mdi:video-input-hdmi
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "HDMI1"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  source: HDMI-1
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "vTuner"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  source: vTuner
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "Megogo"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  source: Megogo
+            - type: custom:button-card
+              icon: mdi:video-input-antenna
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "LiveTV"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  source: LiveTV
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_living_room
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: "custom:button-card"
+              entity: switch.terrarium_master_edifire_opt_cox
+              icon: mdi:transit-connection-variant
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#041729"
+                icon:
+                  - color: green
+              state:
+                - value: "off"
+            - type: custom:button-card
+              entity: switch.terrarium_master_edifire_down
+              icon: mdi:volume-minus
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#041729"
+                icon:
+                  - color: rgb(28, 128, 199)
+              state:
+                - value: "off"
+            - type: custom:button-card
+              entity: switch.terrarium_master_edifire_mute
+              icon: mdi:volume-off
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#041729"
+                icon:
+                  - color: rgb(28, 128, 199)
+              state:
+                - value: "off"
+            - type: custom:button-card
+              entity: switch.terrarium_master_edifire_up
+              icon: mdi:volume-plus
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#041729"
+                icon:
+                  - color: rgb(28, 128, 199)
+              state:
+                - value: "off"
+
+      #      - type: custom:button-card
+      #        icon: mdi:power
+      #        name: "TV на кухне"
+      #        layout: icon_name
+      #        aspect_ratio: 8/1
+      #        show_label: false
+      #        show_name: true
+      #        styles:
+      #          card:
+      #            - background-color: "#1a162a"
+      #          icon:
+      #            - color: rgb(28, 128, 199)
+      #        tap_action:
+      #          action: call-service
+      #          service: switch.turn_on
+      #          service_data:
+      #            entity_id: switch.kitchen_ir_lg_tv_power_on
+      #        hold_action:
+      #          action: call-service
+      #          service: media_player.turn_off
+      #          service_data:
+      #            entity_id: media_player.tv_kitchen
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_kitchen
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              icon: mdi:video-input-hdmi
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "HDMI1"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  source: HDMI-1
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "vTuner"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  source: vTuner
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "Megogo"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  source: Megogo
+            - type: custom:button-card
+              icon: mdi:video-input-antenna
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              name: "LiveTV"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  source: LiveTV
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_kitchen
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              color_type: blank-card
+            - type: custom:button-card
+              icon: mdi:volume-minus
+              styles:
+                card:
+                  - background-color: "#11192b"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "VOLUMEDOWN"
+            - type: custom:button-card
+              icon: mdi:volume-off
+              styles:
+                card:
+                  - background-color: "#11192b"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "MUTE"
+            - type: custom:button-card
+              icon: mdi:volume-plus
+              styles:
+                card:
+                  - background-color: "#11192b"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "VOLUMEUP"
 
   - type: vertical-stack
     cards:
-      - type: custom:button-card
-        icon: mdi:zodiac-aquarius
-        name: "Террариум в гостинной"
-        layout: icon_name
-        aspect_ratio: 8/1
-        show_label: false
-        show_name: true
-        styles:
-          card:
-            - background-color: "#203040"
+      #      - type: custom:button-card
+      #        icon: mdi:zodiac-aquarius
+      #        name: "Террариум в гостинной"
+      #        layout: icon_name
+      #        aspect_ratio: 8/1
+      #        show_label: false
+      #        show_name: true
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
 
       - type: horizontal-stack
         cards:
@@ -114,7 +395,7 @@ cards:
             show_name: true
             name: Течь внутри
             icon: mdi:fishbowl
-            color: red
+            color: rgb(28, 128, 199)
             state:
               - value: "OFF"
                 color: grey
@@ -123,10 +404,11 @@ cards:
             show_name: true
             name: Течь снаружи
             icon: mdi:fishbowl-outline
-            color: red
+            color: rgb(28, 128, 199)
             state:
               - value: "OFF"
                 color: grey
+
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
@@ -151,17 +433,18 @@ cards:
             show:
               icon: true
               name: true
-          - type: custom:mini-graph-card
-            name: "Свет"
-            entities:
-              - sensor.terrarium_master_bh1750_illuminance
-            hour24: true
-            line_color: red
-            hours_to_show: 24
-            points_per_hour: 60
-            show:
-              icon: true
-              name: true
+      #          - type: custom:mini-graph-card
+      #            name: "Свет"
+      #            entities:
+      #              - sensor.terrarium_master_bh1750_illuminance
+      #            hour24: true
+      #            line_color: rgb(28, 128, 199)
+      #            hours_to_show: 24
+      #            points_per_hour: 60
+      #            show:
+      #              icon: true
+      #              name: true
+
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
@@ -176,10 +459,22 @@ cards:
             show:
               icon: true
               name: true
+          #          - type: custom:mini-graph-card
+          #            name: "Давление"
+          #            entities:
+          #              - sensor.terrarium_master_pressure_mmhg
+          #            hour24: true
+          #            line_color: rgb(28, 128, 199)
+          #            font_size: 90
+          #            hours_to_show: 24
+          #            points_per_hour: 60
+          #            show:
+          #              icon: true
+          #              name: true
           - type: custom:mini-graph-card
-            name: "Давление"
+            name: "Влажность"
             entities:
-              - sensor.terrarium_master_pressure_mmhg
+              - sensor.terrarium_master_bme280_relative_humidity
             hour24: true
             line_color: rgb(28, 128, 199)
             font_size: 90
@@ -188,25 +483,6 @@ cards:
             show:
               icon: true
               name: true
-          - type: custom:mini-graph-card
-            name: "Влажность"
-            entities:
-              - sensor.terrarium_master_bme280_relative_humidity
-            hour24: true
-            line_color: red
-            font_size: 90
-            hours_to_show: 24
-            points_per_hour: 60
-            show:
-              icon: true
-              name: true
-
-          #      - type: custom:vertical-stack-in-card
-          #        cards:
-          #          - type: entities
-          #            show_header_toggle: false
-          #            entities:
-          #              - input_boolean.terrarium_master_lamp
 
       - type: horizontal-stack
         cards:
@@ -219,17 +495,17 @@ cards:
 
   - type: vertical-stack
     cards:
-      - type: custom:button-card
-        icon: mdi:zodiac-aquarius
-        name: "Террариум в спальной"
-        layout: icon_name
-        aspect_ratio: 8/1
-        show_label: false
-        show_name: true
-        styles:
-          card:
-            - background-color: "#203040"
-            
+      #      - type: custom:button-card
+      #        icon: mdi:zodiac-aquarius
+      #        name: "Террариум в спальной"
+      #        layout: icon_name
+      #        aspect_ratio: 8/1
+      #        show_label: false
+      #        show_name: true
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
+
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -249,7 +525,7 @@ cards:
             show_name: true
             name: Течь
             icon: mdi:fishbowl
-            color: red
+            color: rgb(28, 128, 199)
             state:
               - value: "OFF"
                 color: grey
@@ -258,117 +534,104 @@ cards:
             show_name: true
             name: Течь
             icon: mdi:fishbowl
-            color: red
+            color: rgb(28, 128, 199)
             state:
               - value: "OFF"
                 color: grey
+
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
-            name: "Воздух"
+            name: "Спальная воздух"
             entities:
               - sensor.terrarium_bedroom_ambient_temp
             hour24: true
             line_color: red
-            height: 65
             hours_to_show: 24
             points_per_hour: 60
             show:
               icon: true
               name: true
           - type: custom:mini-graph-card
-            name: "Вода"
+            name: "Спальная вода"
             entities:
               - sensor.terrarium_bedroom_aqua_temp
             hour24: true
             line_color: rgb(28, 128, 199)
-            height: 65
             hours_to_show: 24
             points_per_hour: 60
             show:
               icon: true
               name: true
+      #          - type: custom:button-card
+      #            color_type: blank-card
 
-        #      - type: custom:vertical-stack-in-card
-        #        cards:
-        #          - type: entities
-        #            show_header_toggle: false
-        #            entities:
-        #              - input_boolean.terrarium_bedroom_lamp
-      - type: vertical-stack
+      #      - type: custom:button-card
+      #        icon: mdi:bank-outline
+      #        name: "Балкон"
+      #        layout: icon_name
+      #        aspect_ratio: 8/1
+      #        show_label: false
+      #        show_name: true
+      #        styles:
+      #          card:
+      #            - background-color: "#203040"
+
+      - type: horizontal-stack
         cards:
-          - type: custom:button-card
-            icon: mdi:bank-outline
-            name: "Балкон"
-            layout: icon_name
-            aspect_ratio: 8/1
-            show_label: false
-            show_name: true
-            styles:
-              card:
-                - background-color: "#203040"
-
-          - type: horizontal-stack
-            cards:
-              - type: custom:mini-graph-card
-                name: "Воздух"
-                entities:
-                  - sensor.balkoon_warm_floor_bme280_temperature
-                hour24: true
-                hours_to_show: 24
-                points_per_hour: 60
-                line_color: red
-                font_size: 90
-                height: 65
-                show:
-                  icon: true
-                  name: true
-
-              - type: custom:mini-graph-card
-                name: "Свет"
-                entities:
-                  - sensor.balkoon_warm_floor_bh1750_illuminance
-                hour24: true
-                hours_to_show: 24
-                points_per_hour: 60
-                font_size: 90
-                height: 65
-                show:
-                  icon: true
-                  name: true
-
-          - type: horizontal-stack
-            cards:
-              - type: custom:mini-graph-card
-                name: "Давление"
-                entities:
-                  - sensor.balkoon_warm_floor_bme280_pressure
-                hour24: true
-                line_color: red
-                font_size: 90
-                height: 65
-                hours_to_show: 24
-                points_per_hour: 60
-                show:
-                  icon: true
-                  name: true
-
-              - type: custom:mini-graph-card
-                name: "Влажность"
-                entities:
-                  - sensor.balkoon_warm_floor_bme280_relative_humidity
-                hour24: true
-                line_color: rgb(28, 128, 199)
-                font_size: 90
-                height: 65
-                hours_to_show: 24
-                points_per_hour: 60
-                show:
-                  icon: true
-                  name: true
-#      - type: custom:vertical-stack-in-card
-#        cards:
-#          - type: entities
-#            show_header_toggle: false
-#            entities:
-#              - input_boolean.fan_schedule
+          - type: custom:mini-graph-card
+            name: "Блкон воздух"
+            entities:
+              - sensor.balkoon_warm_floor_bme280_temperature
+            hour24: true
+            hours_to_show: 24
+            points_per_hour: 60
+            line_color: red
+            font_size: 90
+            show:
+              icon: true
+              name: true
+          #          - type: custom:mini-graph-card
+          #            name: "Давление"
+          #            entities:
+          #              - sensor.balkoon_warm_floor_bme280_pressure
+          #            hour24: true
+          #            line_color: rgb(28, 128, 199)
+          #            font_size: 90
+          #            hours_to_show: 24
+          #            points_per_hour: 60
+          #            show:
+          #              icon: true
+          #              name: true
+          - type: custom:mini-graph-card
+            name: "Балкон влажность"
+            entities:
+              - sensor.balkoon_warm_floor_bme280_relative_humidity
+            hour24: true
+            line_color: rgb(28, 128, 199)
+            font_size: 90
+            hours_to_show: 24
+            points_per_hour: 60
+            show:
+              icon: true
+              name: true
+      #              - type: custom:mini-graph-card
+      #                name: "Свет"
+      #                entities:
+      #                  - sensor.balkoon_warm_floor_bh1750_illuminance
+      #                hour24: true
+      #                hours_to_show: 24
+      #                points_per_hour: 60
+      #                font_size: 90
+      #                #height: 65
+      #                show:
+      #                  icon: true
+      #                  name: true
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.floor_bathroom
+            name: "Пол в ванной"
+          - type: thermostat
+            entity: climate.floor_balkoon
+            name: "Пол на балконе"

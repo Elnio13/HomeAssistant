@@ -87,8 +87,26 @@ cards:
               - value: "off"
                 color: red
 
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - sensor.rb3011_firmware
+          - sensor.rb3011_uptime
+          - sensor.rb3011_temperature
+  #          - switch.rb3011_eth1
+  #          - switch.rb3011_eth2
+  #          - switch.rb3011_eth3
+  #          - switch.rb3011_eth4
+  #          - switch.rb3011_eth5
+  #          - switch.rb3011_eth6
+  #          - switch.rb3011_eth7
+  #          - switch.rb3011_eth8
+  #          - switch.rb3011_eth9
+  #          - switch.rb3011_eth10
+
   - type: vertical-stack
     cards:
+
       - type: custom:button-card
         icon: mdi:router-network
         layout: icon_name
@@ -103,17 +121,125 @@ cards:
       - type: entities
         show_header_toggle: false
         entities:
-          - sensor.rb3011_firmware
-          - sensor.rb3011_uptime
-          - sensor.rb3011_temperature
-          - switch.rb3011_eth1
-          - switch.rb3011_eth2
-          - switch.rb3011_eth3
-          - switch.rb3011_eth4
-          - switch.rb3011_eth5
-          - switch.rb3011_eth6
-          - switch.rb3011_eth7
-          - switch.rb3011_eth8
-          - switch.rb3011_eth9
-          - switch.rb3011_eth10
 
+          - entity: switch.rb3011_eth1
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth1_wan
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth1_rx
+                name: Rx
+              - entity: sensor.rb3011_eth1_tx
+                name: Tx
+
+          - type: section
+
+          - entity: switch.rb3011_eth2
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth2
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth2_rx
+                name: false
+              - entity: sensor.rb3011_eth2_tx
+                name: false
+
+          - entity: switch.rb3011_eth3
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth3
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth3_rx
+                name: false
+              - entity: sensor.rb3011_eth3_tx
+                name: false
+
+          - entity: switch.rb3011_eth4
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth4
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth4_rx
+                name: false
+              - entity: sensor.rb3011_eth4_tx
+                name: false
+
+          - entity: switch.rb3011_eth5
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth5
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth5_rx
+                name: false
+              - entity: sensor.rb3011_eth5_tx
+                name: false
+
+          - entity: switch.rb3011_eth6
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth6
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth6_rx
+                name: false
+              - entity: sensor.rb3011_eth6_tx
+                name: false
+
+          - entity: switch.rb3011_eth7
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth7
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth7_rx
+                name: false
+              - entity: sensor.rb3011_eth7_tx
+                name: false
+
+          - entity: switch.rb3011_eth8
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth8
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth8_rx
+                name: false
+              - entity: sensor.rb3011_eth8_tx
+                name: false
+
+          - entity: switch.rb3011_eth9
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth9
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth9_rx
+                name: false
+              - entity: sensor.rb3011_eth9_tx
+                name: false
+
+          - entity: switch.rb3011_eth10
+            type: custom:multiple-entity-row
+            toggle: true
+            name: rb3011_eth10
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_eth10_rx
+                name: false
+              - entity: sensor.rb3011_eth10_tx
+                name: false
