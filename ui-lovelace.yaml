@@ -1,17 +1,17 @@
 title: Home
-custom_header:
-  button_text:
-    options: "{{ time }}<br>{{ date }}"
-  compact_mode: true
-  footer_mode: true
-  hide_help: true
-  disable_sidebar: true
-  exceptions:
-    - conditions:
-        user: Ennio
-      config:
-        kiosk_mode: false
-        disable_sidebar: false
+#custom_header:
+#  button_text:
+#    options: "{{ time }}<br>{{ date }}"
+#  compact_mode: true
+#  footer_mode: true
+#  hide_help: true
+#  disable_sidebar: true
+#  exceptions:
+#    - conditions:
+#        user: Ennio
+#      config:
+#        kiosk_mode: false
+#        disable_sidebar: false
 
 views: 
   - !include includes/lovelace/home.yaml

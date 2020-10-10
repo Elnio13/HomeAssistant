@@ -1,11 +1,11 @@
 title: "Система"
 icon: "mdi:memory"
 cards:
-  - type: vertical-stack
-    cards:
-      - type: iframe
-        url: /config/server_control
-        aspect_ratio: 260%
+#  - type: vertical-stack
+#    cards:
+  - type: iframe
+    url: /config/server_control
+    aspect_ratio: 260%
 
   - type: vertical-stack
     cards:

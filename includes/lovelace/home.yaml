@@ -179,6 +179,93 @@ cards:
         card:
           type: horizontal-stack
           cards:
+            - type: custom:button-card
+              icon: mdi:arrow-up-thick
+              size: 80%
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  button: "UP"
+
+            - type: custom:button-card
+              icon: mdi:arrow-down-thick
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  button: "DOWN"
+
+            - type: custom:button-card
+              icon: mdi:arrow-left-thick
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  button: "LEFT"
+
+            - type: custom:button-card
+              icon: mdi:arrow-right-thick
+              size: 80%
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  button: "RIGHT"
+
+            - type: custom:button-card
+              icon: mdi:compass-rose
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_living_room
+                  button: "ENTER"
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_living_room
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
             - type: "custom:button-card"
               entity: switch.terrarium_master_edifire_opt_cox
               icon: mdi:transit-connection-variant
@@ -311,6 +398,104 @@ cards:
                   entity_id: media_player.tv_kitchen
                   source: LiveTV
 
+
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_kitchen
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              icon: mdi:arrow-up-thick
+              size: 80%
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "UP"
+
+            - type: custom:button-card
+              icon: mdi:arrow-down-thick
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "DOWN"
+
+            - type: custom:button-card
+              icon: mdi:arrow-left-thick
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "LEFT"
+
+            - type: custom:button-card
+              icon: mdi:arrow-right-thick
+              size: 80%
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "RIGHT"
+
+            - type: custom:button-card
+              icon: mdi:compass-rose
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kitchen
+                  button: "ENTER"
+
+
+
+
+
+
+
+
+
+
       - type: conditional
         conditions:
           - entity: media_player.tv_kitchen
@@ -376,63 +561,122 @@ cards:
       #          card:
       #            - background-color: "#203040"
 
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            entity: light.terrarium_master_lamp
-            icon: mdi:desk-lamp
-            name: "Лампа"
-            hold_action:
-              action: more-info
-          - type: custom:button-card
-            entity: light.terrarium_master_pomp
-            icon: mdi:engine
-            name: "Помпа"
-            hold_action:
-              action: more-info
-          - type: custom:button-card
-            entity: binary_sensor.terrarium_master_waterleak2
-            show_name: true
-            name: Течь внутри
-            icon: mdi:fishbowl
-            color: rgb(28, 128, 199)
-            state:
-              - value: "OFF"
-                color: grey
-          - type: custom:button-card
-            entity: binary_sensor.terrarium_master_waterleak1
-            show_name: true
-            name: Течь снаружи
-            icon: mdi:fishbowl-outline
-            color: rgb(28, 128, 199)
-            state:
-              - value: "OFF"
-                color: grey
+      #      - type: horizontal-stack
+      #        cards:
+      #          - type: custom:button-card
+      #            entity: light.terrarium_master_lamp
+      #            icon: mdi:desk-lamp
+      #            name: "Лампа"
+      #            hold_action:
+      #              action: more-info
+      #          - type: custom:button-card
+      #            entity: light.terrarium_master_pomp
+      #            icon: mdi:engine
+      #            name: "Помпа"
+      #            hold_action:
+      #              action: more-info
+      #          - type: custom:button-card
+      #            entity: binary_sensor.terrarium_master_waterleak2
+      #            show_name: true
+      #            name: Течь внутри
+      #            icon: mdi:fishbowl
+      #            color: rgb(28, 128, 199)
+      #            state:
+      #              - value: "OFF"
+      #                color: grey
+      #          - type: custom:button-card
+      #            entity: binary_sensor.terrarium_master_waterleak1
+      #            show_name: true
+      #            name: Течь снаружи
+      #            icon: mdi:fishbowl-outline
+      #            color: rgb(28, 128, 199)
+      #            state:
+      #              - value: "OFF"
+      #                color: grey
 
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
-            name: "Воздух"
+            name: "Гостинная"
             entities:
-              - sensor.terrarium_master_bme280_temperature
+              - entity: sensor.terrarium_master_bme280_temperature
+                color: red
+              - entity: sensor.terrarium_master_aqua_temp
+                color: rgb(28, 128, 199)
+              #- entity: sensor.terrarium_master_bme280_relative_humidity
+              #  color: green
             hour24: true
-            line_color: red
+            #line_color: red
             hours_to_show: 24
             points_per_hour: 60
+            #height: 150
+            #lower_bound: ~20
+            #upper_bound: ~40
             show:
               icon: true
               name: true
-          - type: custom:mini-graph-card
-            name: "Вода"
-            entities:
-              - sensor.terrarium_master_aqua_temp
-            hour24: true
-            line_color: rgb(28, 128, 199)
-            hours_to_show: 24
-            points_per_hour: 60
-            show:
-              icon: true
-              name: true
+              legend: false
+
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: custom:button-card
+                    entity: light.terrarium_master_lamp
+                    icon: mdi:desk-lamp
+                    name: "Лампа"
+                    hold_action:
+                      action: more-info
+                  - type: custom:button-card
+                    entity: light.terrarium_master_pomp
+                    icon: mdi:engine
+                    name: "Помпа"
+                    hold_action:
+                      action: more-info
+
+              - type: horizontal-stack
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.terrarium_master_waterleak2
+                        state_not: "off"
+                    card:
+                      type: custom:button-card
+                      entity: binary_sensor.terrarium_master_waterleak2
+                      show_name: true
+                      name: Течь внутри
+                      icon: mdi:fishbowl
+                      color: rgb(28, 128, 199)
+                      state:
+                        - value: "OFF"
+                          color: grey
+
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.terrarium_master_waterleak1
+                        state_not: "off"
+                    card:
+                      type: custom:button-card
+                      entity: binary_sensor.terrarium_master_waterleak1
+                      show_name: true
+                      name: Течь снаружи
+                      icon: mdi:fishbowl-outline
+                      color: rgb(28, 128, 199)
+                      state:
+                        - value: "OFF"
+                          color: grey
+
+      #          - type: custom:mini-graph-card
+      #            name: "Вода"
+      #            entities:
+      #              - sensor.terrarium_master_aqua_temp
+      #            hour24: true
+      #            line_color: rgb(28, 128, 199)
+      #            hours_to_show: 24
+      #            points_per_hour: 60
+      #            show:
+      #              icon: true
+      #              name: true
       #          - type: custom:mini-graph-card
       #            name: "Свет"
       #            entities:
@@ -506,45 +750,48 @@ cards:
       #          card:
       #            - background-color: "#203040"
 
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            entity: light.terrarium_bedroom_lamp
-            icon: mdi:desk-lamp
-            name: "Лампа"
-            hold_action:
-              action: more-info
-          - type: custom:button-card
-            entity: light.terrarium_bedroom_pomp
-            icon: mdi:engine
-            name: "Помпа"
-            hold_action:
-              action: more-info
-          - type: custom:button-card
-            entity: binary_sensor.terrarium_bedroom_waterleak1
-            show_name: true
-            name: Течь
-            icon: mdi:fishbowl
-            color: rgb(28, 128, 199)
-            state:
-              - value: "OFF"
-                color: grey
-          - type: custom:button-card
-            entity: binary_sensor.terrarium_bedroom_waterleak1
-            show_name: true
-            name: Течь
-            icon: mdi:fishbowl
-            color: rgb(28, 128, 199)
-            state:
-              - value: "OFF"
-                color: grey
+      #      - type: horizontal-stack
+      #        cards:
+      #          - type: custom:button-card
+      #            entity: light.terrarium_bedroom_lamp
+      #            icon: mdi:desk-lamp
+      #            name: "Лампа"
+      #            hold_action:
+      #              action: more-info
+      #          - type: custom:button-card
+      #            entity: light.terrarium_bedroom_pomp
+      #            icon: mdi:engine
+      #            name: "Помпа"
+      #            hold_action:
+      #              action: more-info
+      #          - type: custom:button-card
+      #            entity: binary_sensor.terrarium_bedroom_waterleak1
+      #            show_name: true
+      #            name: Течь
+      #            icon: mdi:fishbowl
+      #            color: rgb(28, 128, 199)
+      #            state:
+      #              - value: "OFF"
+      #                color: grey
+      #          - type: custom:button-card
+      #            entity: binary_sensor.terrarium_bedroom_waterleak1
+      #            show_name: true
+      #            name: Течь
+      #            icon: mdi:fishbowl
+      #            color: rgb(28, 128, 199)
+      #            state:
+      #              - value: "OFF"
+      #                color: grey
 
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
-            name: "Спальная воздух"
+            name: "Спальная"
             entities:
-              - sensor.terrarium_bedroom_ambient_temp
+              - entity: sensor.terrarium_bedroom_ambient_temp
+                color: red
+              - entity: sensor.terrarium_bedroom_aqua_temp
+                color: rgb(28, 128, 199)
             hour24: true
             line_color: red
             hours_to_show: 24
@@ -552,17 +799,88 @@ cards:
             show:
               icon: true
               name: true
-          - type: custom:mini-graph-card
-            name: "Спальная вода"
-            entities:
-              - sensor.terrarium_bedroom_aqua_temp
-            hour24: true
-            line_color: rgb(28, 128, 199)
-            hours_to_show: 24
-            points_per_hour: 60
-            show:
-              icon: true
-              name: true
+              legend: false
+
+          #          - type: custom:mini-graph-card
+          #            name: "Спальная вода"
+          #            entities:
+          #              - sensor.terrarium_bedroom_aqua_temp
+          #            hour24: true
+          #            line_color: rgb(28, 128, 199)
+          #            hours_to_show: 24
+          #            points_per_hour: 60
+          #            show:
+          #              icon: true
+          #              name: true
+
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: custom:button-card
+                    entity: light.terrarium_bedroom_lamp
+                    icon: mdi:desk-lamp
+                    name: "Лампа"
+                    hold_action:
+                      action: more-info
+
+                  - type: custom:button-card
+                    entity: light.terrarium_bedroom_pomp
+                    icon: mdi:engine
+                    name: "Помпа"
+                    hold_action:
+                      action: more-info
+
+              - type: horizontal-stack
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.terrarium_bedroom_waterleak1
+                        state_not: "off"
+                    card:
+                      type: custom:button-card
+                      entity: binary_sensor.terrarium_bedroom_waterleak1
+                      show_name: true
+                      name: Течь
+                      icon: mdi:fishbowl
+                      color: rgb(28, 128, 199)
+                      state:
+                        - value: "OFF"
+                          color: grey
+
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.terrarium_bedroom_waterleak1
+                        state_not: "off"
+                    card:
+                      type: custom:button-card
+                      entity: binary_sensor.terrarium_bedroom_waterleak1
+                      show_name: true
+                      name: Течь
+                      icon: mdi:fishbowl
+                      color: rgb(28, 128, 199)
+                      state:
+                        - value: "OFF"
+                          color: grey
+
+                      #entity: binary_sensor.terrarium_bedroom_waterleak1
+                      #show_name: true
+                      #name: Течь
+                      #icon: mdi:fishbowl
+                      #color: rgb(28, 128, 199)
+                      #state:
+                      #  - value: "OFF"
+                      #    color: grey
+                  #- type: custom:button-card
+                  #  entity: binary_sensor.terrarium_bedroom_waterleak1
+                  #  show_name: true
+                  #  name: Течь
+                  #  icon: mdi:fishbowl
+                  #  color: rgb(28, 128, 199)
+                  #  state:
+                  #    - value: "OFF"
+                  #      color: grey
+
       #          - type: custom:button-card
       #            color_type: blank-card
 
