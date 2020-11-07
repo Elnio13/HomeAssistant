@@ -1,5 +1,5 @@
-- name: TV Kitchen
-  host: !secret tv_kitchen_ip
+- name: TV Kuchen
+  host: !secret tv_kuchen_ip
   turn_on_action:
     service: switch.turn_on
     data:
@@ -10,20 +10,15 @@
       - LiveTV
       - SmartShare
       - Netflix
+      - Megogo
       - HDMI-1
       - HDMI-2
 
-- name: TV Living Room
-  host: !secret tv_living_ip
+- name: TV Lounge
+  host: !secret tv_lounge_ip
   turn_on_action:
-    service: switch.turn_on
+    service: wake_on_lan.send_magic_packet
     data:
-      entity_id: switch.terrarium_master_lg_tv_power_on
-  customize:
-    sources:
-      - vTuner
-      - LiveTV
-      - SmartShare
-      - Netflix
-      - HDMI-1
-      - HDMI-2
+      mac: !secret tv_lounge_mac
+      broadcast_address: 255.255.255.255
+      broadcast_port: 9

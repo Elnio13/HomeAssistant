@@ -52,7 +52,8 @@ frontend:
 
 auto_backup:
   auto_purge: true
-#  keep_days: 7
+  backup_timeout: 10000  # 40 minutes, needs to be converted to seconds.
+  keep_days: 7
 
 octoprint:
   host: !secret octoprint_ip
@@ -77,14 +78,40 @@ device_tracker:
       track_new_devices: false
 
 stream:
+ffmpeg:
 
 camera:
   - platform: mjpeg
     name: OctoPrint
-    still_image_url: http://192.168.10.30/webcam/?action=snapshot
-    mjpeg_url: http://192.168.10.30/webcam/?action=stream
+    still_image_url: !secret octoprint_image_url
+    mjpeg_url: !secret octopi_mjpeg_url
+
+#  - platform: xiaomi_cloud_map_extractor
+#    host: !secret xiaomi_vacuum_ip
+#    token: !secret xiaomi_vacuum_token
+#    username: !secret xiaomi_cloud_username
+#    password: !secret xiaomi_cloud_password
+#    country: "ru"
+
+
+wake_on_lan:
 
 media_player:
+  - platform: sox
+    name: Roborock
+    host: !secret xiaomi_vacuum_ip
+    port: 7777 # Optional
+
+tts:
+  - platform: rhvoice
+    host: !secret host_tts
+    port: 8080 # Optional
+    format: 'mp3' # Optional, wav|mp3|opus|flac
+    pitch: 50 # Optional, 0..100
+    rate: 80 # Optional, 0..100
+    voice: 'elena' # Optional, default is 'anna' (russian)
+    volume: 40 # Optional, 0..100
+  
 webostv: !include includes/webostv.yaml
 
 notify:
@@ -111,6 +138,8 @@ vacuum:
 
 weather:
   - platform: gismeteo
+#  - platform: yandex_weather
+#    api_key: !secret yandex_weather_api_key
 
 switch: !include_dir_merge_list includes/switches
 sensor: !include_dir_merge_list includes/sensors
@@ -126,6 +155,7 @@ input_boolean: !include includes/input_boolean.yaml
 input_number: !include includes/input_number.yaml
 input_datetime: !include includes/input_datetime.yaml
 input_select: !include includes/input_select.yaml
+input_text: !include includes/input_text.yaml
 #panel_iframe:   !include includes/panel_iframe.yaml
 #timer:          !include includes/timer.yaml
 #scene:          !include includes/scenes.yaml

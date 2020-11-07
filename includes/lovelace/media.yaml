@@ -3,7 +3,7 @@ icon: "mdi:television"
 cards:
   - type: custom:button-card
     icon: mdi:power
-    name: "TV в гостинной"
+    name: "TV в зале"
     layout: icon_name
     aspect_ratio: 8/1
     show_label: false
@@ -15,18 +15,18 @@ cards:
         - color: rgb(28, 128, 199)
     tap_action:
       action: call-service
-      service: switch.turn_on
+      service: media_player.turn_on
       service_data:
-        entity_id: switch.terrarium_master_lg_tv_power_on
+        entity_id: media_player.tv_lounge
     hold_action:
       action: call-service
       service: media_player.turn_off
       service_data:
-        entity_id: media_player.tv_living_room
+        entity_id: media_player.tv_lounge
 
   - type: conditional
     conditions:
-      - entity: media_player.tv_living_room
+      - entity: media_player.tv_lounge
         state: "on"
     card:
       type: vertical-stack
@@ -46,7 +46,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "YELLOW"
             - type: custom:button-card
               icon: mdi:reply-outline
@@ -61,7 +61,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "BACK"
             - type: custom:button-card
               icon: mdi:arrow-up-thick
@@ -76,7 +76,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "UP"
             - type: custom:button-card
               icon: mdi:home
@@ -91,7 +91,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "HOME"
 
         - type: horizontal-stack
@@ -109,7 +109,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "GREEN"
             - type: custom:button-card
               icon: mdi:arrow-left-thick
@@ -124,7 +124,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "LEFT"
             - type: custom:button-card
               icon: mdi:compass-rose
@@ -139,7 +139,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "ENTER"
             - type: custom:button-card
               icon: mdi:arrow-right-thick
@@ -154,7 +154,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "RIGHT"
 
         - type: horizontal-stack
@@ -172,7 +172,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "RED"
             - type: custom:button-card
               icon: mdi:window-close
@@ -187,7 +187,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "EXIT"
             - type: custom:button-card
               icon: mdi:arrow-down-thick
@@ -202,7 +202,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "DOWN"
             - type: custom:button-card
               icon: mdi:arrow-up-bold-outline
@@ -217,7 +217,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "CHANNELUP"
 
         - type: horizontal-stack
@@ -235,7 +235,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "BLUE"
             - type: custom:button-card
               icon: mdi:information-outline
@@ -250,7 +250,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "INFO"
             - type: custom:button-card
               icon: mdi:menu-open
@@ -265,7 +265,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "DASH"
             - type: custom:button-card
               icon: mdi:arrow-down-bold-outline
@@ -280,8 +280,58 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_living_room
+                  entity_id: media_player.tv_lounge
                   button: "CHANNELDOWN"
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              color_type: blank-card
+            - type: custom:button-card
+              icon: mdi:volume-minus
+              styles:
+                card:
+                  - background-color: "#11192b"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "VOLUMEDOWN"
+            - type: custom:button-card
+              icon: mdi:volume-off
+              styles:
+                card:
+                  - background-color: "#11192b"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "MUTE"
+            - type: custom:button-card
+              icon: mdi:volume-plus
+              styles:
+                card:
+                  - background-color: "#11192b"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "VOLUMEUP"
 
         - type: horizontal-stack
           cards:
@@ -338,14 +388,13 @@ cards:
                 - value: "off"
 
         - type: custom:mini-media-player
-          entity: media_player.tv_living_room
+          entity: media_player.tv_lounge
           name: "TV в зале"
           scale: 1.8
           show_source: true
           artwork: cover
           source: full
           power: true
-
 
   - type: custom:button-card
     icon: mdi:power
@@ -361,18 +410,18 @@ cards:
         - color: rgb(28, 128, 199)
     tap_action:
       action: call-service
-      service: switch.turn_on
+      service: media_player.turn_on
       service_data:
-        entity_id: switch.kitchen_ir_lg_tv_power_on
+        entity_id: media_player.tv_kuchen
     hold_action:
       action: call-service
       service: media_player.turn_off
       service_data:
-        entity_id: media_player.tv_kitchen
+        entity_id: media_player.tv_kuchen
 
   - type: conditional
     conditions:
-      - entity: media_player.tv_kitchen
+      - entity: media_player.tv_kuchen
         state: "on"
     card:
       type: vertical-stack
@@ -392,7 +441,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "YELLOW"
             - type: custom:button-card
               icon: mdi:reply-outline
@@ -407,7 +456,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "BACK"
             - type: custom:button-card
               icon: mdi:arrow-up-thick
@@ -422,7 +471,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "UP"
             - type: custom:button-card
               icon: mdi:home
@@ -437,7 +486,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "HOME"
 
         - type: horizontal-stack
@@ -455,7 +504,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "GREEN"
             - type: custom:button-card
               icon: mdi:arrow-left-thick
@@ -470,7 +519,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "LEFT"
             - type: custom:button-card
               icon: mdi:compass-rose
@@ -485,7 +534,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "ENTER"
             - type: custom:button-card
               icon: mdi:arrow-right-thick
@@ -500,7 +549,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "RIGHT"
 
         - type: horizontal-stack
@@ -518,7 +567,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "RED"
             - type: custom:button-card
               icon: mdi:window-close
@@ -533,7 +582,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "EXIT"
             - type: custom:button-card
               icon: mdi:arrow-down-thick
@@ -548,7 +597,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "DOWN"
             - type: custom:button-card
               icon: mdi:arrow-up-bold-outline
@@ -563,7 +612,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "CHANNELUP"
 
         - type: horizontal-stack
@@ -581,7 +630,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "BLUE"
             - type: custom:button-card
               icon: mdi:information-outline
@@ -596,7 +645,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "INFO"
             - type: custom:button-card
               icon: mdi:menu-open
@@ -611,7 +660,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "DASH"
             - type: custom:button-card
               icon: mdi:arrow-down-bold-outline
@@ -626,7 +675,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "CHANNELDOWN"
 
         - type: horizontal-stack
@@ -646,7 +695,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "VOLUMEDOWN"
             - type: custom:button-card
               icon: mdi:volume-off
@@ -661,7 +710,7 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "MUTE"
             - type: custom:button-card
               icon: mdi:volume-plus
@@ -676,11 +725,11 @@ cards:
                 action: call-service
                 service: webostv.button
                 service_data:
-                  entity_id: media_player.tv_kitchen
+                  entity_id: media_player.tv_kuchen
                   button: "VOLUMEUP"
 
         - type: custom:mini-media-player
-          entity: media_player.tv_kitchen
+          entity: media_player.tv_kuchen
           name: "TV на кухне"
           scale: 1.8
           show_source: true
@@ -690,42 +739,69 @@ cards:
 
   - type: vertical-stack
     cards:
-      #      - type: custom:vertical-stack-in-card
-      #        cards:
-      #          - type: entities
-      #            show_header_toggle: false
-      #            entities:
-      #              - input_boolean.livingroom_tv_off
-      #              - input_boolean.kitchen_tv_off
       - type: custom:button-card
-        icon: mdi:television-stop
+        icon: mdi:television-classic-off
+        name: "выкл TV в зале"
         layout: icon_name
         aspect_ratio: 8/1
         show_label: false
         show_name: true
-        name: "Автовыключение ТВ"
         styles:
           card:
-            - background-color: "#203040"
+            - background-color: "#022027"
+          icon:
+            - color: rgb(28, 128, 199)
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.lounge_tv_off
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.lounge_tv_off
 
-      - type: custom:vertical-stack-in-card
-        cards:
-          - type: entities
-            show_header_toggle: false
-            entities:
-              - input_datetime.tv_kitchen_off
-              - input_datetime.tv_livingroom_off
+      - type: conditional
+        conditions:
+          - entity: input_boolean.lounge_tv_off
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - input_datetime.tv_lounge_off
 
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            entity: input_boolean.kitchen_tv_off
-            icon: mdi:television-classic-off
-            name: "ТВ на кухне"
-          - type: custom:button-card
-            entity: input_boolean.livingroom_tv_off
-            icon: mdi:television-classic-off
-            name: "ТВ в гостинной"
+      - type: custom:button-card
+        icon: mdi:television-classic-off
+        name: "выкл TV на кухне"
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#022027"
+          icon:
+            - color: rgb(28, 128, 199)
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.kuchen_tv_off
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.kuchen_tv_off
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.kuchen_tv_off
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - input_datetime.tv_kuchen_off
 
       - type: custom:button-card
         icon: mdi:sony-playstation
@@ -738,7 +814,43 @@ cards:
           card:
             - background-color: "#203040"
 
-      #  - type: custom:vertical-stack-in-card
-      #    cards:
       - type: custom:mini-media-player
         entity: media_player.playstation_4
+
+      - type: custom:button-card
+        icon: mdi:sony-playstation
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Roborock"
+        styles:
+          card:
+            - background-color: "#203040"
+
+      - type: custom:mini-media-player
+        entity: media_player.roborock
+
+      - type: custom:button-card
+        icon: mdi:television-classic-off
+        name: "Пылесос говорит"
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#022027"
+          icon:
+            - color: rgb(28, 128, 199)
+        tap_action:
+          action: call-service
+          service: tts.rhvoice_say
+          service_data:
+            entity_id: media_player.roborock
+            message: >
+              [[[ return states['input_text.text_tts_roborock'].state; ]]]
+
+      - type: entities
+        entities:
+          - entity: input_text.text_tts_roborock

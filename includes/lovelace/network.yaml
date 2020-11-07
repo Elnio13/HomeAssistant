@@ -106,7 +106,6 @@ cards:
 
   - type: vertical-stack
     cards:
-
       - type: custom:button-card
         icon: mdi:router-network
         layout: icon_name
@@ -121,11 +120,10 @@ cards:
       - type: entities
         show_header_toggle: false
         entities:
-
           - entity: switch.rb3011_eth1
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth1_wan
+            name: WAN
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -139,7 +137,7 @@ cards:
           - entity: switch.rb3011_eth2
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth2
+            name: eth2
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -151,7 +149,7 @@ cards:
           - entity: switch.rb3011_eth3
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth3
+            name: eth3
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -163,7 +161,7 @@ cards:
           - entity: switch.rb3011_eth4
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth4
+            name: eth4
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -175,7 +173,7 @@ cards:
           - entity: switch.rb3011_eth5
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth5
+            name: eth5
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -187,7 +185,7 @@ cards:
           - entity: switch.rb3011_eth6
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth6
+            name: eth6
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -199,7 +197,7 @@ cards:
           - entity: switch.rb3011_eth7
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth7
+            name: eth7
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -211,7 +209,7 @@ cards:
           - entity: switch.rb3011_eth8
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth8
+            name: eth8
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -223,7 +221,7 @@ cards:
           - entity: switch.rb3011_eth9
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth9
+            name: eth9
             state_color: true
             #secondary_info: last-changed
             entities:
@@ -235,11 +233,61 @@ cards:
           - entity: switch.rb3011_eth10
             type: custom:multiple-entity-row
             toggle: true
-            name: rb3011_eth10
+            name: eth10
             state_color: true
             #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth10_rx
                 name: false
               - entity: sensor.rb3011_eth10_tx
+                name: false
+
+          - type: section
+
+          - entity: switch.rb3011_wifi_kuchen_5
+            type: custom:multiple-entity-row
+            toggle: true
+            name: WiFi на кухне 5Ггц
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_wifi_kuchen_5_rx
+                name: false
+              - entity: sensor.rb3011_wifi_kuchen_5_tx
+                name: false
+
+          - entity: switch.rb3011_wifi_kuchen_24
+            type: custom:multiple-entity-row
+            toggle: true
+            name: WiFi на кухне 2.4Ггц
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_wifi_kuchen_24_rx
+                name: false
+              - entity: sensor.rb3011_wifi_kuchen_24_tx
+                name: false
+
+          - entity: switch.rb3011_wifi_lounge_5
+            type: custom:multiple-entity-row
+            toggle: true
+            name: WiFi в гостинной 5Ггц
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_wifi_lounge_5_rx
+                name: false
+              - entity: sensor.rb3011_wifi_lounge_5_tx
+                name: false
+
+          - entity: switch.rb3011_wifi_lounge_24
+            type: custom:multiple-entity-row
+            toggle: true
+            name: WiFi в гостинной 2.4Ггц
+            state_color: true
+            #secondary_info: last-changed
+            entities:
+              - entity: sensor.rb3011_wifi_lounge_24_rx
+                name: false
+              - entity: sensor.rb3011_wifi_lounge_24_tx
                 name: false

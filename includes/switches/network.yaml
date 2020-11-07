@@ -203,3 +203,83 @@
         - service: homeassistant.update_entity
           data:
             entity_id: sensor.rb3011_status_eth10
+
+- platform: template
+  switches:
+    rb3011_wifi_kuchen_5:
+      friendly_name: "rb3011_wifi_kuchen_5"
+      value_template: "{{ is_state('sensor.rb3011_status_wifi_kuchen_5', '1') }}"
+      turn_on:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_kuchen_5_on
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_kuchen_5
+      turn_off:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_kuchen_5_off
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_kuchen_5
+
+- platform: template
+  switches:
+    rb3011_wifi_kuchen_24:
+      friendly_name: "rb3011_wifi_kuchen_24"
+      value_template: "{{ is_state('sensor.rb3011_status_wifi_kuchen_24', '1') }}"
+      turn_on:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_kuchen_24_on
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_kuchen_24
+      turn_off:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_kuchen_24_off
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_kuchen_24
+
+- platform: template
+  switches:
+    rb3011_wifi_lounge_5:
+      friendly_name: "rb3011_wifi_lounge_5"
+      value_template: "{{ is_state('sensor.rb3011_status_wifi_lounge_5', '1') }}"
+      turn_on:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_lounge_5_on
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_lounge_5
+      turn_off:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_lounge_5_off
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_lounge_5
+
+- platform: template
+  switches:
+    rb3011_wifi_lounge_24:
+      friendly_name: "rb3011_wifi_lounge_24"
+      value_template: "{{ is_state('sensor.rb3011_status_wifi_lounge_24', '1') }}"
+      turn_on:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_lounge_24_on
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_lounge_24
+      turn_off:
+        - service: mikrotik.run_script
+          data:
+            name: wifi_lounge_24_off
+        - service: homeassistant.update_entity
+          data:
+            entity_id: sensor.rb3011_status_wifi_lounge_24           

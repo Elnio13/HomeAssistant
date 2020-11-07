@@ -20,8 +20,8 @@ resources:
 #    type: js
   - url: /hacsfiles/weather-card/weather-card.js
     type: module
-  - url: /hacsfiles/custom-header/custom-header.js
-    type: module
+  #- url: /hacsfiles/custom-header/custom-header.js
+  #  type: module
   - url: /hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js
     type: module
 #  - url: /hacsfiles/simple-thermostat/simple-thermostat.js?v=1

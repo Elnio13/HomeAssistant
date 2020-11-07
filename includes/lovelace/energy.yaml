@@ -3,19 +3,6 @@ icon: "mdi:power-socket-eu"
 cards:
   - type: vertical-stack
     cards:
-#      - type: custom:button-card
-#        icon: mdi:counter
-#        layout: icon_name
-#        aspect_ratio: 8/1
-#        name: "Прибор учета"
-#        show_label: false
-#        show_name: true
-#        styles:
-#          card:
-#            - background-color: "#203040"
-#          name:
-#            - justify-self: start
-
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -44,14 +31,13 @@ cards:
             name: "Мощность"
             entities:
               - entity: sensor.power_meter_power
-#              - entity: sensor.digma_160m_dishwasher_voltage
-#                value_factor: 10
+            #              - entity: sensor.digma_160m_dishwasher_voltage
+            #                value_factor: 10
             hour24: true
             line_color: blue
             hours_to_show: 24
             points_per_hour: 60
             font_size: 71
-            #font_size_header: 10%
             show:
               icon: false
               name: false
@@ -91,9 +77,6 @@ cards:
             entities:
               - attribute: last_period
 
-#          - entity: binary_sensor.power_meter_impulse_counter_status
-#            name: Статус
-
       - type: custom:button-card
         icon: mdi:desktop-classic
         layout: icon_name
@@ -106,32 +89,6 @@ cards:
             - background-color: "#203040"
           name:
             - justify-self: start
-
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.digma_100s_pc_voltage
-#            hour24: true
-#            line_color: red
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.digma_100s_pc_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
 
       - type: entities
         entities:
@@ -189,32 +146,6 @@ cards:
             - background-color: "#203040"
           name:
             - justify-self: start
-
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.digma_100s_tvps4_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.digma_100s_tvps4_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
 
       - type: entities
         entities:
@@ -275,32 +206,6 @@ cards:
           name:
             - justify-self: start
 
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.digma_160m_dishwasher_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.digma_160m_dishwasher_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
-
       - type: entities
         entities:
           - entity: switch.digma_160m_dishwasher_relay
@@ -358,32 +263,6 @@ cards:
           name:
             - justify-self: start
 
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.hiper_iot04_edifire2700_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.hiper_iot04_edifire2700_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
-
       - type: entities
         entities:
           - entity: switch.hiper_iot04_edifire2700_relay
@@ -440,32 +319,6 @@ cards:
             - background-color: "#203040"
           name:
             - justify-self: start
-
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.hiper_iot04_washer_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.hiper_iot04_washer_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
 
       - type: entities
         entities:
@@ -526,32 +379,6 @@ cards:
           name:
             - justify-self: start
 
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.hiper_iot04_water_heater_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.hiper_iot04_water_heater_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
-
       - type: entities
         entities:
           - entity: switch.hiper_iot04_water_heater_relay
@@ -609,32 +436,6 @@ cards:
           name:
             - justify-self: start
 
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.hiper_iot04_4_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.hiper_iot04_4_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
-
       - type: entities
         entities:
           - entity: switch.hiper_iot04_4_relay
@@ -691,32 +492,6 @@ cards:
             - background-color: "#203040"
           name:
             - justify-self: start
-
-#      - type: horizontal-stack
-#        cards:
-#          - type: custom:mini-graph-card
-#            name: "Напряжение"
-#            entities:
-#              - sensor.hiper_iot04_5_voltage
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            show:
-#              icon: false
-#              name: false
-#
-#          - type: custom:mini-graph-card
-#            name: "Мощность"
-#            entities:
-#              - sensor.hiper_iot04_5_power
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: blue
-#            show:
-#              icon: false
-#              name: false
 
       - type: entities
         entities:

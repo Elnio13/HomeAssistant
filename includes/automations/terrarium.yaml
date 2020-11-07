@@ -5,9 +5,9 @@
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
     - platform: template
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
-    - platform: state
-      entity_id: "input_boolean.terrarium_living_lamp"
-      to: "on"
+#    - platform: state
+#      entity_id: "input_boolean.terrarium_living_lamp"
+#      to: "on"
     - platform: homeassistant
       event: start
   condition:
@@ -32,9 +32,9 @@
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_living_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
     - platform: template
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_living_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
-    - platform: state
-      entity_id: "input_boolean.terrarium_living_lamp"
-      to: "off"
+#    - platform: state
+#      entity_id: "input_boolean.terrarium_living_lamp"
+#      to: "off"
     - platform: homeassistant
       event: start
   condition:
@@ -61,9 +61,9 @@
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
     - platform: template
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
-    - platform: state
-      entity_id: "input_boolean.terrarium_bedroom_lamp"
-      to: "on"
+#    - platform: state
+#      entity_id: "input_boolean.terrarium_bedroom_lamp"
+#      to: "on"
     - platform: homeassistant
       event: start
   condition:
@@ -88,9 +88,9 @@
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_bedroom_terrarium_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
     - platform: template
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_light_bedroom_terrarium_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
-    - platform: state
-      entity_id: "input_boolean.terrarium_bedroom_lamp"
-      to: "off"
+#    - platform: state
+#      entity_id: "input_boolean.terrarium_bedroom_lamp"
+#      to: "off"
     - platform: homeassistant
       event: start
   condition:

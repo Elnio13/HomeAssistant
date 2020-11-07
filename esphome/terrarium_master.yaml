@@ -134,10 +134,10 @@ sensor:
       return id(${plug_name}_bme280_pressure).state * STANDARD_SEA_LEVEL_PRESSURE_MM / STANDARD_SEA_LEVEL_PRESSURE_PA; // in hPa
     update_interval: 60s
 
-  - platform: bh1750
-    name: "${plug_name}_BH1750 Illuminance"
-    address: 0x23
-    update_interval: 60s
+#  - platform: bh1750
+#    name: "${plug_name}_BH1750 Illuminance"
+#    address: 0x23
+#    update_interval: 60s
     
 text_sensor:
   - platform: version

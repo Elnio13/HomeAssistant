@@ -3,17 +3,6 @@ icon: "mdi:robot-vacuum"
 cards:
   - type: vertical-stack
     cards:
-      #      - type: custom:button-card
-      #        icon: mdi:robot-vacuum
-      #        layout: icon_name
-      #        size: 20%
-      #        show_label: false
-      #        show_name: true
-      #        name: "Управление пылесосом"
-      #        styles:
-      #          card:
-      #            - background-color: "#203040"
-
       - type: custom:xiaomi-vacuum-card
         entity: vacuum.xiaomi_vacuum_cleaner
         vendor: xiaomi
@@ -29,8 +18,6 @@ cards:
           sensor: "Сенсор"
           hours: "ч"
 
-      #      - type: custom:vertical-stack-in-card
-      #        cards:
       - type: entities
         show_header_toggle: false
         entities:
@@ -50,29 +37,8 @@ cards:
             entities:
               - input_boolean.vacuum_schedule
               - input_boolean.vacuum_notification
-              
-    #      - type: custom:button-card
-    #        icon: mdi:robot-vacuum
-    #        layout: icon_name
-    #        size: 20%
-    #        show_label: false
-    #        show_name: true
-    #        name: "Уборка территории"
-    #        styles:
-    #          card:
-    #            - background-color: "#203040"
-    #      - type: custom:button-card
-    #        icon: mdi:robot-vacuum
-    #        layout: icon_name
-    #        size: 20%
-    #        show_label: false
-    #        show_name: true
-    #        name: "Карта пылесоса"
-    #        styles:
-    #          card:
-    #            - background-color: "#203040"
+
   - type: vertical-stack
-    #  - type: custom:vertical-stack-in-card
     cards:
       - type: custom:valetudo-map-card
         entity: sensor.xiaomi_map
@@ -98,22 +64,12 @@ cards:
 
   - type: vertical-stack
     cards:
-      #      - type: custom:button-card
-      #        icon: mdi:robot-vacuum
-      #        layout: icon_name
-      #        size: 20%
-      #        show_label: false
-      #        show_name: true
-      #        name: "Зональная уборка"
-      #        styles:
-      #          card:
-      #            - background-color: "#203040"
-
       - type: custom:xiaomi-vacuum-map-card
         entity: vacuum.xiaomi_vacuum_cleaner
         map_image: "/local/img/vacuum_map.png"
         modes: [go_to_target, zoned_cleanup, predefined_zones]
         default_mode: zoned_cleanup
+        language: ru
         debug: false
         calibration_points:
           - vacuum:
@@ -140,28 +96,6 @@ cards:
           - [[21715, 32296, 24971, 33831], [21597, 28847, 23670, 32546]] #коридор
           - [[22383, 24661, 28146, 29773]] #зал
           - [[23755, 29152, 28036, 33164]] #спальная
-
-#      - type: custom:button-card
-#        icon: mdi:robot-vacuum
-#        layout: icon_name
-#        size: 20%
-#        show_label: false
-#        show_name: true
-#        name: "Статус"
-#        styles:
-#          card:
-#            - background-color: "#203040"
-
-#      - type: custom:button-card
-#        icon: mdi:robot-vacuum
-#        layout: icon_name
-#        size: 20%
-#        show_label: false
-#        show_name: true
-#        name: "Сброс Счетчиков"
-#        styles:
-#          card:
-#            - background-color: "#203040"
 
       - type: custom:vertical-stack-in-card
         cards:

@@ -1,8 +1,6 @@
 title: "Система"
 icon: "mdi:memory"
 cards:
-#  - type: vertical-stack
-#    cards:
   - type: iframe
     url: /config/server_control
     aspect_ratio: 260%
@@ -35,7 +33,6 @@ cards:
             points_per_hour: 4
           - type: custom:mini-graph-card
             name: "CPU use"
-            #icon: mdi:gauge
             icon: mdi:cpu-64-bit
             hour24: true
             entities:
@@ -116,8 +113,6 @@ cards:
               - entity: sensor.ha_current
               - entity: sensor.ha_latest
               - entity: sensor.hacs
-      #        - entity: sensor.smart_ssd
-      #              - entity: sensor.dbsize
 
       - type: custom:button-card
         name: "Время"

@@ -2,20 +2,32 @@
   alias: Edifire 2700 ON
   trigger:
     - platform: state
-      entity_id:  media_player.tv_living_room
-      to: 'on'
+      entity_id: media_player.tv_lounge
+      to: "on"
   condition:
   action:
     - service: switch.turn_on
       entity_id: switch.hiper_iot04_edifire2700_relay
+#    - service: notify.telegram
+#      data:
+#        title: "Edifire On"
+#        message: "Питание розетки включено"
 
 - id: Edifire 2700 OFF
   alias: Edifire 2700 OFF
   trigger:
     - platform: state
-      entity_id:  media_player.tv_living_room
-      to: 'off'
+      entity_id: media_player.tv_lounge
+      to: "off"
+    #- delay: '0:0:10'
   condition:
+    - condition: state
+      entity_id: media_player.tv_lounge
+      state: "off"
   action:
     - service: switch.turn_off
       entity_id: switch.hiper_iot04_edifire2700_relay
+#    - service: notify.telegram
+#      data:
+#        title: "Edifire Off"
+#        message: "Питание розетки отключено"

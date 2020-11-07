@@ -1,66 +1,52 @@
-- id: TV Living room ON
-  alias: TV Living room ON
+- id: TV Kuchen ON
+  alias: TV Kuchen ON
   trigger:
     - platform: state
-      entity_id: media_player.tv_living_room
+      entity_id: media_player.tv_kuchen
       to: "on"
   condition:
   action:
     - service: media_player.select_source
       data:
-        entity_id: media_player.tv_living_room
+        entity_id: media_player.tv_kuchen
         source: "vTuner"
 
-- id: TV Kitchen ON
-  alias: TV Kitchen ON
-  trigger:
-    - platform: state
-      entity_id: media_player.tv_kitchen
-      to: "on"
-  condition:
-  action:
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.tv_kitchen
-        source: "vTuner"
-
-- id: TV Living room OFF
-  alias: TV Living room OFF
+- id: TV Kuchen OFF
+  alias: TV Kuchen OFF
   trigger:
     - platform: template
-      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.tv_livingroom_off', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.tv_kuchen_off', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   condition:
     - condition: state
-      entity_id: input_boolean.livingroom_tv_off
+      entity_id: input_boolean.kuchen_tv_off
       state: "on"
   action:
     - service: webostv.button
       data:
-        entity_id: media_player.tv_living_room
+        entity_id: media_player.tv_kuchen
         button: "BACK"
     - delay: '0:0:10'
     - service: webostv.command
       data:
-        entity_id: media_player.tv_living_room
+        entity_id: media_player.tv_kuchen
         command: system/turnOff
 
-- id: TV LivKitchen ing room OFF
-  alias: TV Kitchen room OFF
+- id: TV Lounge OFF
+  alias: TV Lounge OFF
   trigger:
     - platform: template
-      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.tv_kitchen_off', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
-
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.tv_lounge_off', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   condition:
     - condition: state
-      entity_id: input_boolean.kitchen_tv_off
+      entity_id: input_boolean.lounge_tv_off
       state: "on"
   action:
     - service: webostv.button
       data:
-        entity_id: media_player.tv_kitchen
+        entity_id: media_player.tv_lounge
         button: "BACK"
-    - delay: '0:0:10'
+    - delay: '0:0:05'
     - service: webostv.command
       data:
-        entity_id: media_player.tv_kitchen
+        entity_id: media_player.tv_lounge
         command: system/turnOff

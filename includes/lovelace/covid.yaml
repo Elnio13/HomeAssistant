@@ -23,8 +23,6 @@ cards:
                   - sensor.russia_coronavirus_confirmed
                 hour24: true
                 line_color: red
-                #font_size: 90
-                #height: 150
                 hours_to_show: 360
                 points_per_hour: 1
                 show:
@@ -36,8 +34,6 @@ cards:
                 entities:
                   - sensor.russia_coronavirus_current
                 hour24: true
-                #font_size: 90
-                #height: 150
                 hours_to_show: 360
                 points_per_hour: 1
                 show:
@@ -52,8 +48,6 @@ cards:
                   - sensor.russia_coronavirus_deaths
                 hour24: true
                 line_color: red
-                #font_size: 90
-                #height: 150
                 hours_to_show: 360
                 points_per_hour: 1
                 show:
@@ -66,8 +60,6 @@ cards:
                   - sensor.russia_coronavirus_recovered
                 hour24: true
                 line_color: red
-                #font_size: 90
-                #height: 150
                 hours_to_show: 360
                 points_per_hour: 1
                 show:
