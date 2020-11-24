@@ -154,7 +154,7 @@ utility_meter:
     source: sensor.power_meter_indicator
     cycle: yearly
     tariffs: stnd
-
+    
 #sensor:
 #  - platform: template
 #    sensors:

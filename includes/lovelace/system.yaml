@@ -24,13 +24,21 @@ cards:
             name: "CPU temp"
             icon: mdi:thermometer
             hour24: true
-            line_color: red
+            #line_color: red
             entities:
               - sensor.cpu_temperature
             font_size: 75
             height: 75
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 1
+                color: rgb(28, 128, 199)
+              - value: 50
+                color: orange
+              - value: 60
+                color: red
+
           - type: custom:mini-graph-card
             name: "CPU use"
             icon: mdi:cpu-64-bit
@@ -41,6 +49,13 @@ cards:
             height: 75
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 6
+                color: rgb(28, 128, 199)
+              - value: 50
+                color: orange
+              - value: 80
+                color: red
 
       - type: horizontal-stack
         cards:
@@ -48,13 +63,21 @@ cards:
             name: "RAM"
             icon: mdi:memory
             hour24: true
-            line_color: red
+            #line_color: red
             entities:
               - sensor.memory_use_percent
             font_size: 75
             height: 75
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 35
+                color: green
+              - value: 50
+                color: orange
+              - value: 70
+                color: red
+
           - type: custom:mini-graph-card
             name: "SWAP"
             icon: mdi:file-swap
@@ -65,6 +88,13 @@ cards:
             height: 75
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 1
+                color: rgb(28, 128, 199)
+              - value: 50
+                color: orange
+              - value: 80
+                color: red
 
       - type: horizontal-stack
         cards:
@@ -72,13 +102,21 @@ cards:
             name: "SSD"
             icon: mdi:micro-sd
             hour24: true
-            line_color: red
+            #line_color: red
             entities:
               - sensor.disk_use_percent
             font_size: 75
             height: 75
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 0
+                color: rgb(28, 128, 199)
+              - value: 50
+                color: orange
+              - value: 80
+                color: red
+
           - type: custom:mini-graph-card
             name: "BD size"
             icon: mdi:database

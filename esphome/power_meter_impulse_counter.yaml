@@ -43,7 +43,7 @@ sensor:
     pin: 32
     name: '${plug_name}_pulse_counter'
     id: '${plug_name}_pulse_counter'
-    internal_filter: 13us # debonce filter
+    internal_filter: 10us # debonce filter
     update_interval: 60s
     
   - platform: homeassistant

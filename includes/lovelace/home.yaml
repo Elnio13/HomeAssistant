@@ -75,6 +75,13 @@ cards:
             points_per_hour: 60
             show:
               legend: false
+            color_thresholds:
+              - value: 1
+                color: rgb(28, 128, 199)
+              - value: 10
+                color: orange
+              - value: 30
+                color: red
 
           - type: custom:mini-graph-card
             name: "SSD"
@@ -263,6 +270,28 @@ cards:
                   entity_id: media_player.tv_lounge
                   button: "RIGHT"
 
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_lounge
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              icon: mdi:reply-outline
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "BACK"
+
             - type: custom:button-card
               icon: mdi:compass-rose
               styles:
@@ -277,6 +306,37 @@ cards:
                 service_data:
                   entity_id: media_player.tv_lounge
                   button: "ENTER"
+
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: red
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "RED"
+
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: blue
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "BLUE"
+
       - type: conditional
         conditions:
           - entity: media_player.tv_lounge
@@ -512,11 +572,33 @@ cards:
                   entity_id: media_player.tv_kuchen
                   button: "RIGHT"
 
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_kuchen
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              icon: mdi:reply-outline
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "BACK"
+
             - type: custom:button-card
               icon: mdi:compass-rose
               styles:
                 card:
-                  - background-color: "#1a162a"
+                  - background-color: "#022027"
                 icon:
                   - color: rgb(28, 128, 199)
               show_name: false
@@ -526,6 +608,36 @@ cards:
                 service_data:
                   entity_id: media_player.tv_kuchen
                   button: "ENTER"
+
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: red
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "RED"
+
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: blue
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "BLUE"
 
       - type: conditional
         conditions:
@@ -587,11 +699,16 @@ cards:
             name: "Гостинная"
             entities:
               - entity: sensor.terrarium_master_bme280_temperature
-                color: red
+                #color: red
               - entity: sensor.terrarium_master_aqua_temp
+                #color: rgb(28, 128, 199)
+            color_thresholds:
+              - value: 20
                 color: rgb(28, 128, 199)
-              #- entity: sensor.terrarium_master_bme280_relative_humidity
-              #  color: green
+              - value: 23
+                color: orange
+              - value: 25
+                color: red
             hour24: true
             hours_to_show: 24
             points_per_hour: 60
@@ -629,7 +746,7 @@ cards:
                       show_name: true
                       name: Течь внутри
                       icon: mdi:fishbowl
-                      color: rgb(28, 128, 199)
+                      color: red
                       state:
                         - value: "OFF"
                           color: grey
@@ -644,7 +761,7 @@ cards:
                       show_name: true
                       name: Течь снаружи
                       icon: mdi:fishbowl-outline
-                      color: rgb(28, 128, 199)
+                      color: red
                       state:
                         - value: "OFF"
                           color: grey
@@ -656,13 +773,32 @@ cards:
             entities:
               - sensor.terrarium_master_bme280_pressure
             hour24: true
-            line_color: red
+            #line_color: orange
             font_size: 90
             hours_to_show: 24
             points_per_hour: 60
             show:
               icon: true
               name: true
+            color_thresholds:
+              - value: 980
+                color: rgb(28, 128, 199)
+              - value: 990
+                color: rgb(28, 128, 199)
+              - value: 1000
+                color: rgb(28, 128, 199)
+              - value: 1005
+                color: rgb(28, 128, 199)
+              - value: 1011
+                color: green
+              - value: 1017
+                color: green
+              - value: 1020
+                color: orange
+              - value: 1025
+                color: orange
+              - value: 1030
+                color: red
 
           - type: custom:mini-graph-card
             name: "Влажность"
@@ -676,6 +812,14 @@ cards:
             show:
               icon: true
               name: true
+            color_thresholds:
+              - value: 20
+                color: rgb(28, 128, 199)
+              - value: 30
+                color: green
+              - value: 40
+                color: red
+
 
       - type: horizontal-stack
         cards:
@@ -694,11 +838,18 @@ cards:
             name: "Спальная"
             entities:
               - entity: sensor.terrarium_bedroom_ambient_temp
-                color: red
+                #color: red
               - entity: sensor.terrarium_bedroom_aqua_temp
+                #color: rgb(28, 128, 199)
+            color_thresholds:
+              - value: 20
                 color: rgb(28, 128, 199)
+              - value: 23
+                color: orange
+              - value: 25
+                color: red
             hour24: true
-            line_color: red
+#            line_color: red
             hours_to_show: 24
             points_per_hour: 60
             show:
@@ -736,7 +887,7 @@ cards:
                       show_name: true
                       name: Течь
                       icon: mdi:fishbowl
-                      color: rgb(28, 128, 199)
+                      color: red
                       state:
                         - value: "OFF"
                           color: grey
@@ -751,7 +902,7 @@ cards:
                       show_name: true
                       name: Течь
                       icon: mdi:fishbowl
-                      color: rgb(28, 128, 199)
+                      color: red
                       state:
                         - value: "OFF"
                           color: grey
@@ -759,17 +910,32 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
-            name: "Блкон воздух"
+            name: "Балкон воздух"
             entities:
               - sensor.balkoon_warm_floor_bme280_temperature
+            color_thresholds:
+              - value: 20
+                color: rgb(28, 128, 199)
+              - value: 23
+                color: orange
+              - value: 25
+                color: red
             hour24: true
             hours_to_show: 24
             points_per_hour: 60
-            line_color: red
-            font_size: 90
             show:
               icon: true
               name: true
+              legend: false
+
+#            hour24: true
+#            hours_to_show: 24
+#            points_per_hour: 60
+#            line_color: red
+#            font_size: 90
+#            show:
+#              icon: true
+#              name: true
 
           - type: custom:mini-graph-card
             name: "Балкон влажность"
@@ -783,6 +949,14 @@ cards:
             show:
               icon: true
               name: true
+            color_thresholds:
+              - value: 20
+                color: rgb(28, 128, 199)
+              - value: 30
+                color: green
+              - value: 40
+                color: red
+
 
       - type: horizontal-stack
         cards:

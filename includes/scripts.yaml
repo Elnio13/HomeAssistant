@@ -1,3 +1,6 @@
+### 0.117.6 Including scripts.yaml and a folder with scripts at the same time is not possible https://github.com/home-assistant/core/issues/38456
+### какая-то адская лажа, скрипты не могут лежать в папках. script: !include_dir_merge_list includes/scripts - такая фигня работать не будет
+### необъяснимая дичь
 vacuum_all:
   alias: "Уборка всей квартиры"
   sequence:
@@ -143,4 +146,3 @@ write_energy_indicator:
     data_template:
       entity_id: sensor.power_meter_impulse_counter_total_impulse
       state: "{{ states.input_number.energy_indicator_value.state | float * 3200.0 }}"
-      

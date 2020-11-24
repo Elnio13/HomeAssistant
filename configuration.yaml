@@ -72,7 +72,7 @@ device_tracker:
     #auth_protocol: !secret snmp_auth_protocol
     #priv_protocol: !secret snmp_priv_protocol
     baseoid: 1.3.6.1.4.1.14988.1.1.1.5.1.1
-    interval_seconds: 60
+    interval_seconds: 12
     consider_home: 120
     new_device_defaults:
       track_new_devices: false
@@ -93,7 +93,6 @@ camera:
 #    password: !secret xiaomi_cloud_password
 #    country: "ru"
 
-
 wake_on_lan:
 
 media_player:
@@ -107,8 +106,8 @@ tts:
     host: !secret host_tts
     port: 8080 # Optional
     format: 'mp3' # Optional, wav|mp3|opus|flac
-    pitch: 50 # Optional, 0..100
-    rate: 80 # Optional, 0..100
+    pitch: 30 # Optional, 0..100
+    rate: 50 # Optional, 0..100
     voice: 'elena' # Optional, default is 'anna' (russian)
     volume: 40 # Optional, 0..100
   
@@ -151,6 +150,8 @@ group: !include includes/groups.yaml
 #media_player:   !include includes/media_player.yaml
 #yeelight:       !include includes/yeelight.yaml
 script: !include includes/scripts.yaml
+
+#script: !include_dir_merge_list includes/scripts
 input_boolean: !include includes/input_boolean.yaml
 input_number: !include includes/input_number.yaml
 input_datetime: !include includes/input_datetime.yaml

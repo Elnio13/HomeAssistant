@@ -8,6 +8,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.hiper_iot04_edifire2700_relay
+
 #    - service: notify.telegram
 #      data:
 #        title: "Edifire On"
@@ -19,15 +20,26 @@
     - platform: state
       entity_id: media_player.tv_lounge
       to: "off"
-    #- delay: '0:0:10'
   condition:
-    - condition: state
-      entity_id: media_player.tv_lounge
-      state: "off"
+    #- condition: state
+    #  entity_id: media_player.tv_lounge
+    #  state: "off"
   action:
-    - service: switch.turn_off
-      entity_id: switch.hiper_iot04_edifire2700_relay
+    - delay: "0:0:10" ## Исключаем дребезг. ХЗ откуда он берется!!!
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: media_player.tv_lounge
+              state: "off"
+          sequence:
+            - service: switch.turn_off
+              entity_id: switch.hiper_iot04_edifire2700_relay
+
+#    - service: switch.turn_off
+#      entity_id: switch.hiper_iot04_edifire2700_relay
+
 #    - service: notify.telegram
 #      data:
 #        title: "Edifire Off"
 #        message: "Питание розетки отключено"
+

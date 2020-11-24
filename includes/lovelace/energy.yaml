@@ -5,25 +5,43 @@ cards:
     cards:
       - type: horizontal-stack
         cards:
-          - type: custom:button-card
-            show_name: true
-            show_label: true
-            name: Показания, кВтч
-            aspect_ratio: 2.2/1
-            trigger_update: sensor.power_meter_translate_value
-            label: >
-              [[[
-                return Math.trunc(states['sensor.power_meter_translate_value'].state * 10 / 3200) / 10;
-              ]]]
-            styles:
-              label:
-                - font-size: 200%
-              name:
-                - font-size: 100%
-              grid:
-                - grid-template-areas: '"n" "i" "l"'
-                - grid-template-rows: 0.5fr 0.2fr 1fr
-            hold_action:
+          #  - type: custom:button-card
+          #    show_name: true
+          #    show_label: true
+          #    name: Показания, кВтч
+          #    #aspect_ratio: 2.2/1
+          #    trigger_update: sensor.power_meter_translate_value
+          #    label: >
+          #      [[[
+          #        return Math.trunc(states['sensor.power_meter_translate_value'].state * 10 / 3200) / 10;
+          #      ]]]
+          #    styles:
+          #      label:
+          #        - font-size: 200%
+          #      name:
+          #        - font-size: 100%
+          #      grid:
+          #        - grid-template-areas: '"n" "i" "l"'
+          #        - grid-template-rows: 0.5fr 0.2fr 1fr
+          #    hold_action:
+          #      action: navigate
+          #      navigation_path: /lovelace/6/
+
+          - type: custom:mini-graph-card
+            name: "Энергия"
+            entities:
+              - entity: sensor.power_meter_indicator
+            decimals: 1
+            hour24: true
+            line_color: red
+            hours_to_show: 168
+            #points_per_hour: 60
+            font_size: 75
+            show:
+              icon: false
+              name: false
+              legend: false
+            tap_action:
               action: navigate
               navigation_path: /lovelace/6/
 
@@ -31,17 +49,22 @@ cards:
             name: "Мощность"
             entities:
               - entity: sensor.power_meter_power
-            #              - entity: sensor.digma_160m_dishwasher_voltage
-            #                value_factor: 10
             hour24: true
-            line_color: blue
+            #line_color: blue
             hours_to_show: 24
             points_per_hour: 60
-            font_size: 71
+            font_size: 75
             show:
               icon: false
               name: false
               legend: false
+            color_thresholds:
+              - value: 0.15
+                color: rgb(28, 128, 199)
+              - value: 0.8
+                color: orange
+              - value: 1.2
+                color: red
 
       - type: entities
         entities:
@@ -53,29 +76,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_impulse_counter_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_impulse_counter_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_impulse_counter_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_impulse_counter_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
       - type: custom:button-card
         icon: mdi:desktop-classic
@@ -101,8 +132,10 @@ cards:
             entities:
               - entity: sensor.digma_100s_pc_voltage
                 name: false
+                format: precision2
               - entity: sensor.digma_100s_pc_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_pc_stnd
             type: custom:multiple-entity-row
@@ -112,29 +145,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_pc_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_pc_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_pc_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_pc_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
       - type: custom:button-card
         icon: mdi:playstation
@@ -158,8 +199,10 @@ cards:
             entities:
               - entity: sensor.digma_100s_tvps4_voltage
                 name: false
+                format: precision2
               - entity: sensor.digma_100s_tvps4_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_tvps4_stnd
             type: custom:multiple-entity-row
@@ -169,29 +212,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_tvps4_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_tvps4_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_tvps4_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_tvps4_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
   - type: vertical-stack
     cards:
@@ -217,8 +268,10 @@ cards:
             entities:
               - entity: sensor.digma_160m_dishwasher_voltage
                 name: false
+                format: precision2
               - entity: sensor.digma_160m_dishwasher_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_dishwasher_stnd
             type: custom:multiple-entity-row
@@ -228,29 +281,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_dishwasher_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_dishwasher_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_dishwasher_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_dishwasher_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
       - type: custom:button-card
         icon: mdi:silverware-variant
@@ -274,8 +335,10 @@ cards:
             entities:
               - entity: sensor.hiper_iot04_edifire2700_voltage
                 name: false
+                format: precision2
               - entity: sensor.hiper_iot04_edifire2700_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_edifire2700_stnd
             type: custom:multiple-entity-row
@@ -285,29 +348,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_edifire2700_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_edifire2700_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_edifire2700_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_dishwasher_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
       - type: custom:button-card
         icon: mdi:silverware-variant
@@ -331,8 +402,10 @@ cards:
             entities:
               - entity: sensor.hiper_iot04_washer_voltage
                 name: false
+                format: precision2
               - entity: sensor.hiper_iot04_washer_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_washer_stnd
             type: custom:multiple-entity-row
@@ -342,29 +415,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_washer_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_washer_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_washer_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_washer_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
   - type: vertical-stack
     cards:
@@ -390,8 +471,10 @@ cards:
             entities:
               - entity: sensor.hiper_iot04_water_heater_voltage
                 name: false
+                format: precision2
               - entity: sensor.hiper_iot04_water_heater_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_water_heater_stnd
             type: custom:multiple-entity-row
@@ -401,29 +484,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_water_heater_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_water_heater_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_water_heater_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_water_heater_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
       - type: custom:button-card
         icon: mdi:silverware-variant
@@ -447,8 +538,10 @@ cards:
             entities:
               - entity: sensor.hiper_iot04_4_voltage
                 name: false
+                format: precision2
               - entity: sensor.hiper_iot04_4_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_4_stnd
             type: custom:multiple-entity-row
@@ -458,29 +551,37 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_4_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_4_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_4_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_4_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
       - type: custom:button-card
         icon: mdi:silverware-variant
@@ -504,8 +605,10 @@ cards:
             entities:
               - entity: sensor.hiper_iot04_5_voltage
                 name: false
+                format: precision2
               - entity: sensor.hiper_iot04_5_power
                 name: false
+                format: precision2
 
           - entity: sensor.energy_hourly_5_stnd
             type: custom:multiple-entity-row
@@ -515,26 +618,34 @@ cards:
             entities:
               - attribute: last_period
                 name: предыдущий
+                format: precision2
               - entity: sensor.energy_hourly_5_stnd
                 name: текущий
+                format: precision2
 
           - entity: sensor.energy_daily_5_stnd
             type: custom:multiple-entity-row
             name: День
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_monthly_5_stnd
             type: custom:multiple-entity-row
             name: Месяц
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2
 
           - entity: sensor.energy_yearly_5_stnd
             type: custom:multiple-entity-row
             name: Год
             secondary_info: энергия
+            format: precision2
             entities:
               - attribute: last_period
+                format: precision2

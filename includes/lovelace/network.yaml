@@ -24,11 +24,18 @@ cards:
               - sensor.rb3011_eth1_tx
             #height: 300
             hour24: true
-            line_color: red
+            #line_color: red
             hours_to_show: 24
             points_per_hour: 60
             show:
               legend: false
+            color_thresholds:
+              - value: 1
+                color: rgb(28, 128, 199)
+              - value: 10
+                color: orange
+              - value: 30
+                color: red
 
           - type: custom:mini-graph-card
             name: "CPU"
@@ -43,6 +50,13 @@ cards:
             points_per_hour: 60
             show:
               legend: false
+            color_thresholds:
+              - value: 1
+                color: rgb(28, 128, 199)
+              - value: 10
+                color: orange
+              - value: 30
+                color: red
 
       - type: horizontal-stack
         cards:
@@ -55,6 +69,13 @@ cards:
             line_color: red
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 36
+                color: rgb(28, 128, 199)
+              - value: 40
+                color: orange
+              - value: 50
+                color: red
 
           - type: custom:mini-graph-card
             name: "RAM"
@@ -64,6 +85,13 @@ cards:
             hour24: true
             hours_to_show: 24
             points_per_hour: 4
+            color_thresholds:
+              - value: 18
+                color: rgb(28, 128, 199)
+              - value: 25
+                color: orange
+              - value: 30
+                color: red
 
       - type: horizontal-stack
         cards:
