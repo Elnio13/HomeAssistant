@@ -1,0 +1,34 @@
+floor_bathroom_schedule:
+  name: "Подогрев пола в ванной по рассписанию"
+  icon: "mdi:timer-outline"
+floor_balkoon_schedule:
+  name: "Подогрев пола на балконе по рассписанию"
+  icon: "mdi:timer-outline"
+fan_schedule:
+  name: "Управление вентилятором по рассписанию"
+  icon: "mdi:timer-outline"
+
+terrarium_bedroom_lamp:
+  name: "Лампа в террариуме в спальной по рассписанию"
+  icon: "mdi:timer-outline"
+terrarium_living_lamp:
+  name: "Лампа в террариуме в гостинной по рассписанию"
+  icon: "mdi:timer-outline"
+
+kuchen_tv_off:
+  name: "Выключить ТВ в зале по рассписанию"
+  icon: "mdi:timer-outline"
+lounge_tv_off:
+  name: "Выключить ТВ в зале по рассписанию"
+  icon: "mdi:timer-outline"
+
+backup_shedule:
+  name: "Регулярное резервное копирование"
+  icon: "mdi:timer-outline"
+
+vacuum_schedule:
+  name: "Регулярная уборка роботом"
+  icon: "mdi:timer-outline"
+vacuum_notification:
+  name: "Сообщения от робота"
+  icon: "mdi:bell"

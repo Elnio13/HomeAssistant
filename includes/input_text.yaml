@@ -1,0 +1,3 @@
+text_tts_roborock:
+  name: Roborock speak
+  initial: Hello!

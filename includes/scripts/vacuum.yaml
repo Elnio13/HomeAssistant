@@ -1,0 +1,146 @@
+vacuum_all:
+  alias: "Уборка всей квартиры"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [
+            [[24889, 32718, 27990, 35830, 1]], #кухня
+            [[21621, 33330, 24664, 35385, 1]], #ванная
+            [[21715, 32296, 24971, 33831, 1], [21597, 28847, 23670, 32546, 1]], #коридор
+            [[22383, 24661, 28146, 29773, 1]], #зал
+            [[23755, 29152, 28036, 33164, 1]], #спальная
+          ]
+    - condition: state
+      entity_id: input_boolean.vacuum_notification
+      state: "on"
+    - service: notify.telegram
+      data:
+        title: !secret vacuum_name
+        message: "Уборка всей квартиры"
+
+vacuum_bedroom:
+  alias: "Уборка спальной"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[23755, 29152, 28036, 33164, 1]]
+    - condition: state
+      entity_id: input_boolean.vacuum_notification
+      state: "on"
+    - service: notify.telegram
+      data:
+        title: !secret vacuum_name
+        message: "Уборка спальной"
+
+vacuum_wc:
+  alias: "Уборка ванной"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[21621, 33330, 24664, 35385, 1]]
+    - condition: state
+      entity_id: input_boolean.vacuum_notification
+      state: "on"
+    - service: notify.telegram
+      data:
+        title: !secret vacuum_name
+        message: "Уборка ванной"
+
+vacuum_hallway:
+  alias: "Уборка коридора"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params:
+          [[21715, 32296, 24971, 33831, 1], [21597, 28847, 23670, 32546, 1]]
+    - condition: state
+      entity_id: input_boolean.vacuum_notification
+      state: "on"
+    - service: notify.telegram
+      data:
+        title: !secret vacuum_name
+        message: "Уборка коридора"
+
+vacuum_kitchen:
+  alias: "Уборка кухни"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[24889, 32718, 27990, 35830, 1]]
+    - condition: state
+      entity_id: input_boolean.vacuum_notification
+      state: "on"
+    - service: notify.telegram
+      data:
+        title: !secret vacuum_name
+        message: "Уборка кухни"
+
+vacuum_living_room:
+  alias: "Уборка гостиной"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[22383, 24661, 28146, 29773, 1]]
+    - condition: state
+      entity_id: input_boolean.vacuum_notification
+      state: "on"
+    - service: notify.telegram
+      data:
+        title: !secret vacuum_name
+        message: "Уборка гостиной"
+
+vacuum_reset_main_brush:
+  alias: "Reset Main Brush"
+  sequence:
+    - service: vacuum.send_command
+      data_template:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: reset_consumable
+        params: main_brush_work_time
+
+vacuum_reset_side_brush:
+  alias: "Reset Side Brush"
+  sequence:
+    - service: vacuum.send_command
+      data_template:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: reset_consumable
+        params: side_brush_work_time
+
+vacuum_reset_filter:
+  alias: "Reset Filter"
+  sequence:
+    - service: vacuum.send_command
+      data_template:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: reset_consumable
+        params: filter_work_time
+
+vacuum_reset_sensor:
+  alias: "Reset Sensor"
+  sequence:
+    - service: vacuum.send_command
+      data_template:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: reset_consumable
+        params: sensor_dirty_time
+
+#write_energy_indicator:
+#  sequence:
+#    service: python_script.set_state
+#    data_template:
+#      entity_id: sensor.power_meter_impulse_counter_total_impulse
+#      state: "{{ states.input_number.energy_indicator_value.state | float * 3200.0 }}"
+      

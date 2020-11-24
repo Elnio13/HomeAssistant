@@ -1,0 +1,118 @@
+#esphome:
+#  name: hallway
+#  platform: ESP8266
+#  board: d1_mini
+substitutions:
+  plug_name: hallway
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  power_save_mode: high
+
+logger:
+
+api:
+  password: !secret api_passwd
+ota:
+  password: !secret ota_passwd
+
+web_server:
+  port: 80
+  auth:
+    username: !secret web_user
+    password: !secret web_passwd
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+dallas:
+  - pin: D5
+
+light:
+  - platform: monochromatic
+    name: "${plug_name}_Light"
+    id: "${plug_name}_Light"
+    output: "${plug_name}_Light_pwm"
+
+output:
+  - platform: esp8266_pwm
+    id: "${plug_name}_Light_pwm"
+    pin: D2
+    max_power: 1.0
+    
+binary_sensor:
+  - platform: gpio
+    pin: D1
+    name: "${plug_name}_PIR"
+    device_class: motion
+    on_press:
+      then:
+### Если есть кто дома и пылик не убирается, зажечь подсветку
+### Подсветка в некоторых условиях слепит пылик
+        - lambda: |-
+            if ( (id(${plug_name}_ha_device_tracker_parents).state == "home") and (id(${plug_name}_ha_xiaomi_vacuum_cleaner_cleaning).state != "cleaning") ) {
+              auto call =  id(${plug_name}_Light).turn_on();
+              call.perform();
+            } 
+
+#        if:
+#          condition:
+#            - text_sensor.state:
+#                id: '${plug_name}_ha_device_tracker_parents'
+#                state: 'home'
+#            - text_sensor.state:
+#                id: '${plug_name}_ha_xiaomi_vacuum_cleaner_cleaning'
+#                state: 'docked'
+#          then:
+#            - light.turn_on: "${plug_name}_Light"
+#            - logger.log: "Lambda Light Turned On!"
+
+    on_release:
+      then:
+        - light.turn_off: "${plug_name}_Light"
+
+  - platform: status
+    name: "${plug_name}_Status"
+
+sensor:
+  - platform: dallas
+    address: 0x7B01186BB24DFF28
+    name: "${plug_name}_Ambient_Temp"
+
+  - platform: uptime
+    name: "${plug_name}_Uptime"
+    unit_of_measurement: days
+    update_interval: 600s
+    filters:
+      - multiply: 0.000011574
+
+  - platform: wifi_signal
+    name: "${plug_name}_WiFi_Signal"
+    update_interval: 600s
+
+switch:
+  - platform: restart
+    name: "${plug_name}_restart"
+
+text_sensor:
+  - platform: version
+    name: "${plug_name}_firmware_version"
+    
+  - platform: homeassistant
+    name: '${plug_name}_ha_device_tracker_parents'
+    id: '${plug_name}_ha_device_tracker_parents'
+    entity_id: group.device_tracker_parents
+    #internal: true
+    
+  - platform: homeassistant
+    name: '${plug_name}_ha_xiaomi_vacuum_cleaner_cleaning'
+    id: '${plug_name}_ha_xiaomi_vacuum_cleaner_cleaning'
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+    #internal: true

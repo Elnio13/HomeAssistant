@@ -1,0 +1,39 @@
+energy_indicator_value:
+  name: Energy Indicator Value
+  #initial: "{{ states.sensor.power_meter_indicator.state | float }}"
+  min: 0
+  max: 999999.9
+  step: 0.1
+  mode: box
+
+heat_temp_bathroom_floor:
+  name: "Температура нагрева"
+  initial: 25
+  min: 15
+  max: 29
+  step: 1
+  mode: slider
+
+cool_temp_bathroom_floor:
+  name: "Температура простоя"
+  initial: 15
+  min: 15
+  max: 29
+  step: 1
+  mode: slider
+
+heat_temp_balkoon_floor:
+  name: "Температура нагрева"
+  initial: 25
+  min: 15
+  max: 29
+  step: 1
+  mode: slider
+
+cool_temp_balkoon_floor:
+  name: "Температура простоя"
+  initial: 15
+  min: 15
+  max: 29
+  step: 1
+  mode: slider

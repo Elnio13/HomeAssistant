@@ -1,0 +1,14 @@
+- alias: Backup Everyday
+  #  initial_state: true
+  trigger:
+    - platform: time
+      at: "00:15"
+  condition:
+    - condition: state
+      entity_id: input_boolean.backup_shedule
+      state: "on"
+  action:
+    - service: auto_backup.snapshot_full
+      data_template:
+        name: "DailyBackup: {{ now().strftime('%A, %B %-d, %Y') }}"
+        keep_days: 7

@@ -1,0 +1,96 @@
+heat_bathroom_floor_morning:
+  name: "Включить утром (от 00:00)"
+  has_date: false
+  has_time: true
+cool_bathroom_floor_morning:
+  name: "Выключить утром"
+  has_date: false
+  has_time: true
+heat_bathroom_floor_evening:
+  name: "Включить вечером"
+  has_date: false
+  has_time: true
+cool_bathroom_floor_evening:
+  name: "Выключить вечером (до 23:59)"
+  has_date: false
+  has_time: true
+
+heat_balkoon_floor_morning:
+  name: "Включить утром (от 00:00)"
+  has_date: false
+  has_time: true
+cool_balkoon_floor_morning:
+  name: "Выключить утром"
+  has_date: false
+  has_time: true
+heat_balkoon_floor_evening:
+  name: "Включить вечером"
+  has_date: false
+  has_time: true
+cool_balkoon_floor_evening:
+  name: "Выключить вечером (до 23:59)"
+  has_date: false
+  has_time: true
+
+############ FAN ##############
+on_fan_morning:
+  name: "Включить утром (от 00:00)"
+  has_date: false
+  has_time: true
+off_fan_morning:
+  name: "Выключить утром"
+  has_date: false
+  has_time: true
+on_fan_evening:
+  name: "Включить вечером"
+  has_date: false
+  has_time: true
+off_fan_evening:
+  name: "Выключить вечером (до 23:59)"
+  has_date: false
+  has_time: true
+
+##################### TV #######################
+tv_kuchen_off:
+  name: "Выключить ТВ в гостинной"
+  has_date: false
+  has_time: true
+tv_lounge_off:
+  name: "Выключить ТВ в зале"
+  has_date: false
+  has_time: true
+###################### terrarium #####################
+
+on_light_living_terrarium_morning:
+  name: "Включить утром (от 00:00)"
+  has_date: false
+  has_time: true
+off_light_living_terrarium_morning:
+  name: "Выключить утром"
+  has_date: false
+  has_time: true
+on_light_living_terrarium_evening:
+  name: "Включить вечером"
+  has_date: false
+  has_time: true
+off_light_living_terrarium_evening:
+  name: "Выключить вечером (до 23:59)"
+  has_date: false
+  has_time: true
+
+on_light_bedroom_terrarium_morning:
+  name: "Включить утром (от 00:00)"
+  has_date: false
+  has_time: true
+off_light_bedroom_terrarium_morning:
+  name: "Выключить утром"
+  has_date: false
+  has_time: true
+on_light_bedroom_terrarium_evening:
+  name: "Включить вечером"
+  has_date: false
+  has_time: true
+off_light_bedroom_terrarium_evening:
+  name: "Выключить вечером (до 23:59)"
+  has_date: false
+  has_time: true

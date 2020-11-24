@@ -1,0 +1,256 @@
+title: "Settings"
+icon: "mdi:tune-variant"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:shower
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Термостат в ванной"
+        styles:
+          card:
+            - background-color: "#203040"
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.floor_bathroom_schedule
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.floor_bathroom_schedule
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.floor_bathroom_schedule
+            state: "on"
+        card:
+          type: custom:vertical-stack-in-card
+          cards:
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - input_datetime.heat_bathroom_floor_morning
+                - input_datetime.cool_bathroom_floor_morning
+                - input_datetime.heat_bathroom_floor_evening
+                - input_datetime.cool_bathroom_floor_evening
+                - input_number.heat_temp_bathroom_floor
+                - input_number.cool_temp_bathroom_floor
+
+      - type: custom:button-card
+        icon: mdi:zodiac-aquarius
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Лампа террариума в гостинной"
+        styles:
+          card:
+            - background-color: "#203040"
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.terrarium_living_lamp
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.terrarium_living_lamp
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.terrarium_living_lamp
+            state: "on"
+        card:
+          type: custom:vertical-stack-in-card
+          cards:
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - input_datetime.on_light_living_terrarium_morning
+                - input_datetime.off_light_living_terrarium_morning
+                - input_datetime.on_light_living_terrarium_evening
+                - input_datetime.off_light_living_terrarium_evening
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:castle
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Термостат на балконе"
+        styles:
+          card:
+            - background-color: "#203040"
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.floor_balkoon_schedule
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.floor_balkoon_schedule
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.floor_balkoon_schedule
+            state: "on"
+        card:
+          type: custom:vertical-stack-in-card
+          cards:
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - input_datetime.heat_balkoon_floor_morning
+                - input_datetime.cool_balkoon_floor_morning
+                - input_datetime.heat_balkoon_floor_evening
+                - input_datetime.cool_balkoon_floor_evening
+                - input_number.heat_temp_balkoon_floor
+                - input_number.cool_temp_balkoon_floor
+
+      - type: custom:button-card
+        icon: mdi:zodiac-aquarius
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Лампа террариума в спальной"
+        styles:
+          card:
+            - background-color: "#203040"
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.terrarium_bedroom_lamp
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.terrarium_bedroom_lamp
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.terrarium_bedroom_lamp
+            state: "on"
+        card:
+          type: custom:vertical-stack-in-card
+          cards:
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - input_datetime.on_light_bedroom_terrarium_morning
+                - input_datetime.off_light_bedroom_terrarium_morning
+                - input_datetime.on_light_bedroom_terrarium_evening
+                - input_datetime.off_light_bedroom_terrarium_evening
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        icon: mdi:fan
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        name: "Вентилятор"
+        styles:
+          card:
+            - background-color: "#203040"
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.fan_schedule
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.fan_schedule
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.fan_schedule
+            state: "on"
+        card:
+          type: custom:vertical-stack-in-card
+          cards:
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - input_datetime.on_fan_morning
+                - input_datetime.off_fan_morning
+                - input_datetime.on_fan_evening
+                - input_datetime.off_fan_evening
+
+      - type: custom:button-card
+        icon: mdi:television-classic-off
+        name: "выкл TV в зале"
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#022027"
+          icon:
+            - color: rgb(28, 128, 199)
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.lounge_tv_off
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.lounge_tv_off
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.lounge_tv_off
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - input_datetime.tv_lounge_off
+
+      - type: custom:button-card
+        icon: mdi:television-classic-off
+        name: "выкл TV на кухне"
+        layout: icon_name
+        aspect_ratio: 8/1
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#022027"
+          icon:
+            - color: rgb(28, 128, 199)
+        tap_action:
+          action: call-service
+          service: input_boolean.turn_on
+          service_data:
+            entity_id: input_boolean.kuchen_tv_off
+        hold_action:
+          action: call-service
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.kuchen_tv_off
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.kuchen_tv_off
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - input_datetime.tv_kuchen_off

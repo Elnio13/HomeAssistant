@@ -1,0 +1,244 @@
+#weekday: можно сделать рассписание выходного дня
+#    - mon
+#    - wed
+#    - fri
+
+# Процесс включения выключения привязан к присутствию дома и разрешению на работу термостата
+# Процесс регулировки температуры привязан к интервалам времени
+
+- alias: Thermostat bathroom ON
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_parents
+      to: "home"
+    - platform: state
+      entity_id: "input_boolean.floor_bathroom_schedule"
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: "input_boolean.floor_bathroom_schedule"
+      state: "on"
+    - condition: state
+      entity_id: group.device_tracker_parents
+      state: "home"
+  action:
+    - service: climate.turn_on
+      entity_id: climate.floor_bathroom
+
+- alias: Thermostat bathroom OFF
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: "input_boolean.floor_bathroom_schedule"
+      to: "off"
+  condition:
+    - condition: state
+      entity_id: "input_boolean.floor_bathroom_schedule"
+      state: "off"
+  action:
+    - service: climate.turn_off
+      entity_id: climate.floor_bathroom
+
+- alias: Heat floor bathroom
+  trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.heat_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.heat_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_parents
+      to: "home"
+  condition:
+    - condition: state
+      entity_id: group.device_tracker_parents
+      state: "home"
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.heat_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.cool_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.heat_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.cool_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+  action:
+    - service: climate.set_temperature
+      entity_id: climate.floor_bathroom
+      data_template:
+        temperature: "{{ states('input_number.heat_temp_bathroom_floor') | int }}"
+
+- alias: Cool floor bathroom
+  trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.cool_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.cool_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_parents
+      to: "not_home"
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.cool_bathroom_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.heat_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.cool_bathroom_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
+      - condition: state
+        entity_id: group.device_tracker_parents
+        state: "not_home"
+  action:
+    - service: climate.set_temperature
+      entity_id: climate.floor_bathroom
+      data_template:
+        temperature: "{{ states('input_number.cool_temp_bathroom_floor') | int }}"
+
+###############################################################
+
+- alias: Thermostat balkoon ON
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_parents
+      to: "home"
+    - platform: state
+      entity_id: "input_boolean.floor_balkoon_schedule"
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: "input_boolean.floor_balkoon_schedule"
+      state: "on"
+    - condition: state
+      entity_id: group.device_tracker_parents
+      state: "home"
+  action:
+    - service: climate.turn_on
+      entity_id: climate.floor_balkoon
+
+- alias: Thermostat balkoon OFF
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: "input_boolean.floor_balkoon_schedule"
+      to: "off"
+  condition:
+    - condition: state
+      entity_id: "input_boolean.floor_balkoon_schedule"
+      state: "off"
+  action:
+    - service: climate.turn_off
+      entity_id: climate.floor_balkoon
+
+- alias: Heat floor balkoon
+  trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.heat_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.heat_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_parents
+      to: "home"
+  condition:
+    - condition: state
+      entity_id: group.device_tracker_parents
+      state: "home"
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.heat_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.cool_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.heat_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.cool_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+  action:
+    - service: climate.set_temperature
+      entity_id: climate.floor_balkoon
+      data_template:
+        temperature: "{{ states('input_number.heat_temp_balkoon_floor') | int }}"
+
+- alias: Cool floor balkoon
+  trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.cool_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.cool_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: group.device_tracker_parents
+      to: "not_home"
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.cool_balkoon_floor_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.heat_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: template
+        value_template: "{{ (state_attr('input_datetime.cool_balkoon_floor_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
+      - condition: state
+        entity_id: group.device_tracker_parents
+        state: "not_home"
+  action:
+    - service: climate.set_temperature
+      entity_id: climate.floor_balkoon
+      data_template:
+        temperature: "{{ states('input_number.cool_temp_balkoon_floor') | int }}"
+
+###############################################################
+
+- alias: Fan ON
+  trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.on_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    #- platform: state
+    #  entity_id: "input_boolean.fan_schedule"
+    #  to: "on"
+    - platform: homeassistant
+      event: start
+  condition:
+    - condition: state
+      entity_id: "input_boolean.fan_schedule"
+      state: "on"
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.on_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.off_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.on_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.off_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.hiper_iot04_5_relay
+
+- alias: Fan OFF
+  trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    - platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.off_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+    #- platform: state
+    #  entity_id: "input_boolean.fan_schedule"
+    #  to: "off"
+    - platform: homeassistant
+      event: start
+  condition:
+    - condition: state
+      entity_id: "input_boolean.fan_schedule"
+      state: "on"
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.off_fan_morning', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < (state_attr('input_datetime.on_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+        - condition: template
+          value_template: "{{ (state_attr('input_datetime.off_fan_evening', 'timestamp') | int | timestamp_custom('%H:%M', False)) <= states('sensor.time') < '24:00:00' }}"
+        - condition: state
+          entity_id: "input_boolean.fan_schedule"
+          state: "off"
+  action:
+    - service: switch.turn_off
+      entity_id: switch.hiper_iot04_5_relay
