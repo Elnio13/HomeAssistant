@@ -22,7 +22,7 @@
 ![](https://github.com/Elnio13/HomeAssistant/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA.jpg)
 ____
 
-~~ Для считывания импульсов с прибора учета использую готовый фотомодуль с компаратором LM393:
+~~Для считывания импульсов с прибора учета использую готовый фотомодуль с компаратором LM393:
 
 https://arduinomaster.ru/datchiki-arduino/photorezistor-arduino-datchik-sveta/
 
@@ -30,7 +30,7 @@ https://robotchip.ru/obzor-modulya-osveshchennosti-lm393/
 
 Однако, такой фотомодуль с LM393 имеет серъезный недостаток и не один. Это не исмерительный инструмент со всеми вытекающими. 
 
-Используя простейший RC фильтр можно применить на входе DIO. 
+## RC фильтр можно применить на входе DIO. 
 
 http://forum.amperka.ru/threads/%D0%94%D1%80%D0%B5%D0%B1%D0%B5%D0%B7%D0%B3-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8.6607/
 
