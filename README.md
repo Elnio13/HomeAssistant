@@ -2,7 +2,7 @@
 
 ## Прибор учета
 
-![Такой прибор учета установлен у меня](https://github.com/Elnio13/HomeAssistant/blob/master/1.BMP)
+![](https://github.com/Elnio13/HomeAssistant/blob/master/1.jpg "Такой прибор учета установлен у меня")
 
 
 ![](https://github.com/Elnio13/HomeAssistant/blob/master/2.jpg)
@@ -12,7 +12,7 @@
 ![](https://github.com/Elnio13/HomeAssistant/blob/master/3.jpg)
 
 
-![](https://github.com/Elnio13/HomeAssistant/blob/master/4.jpg)
+![](https://github.com/Elnio13/HomeAssistant/blob/master/4.BMP)
 
 
 ![](https://github.com/Elnio13/HomeAssistant/blob/master/5.jpg)
