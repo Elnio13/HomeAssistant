@@ -2,24 +2,21 @@
 
 ## Прибор учета
 
-![Такой прибор учета установлен у меня](https://github.com/Elnio13/HomeAssistant/blob/master/post-155023-0-33428900-1363273888_thumb.jpg)
+![Такой прибор учета установлен у меня](https://github.com/Elnio13/HomeAssistant/blob/master/1.BMP)
 
 
-![](https://github.com/Elnio13/HomeAssistant/blob/master/lightSensor.jpg)
-
-
-
-![](https://github.com/Elnio13/HomeAssistant/blob/master/index.jpg)
+![](https://github.com/Elnio13/HomeAssistant/blob/master/2.jpg)
 
 
 
-![](https://github.com/Elnio13/HomeAssistant/blob/master/index2.jpg)
+![](https://github.com/Elnio13/HomeAssistant/blob/master/3.jpg)
 
 
-![](https://github.com/Elnio13/HomeAssistant/blob/master/IMG_001.BMP)
+![](https://github.com/Elnio13/HomeAssistant/blob/master/4.jpg)
 
 
-![](https://github.com/Elnio13/HomeAssistant/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA.jpg)
+![](https://github.com/Elnio13/HomeAssistant/blob/master/5.jpg)
+
 ____
 
 ~~Для считывания импульсов с прибора учета использую готовый фотомодуль с компаратором LM393:
