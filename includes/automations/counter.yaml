@@ -1,0 +1,11 @@
+- id: power meter counter
+  alias: power meter counter
+  trigger:
+    - platform: state
+      entity_id: sensor.power_meter_pulse_counter
+  condition:
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.power_meter_indicator_imp
+        value: "{{ states.input_number.power_meter_indicator_imp.state | int + states.sensor.power_meter_pulse_counter.state  | int }}"

@@ -1,26 +1,40 @@
+#- platform: template
+#  sensors:
+#    power_meter_translate_value:
+#      unit_of_measurement: "imp"
+#      # Если получаем значение от счетчика, учитываем его
+#      # Если не получаем, оставляем прежнее значение
+#      value_template: >-
+#        {% if (states.sensor.power_meter_pulse_counter.state | int > 0) %}
+#          {{ states.sensor.power_meter_translate_value.state | float + states.sensor.power_meter_pulse_counter.state | float }}
+#        {% endif %}
+##        {% else %}
+##          {{ states.sensor.power_meter_translate_value.state }}
+##        {% endif %}
+
+#        {% if (states.sensor.power_meter_total_impulse.state |int > 0) %}
+#          {{ states.sensor.power_meter_total_impulse.state }}
+#        {% else %}
+#          {{ states.sensor.power_meter_translate_value.state }}
+#        {% endif %}
+
 - platform: template
   sensors:
-    power_meter_translate_value:
-      unit_of_measurement: "imp"
-      # Если получаем значение от счетчика, учитываем его
-      # Если не получаем, оставляем прежнее значение
+    power_meter_indicator_imp:
+      # Полное значение энергии в импульсах 
       value_template: >-
-        {% if (states.sensor.power_meter_impulse_counter_total_impulse.state |int > 0) %}
-          {{ states.sensor.power_meter_impulse_counter_total_impulse.state }}
-        {% else %}
-          {{ states.sensor.power_meter_translate_value.state }}
-        {% endif %}
+          {{ states.input_number.power_meter_indicator_imp.state }}
+### {{ states.input_number.power_meter_indicator_imp.state + states.sensor.power_meter_pulse_counter.state }}
 
 - platform: template
   sensors:
     power_meter_indicator:
-      # Полное значение энергии в импульсах приводим к кВтч
-      value_template: "{{ states.sensor.power_meter_translate_value.state | float / 3200.0 }}"
-      unit_of_measurement: "kWh"
+      # Полное значение энергии в кВтч
+      value_template: >-
+        {{ states.input_number.power_meter_indicator_imp.state | float / 3200 }}
 
 - platform: template
   sensors:
     power_meter_power:
       # Среднюю мощность в импульсах за предыдущую минуту преобразуем кВт
-      value_template: "{{ states.sensor.power_meter_impulse_counter_pulse_counter.state |float * 60.0 / 3200.0 }}"
-      unit_of_measurement: "kW"
+      value_template: "{{ states.sensor.power_meter_pulse_counter.state |float * 60.0 / 3200.0 }}"

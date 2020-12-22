@@ -1,5 +1,6 @@
 substitutions:
-  plug_name: 'power_meter_impulse_counter'
+  plug_name: 'power_meter'
+
 esphome:
   name: ${plug_name}
   platform: ESP32
@@ -10,6 +11,7 @@ wifi:
   password: !secret wifi_password
 
 logger:
+  level: info ###debug ##info
 
 api:
   password: !secret api_passwd
@@ -28,59 +30,39 @@ time:
     id: homeassistant_time
 
 globals:
-  - id: '${plug_name}_save_impulse'
-    type: int
+  - id: '${plug_name}_remember'
+    type: uint
     restore_value: yes
+    initial_value: '0'
+    
+  - id: '${plug_name}_blink'
+    type: uint
+    restore_value: no
     initial_value: '0'
 
 sensor:
   - platform: template
-    name: '${plug_name}_save_impulse_tmp'
+    internal: false
+    name: '${plug_name}_remember'
     lambda: |-
-      return id(${plug_name}_save_impulse);
+      return id(${plug_name}_remember);
 
-  - platform: pulse_counter
-    pin: 32
+  - platform: template
     name: '${plug_name}_pulse_counter'
     id: '${plug_name}_pulse_counter'
-    internal_filter: 10us # debonce filter
-    update_interval: 60s
-    
-  - platform: homeassistant
-    name: '${plug_name}_ha_power_meter_indicator_total_impulse'
-    id: '${plug_name}_ha_power_meter_indicator_total_impulse'
-    entity_id: sensor.power_meter_translate_value
-    
-  - platform: template
-    name: '${plug_name}_total_impulse'
-    unit_of_measurement: 'pulses'
-    update_interval: 60s
     lambda: |-
+        uint result = 0;
+        uint blink_1m = id(${plug_name}_blink);
+        uint rem = id(${plug_name}_remember);
+        id(${plug_name}_blink) = 0;
 
-      static int result = 0;
-
-      if (id(${plug_name}_pulse_counter).state > 0) {
-
-        if (id(${plug_name}_ha_power_meter_indicator_total_impulse).state > 0) {
-
-          result = id(${plug_name}_pulse_counter).state + id(${plug_name}_ha_power_meter_indicator_total_impulse).state + id(${plug_name}_save_impulse);
-
-        }  
-
-        else  {
-
-          id(${plug_name}_save_impulse) = id(${plug_name}_save_impulse) + id(${plug_name}_pulse_counter).state; // save imp on flash
-
+        if ( id(${plug_name}_Status).state ) {
+          result = blink_1m + rem;
+          id(${plug_name}_remember) = 0;
+        } else  {
+          id(${plug_name}_remember) = rem + blink_1m;
         }
-      }
-
-      if (result > 0) {
-
-          id(${plug_name}_save_impulse) = 0;
-
-      }
-      
-      return result;
+        return result;
 
   - platform: uptime
     name: '${plug_name}_Uptime'
@@ -96,18 +78,27 @@ sensor:
 binary_sensor:
   - platform: status
     name: '${plug_name}_Status'
-    
+    id: '${plug_name}_Status'
+
+### Ловим импульсы длительностью 150-250мс, они и есть наш полезный сигнал на воне 50Гц шума
+  - platform: gpio
+    device_class: power
+    internal: true
+    pin: 
+      number: 32
+      inverted: true
+      mode: INPUT_PULLUP
+    name: '${plug_name}_blink'
+    on_click:
+      - min_length: 150ms
+        max_length: 250ms
+        then:
+          - lambda: id(${plug_name}_blink) += 1;
+
 text_sensor:
   - platform: version
     name: '${plug_name}_firmware_version'
-    
+
 switch:
   - platform: restart
     name: '${plug_name}_restart'
-    
-#  - platform: template
-#    name: '${plug_name}_save_null'
-#    on_press:
-#      then:
-#        - lambda: |-
-#            id(${plug_name}_save_impulse) = 0;

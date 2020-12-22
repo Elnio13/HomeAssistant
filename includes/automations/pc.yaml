@@ -10,9 +10,5 @@
       below: 10
   condition:
   action:
-    #- delay: "0:0:10" ## небольшую задержку
-    - choose:
-        - conditions:
-          sequence:
-            - service: switch.turn_off
-              entity_id: switch.digma_100s_pc_relay
+    - service: switch.turn_off
+      entity_id: switch.digma_100s_pc_relay

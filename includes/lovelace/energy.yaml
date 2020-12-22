@@ -31,7 +31,7 @@ cards:
             name: "Энергия"
             entities:
               - entity: sensor.power_meter_indicator
-            decimals: 1
+            decimals: 2
             hour24: true
             line_color: red
             hours_to_show: 168

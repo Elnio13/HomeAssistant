@@ -1,10 +1,17 @@
-energy_indicator_value:
+power_meter_indicator:
   name: Energy Indicator Value
   #initial: "{{ states.sensor.power_meter_indicator.state | float }}"
   min: 0
   max: 999999.9
   step: 0.1
   mode: box
+
+power_meter_indicator_imp:
+    name: Energy Indicator Impulse Value
+    min: 0
+    max: 9999999999
+    step: 1
+    mode: box
 
 heat_temp_bathroom_floor:
   name: "Температура нагрева"

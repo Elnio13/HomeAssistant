@@ -4,27 +4,32 @@ icon: "mdi:power-socket-eu"
 cards:
   - type: vertical-stack
     cards:
-      #- type: custom:button-card
-      #  icon: mdi:counter
-      #  layout: icon_name
-      #  size: 20%
-      #  name: "Прибор учета"
-      #  show_label: false
-      #  show_name: true
-      #styles:
-      #  card:
-      #    - background-color: "#203040"
-      #  name:
-      #    - justify-self: start
+      - type: custom:button-card
+        icon: mdi:counter
+        layout: icon_name
+        size: 20%
+        name: "Прибор учета"
+        show_label: false
+        show_name: true
+        styles:
+          card:
+            - background-color: "#203040"
+          name:
+            - justify-self: start
 
       - type: entities
         entities:
-          - entity: input_number.energy_indicator_value
-            name: Новые показания
+          - entity: sensor.power_meter_indicator_imp
+          - entity: sensor.power_meter_indicator
+          - entity: input_number.power_meter_indicator
+            name: Киловатты
             icon: mdi:counter
-          - entity: script.write_energy_indicator
-            icon: mdi:memory
-            name: Внести новые показания
+          #- entity: input_number.power_meter_indicator_imp
+          #  name: Импульсы
+          #  icon: mdi:counter
+          #- entity: script.write_energy_indicator
+          #  icon: mdi:memory
+          #  name: Внести новые показания
 
       - type: custom:button-card
         name: Внести новые показания
@@ -65,7 +70,7 @@ cards:
         cards:
           - type: custom:mini-graph-card
             name: "Энегрия"
-            decimals: 1
+            decimals: 2
             #height: 50
             entities:
               - sensor.power_meter_indicator
@@ -84,10 +89,10 @@ cards:
             #show_state: true
             name: Показания, кВтч
             aspect_ratio: 1.45/1
-            trigger_update: sensor.power_meter_translate_value # Расчет происходит после изменения сенсора
+            trigger_update: sensor.power_meter_indicator_imp # Расчет происходит после изменения сенсора
             label: >
               [[[
-                return Math.trunc(states['sensor.power_meter_translate_value'].state * 10 / 3200) / 10;
+                return Math.trunc(states['sensor.power_meter_indicator_imp'].state * 100 / 3200) / 100;
               ]]]
             styles:
               label:
