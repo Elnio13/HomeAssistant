@@ -14,9 +14,13 @@
 
 Первый полностью рабочий вариант поделки.
 
-![ ](https://github.com/Elnio13/HomeAssistant/blob/master/4.BMP)
+![ ](https://github.com/Elnio13/HomeAssistant/blob/master/4.BMP )
 
 Вот такую лажу наблюдаем когда светодиод просто горит! Это БЕСПОЛЗНЫЙ для нас сигнал - на светодиоде 50Гц! Нам нужны паузы среди этого сигнала длиной 170-180мс. Длина паузы не фиксирована, нужно иметь это в виду.
+
+![ ](https://github.com/Elnio13/HomeAssistant/blob/master/6.BMP)
+
+Вот полезный сигнал
 
 ![ ](https://github.com/Elnio13/HomeAssistant/blob/master/5.jpg)
 
