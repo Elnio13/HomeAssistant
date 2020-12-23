@@ -146,7 +146,7 @@ write_energy_indicator:
     - service: input_number.set_value
       data:
         entity_id: input_number.power_meter_indicator_imp
-        value: "{{ states.input_number.power_meter_indicator.state | float * 3200 }}"
+        value: "{{ ( states.input_number.power_meter_indicator.state | float * 3200 ) | int}}"
 
 #write_energy_indicator:
 #  sequence:

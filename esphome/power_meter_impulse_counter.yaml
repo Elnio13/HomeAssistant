@@ -50,6 +50,7 @@ sensor:
   - platform: template
     name: '${plug_name}_pulse_counter'
     id: '${plug_name}_pulse_counter'
+    force_update: true                  ### Иначе будет тротлить одинаковые значения
     lambda: |-
         uint result = 0;
         uint blink_1m = id(${plug_name}_blink);
@@ -58,7 +59,9 @@ sensor:
 
         if ( id(${plug_name}_Status).state ) {
           result = blink_1m + rem;
-          id(${plug_name}_remember) = 0;
+          if ( id(${plug_name}_remember) > 0 ) {
+            id(${plug_name}_remember) = 0;
+          }
         } else  {
           id(${plug_name}_remember) = rem + blink_1m;
         }
@@ -90,7 +93,7 @@ binary_sensor:
       mode: INPUT_PULLUP
     name: '${plug_name}_blink'
     on_click:
-      - min_length: 150ms
+      - min_length: 100ms
         max_length: 250ms
         then:
           - lambda: id(${plug_name}_blink) += 1;

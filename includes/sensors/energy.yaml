@@ -21,7 +21,7 @@
 - platform: template
   sensors:
     power_meter_indicator_imp:
-      # Полное значение энергии в импульсах 
+      # Полное значение энергии в импульсах
       value_template: >-
           {{ states.input_number.power_meter_indicator_imp.state }}
 ### {{ states.input_number.power_meter_indicator_imp.state + states.sensor.power_meter_pulse_counter.state }}

@@ -3,7 +3,7 @@ power_meter_indicator:
   #initial: "{{ states.sensor.power_meter_indicator.state | float }}"
   min: 0
   max: 999999.9
-  step: 0.1
+  step: 0.01
   mode: box
 
 power_meter_indicator_imp:
