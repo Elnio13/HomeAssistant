@@ -14,7 +14,7 @@
 
 ![ ](https://github.com/Elnio13/HomeAssistant/blob/master/3.jpg)
 
-Первый полностью рабочий вариант поделки.
+Первый полностью рабочий вариант поделки. Цена вопроса не более 100р.
 
 ![ ](https://github.com/Elnio13/HomeAssistant/blob/master/4.BMP )
 
