@@ -1,5 +1,5 @@
-- id: power meter counter
-  alias: power meter counter
+- alias: power meter counter
+#  alias: power meter counter
   trigger:
     - platform: state
       entity_id: sensor.power_meter_pulse_counter

@@ -1,0 +1,100 @@
+title: "Zigbee"
+icon: "mdi:zigbee"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - sensor.lumi_illuminance
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.lumi_light
+          - type: light
+            entity: light.lumi_light
+
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - switch.hallway_light
+          - sensor.hallway_light_linkquality
+
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - switch.wc_light_left
+          - sensor.wc_light_linkquality
+          - switch.wc_light_right
+          - sensor.wc_light_temperature
+
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - sensor.wc_move_linkquality
+          - binary_sensor.wc_move_occupancy
+          - sensor.wc_move_battery
+      - type: entities
+        entities:
+          - sensor.0x00158d0003cff1a2_linkquality
+          - binary_sensor.0x00158d0003cff1a2_occupancy
+          - sensor.0x00158d0003cff1a2_battery
+      - type: entities
+        entities:
+          - binary_sensor.wc_door_contact
+          - sensor.wc_door_linkquality
+          - sensor.wc_door_battery
+      - type: entities
+        entities:
+          - binary_sensor.hallway_door_contact
+          - sensor.hallway_door_linkquality
+          - sensor.hallway_door_battery
+
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - sensor.kitchen_linkquality
+          - binary_sensor.kitchen_water_leak
+          - sensor.kitchen_battery
+
+
+      - type: entities
+        entities:
+          - sensor.wc_linkquality
+          - binary_sensor.wc_water_leak
+          - sensor.wc_battery
+
+
+      - type: entities
+        entities:
+          - sensor.key_action
+          - sensor.key_linkquality
+          - sensor.key_battery
+
+      - type: entities
+        entities:
+          - sensor.button_action
+          - sensor.button_linkquality
+          - sensor.button_battery
+
+      - type: entities
+        title: Zigbee2MQTT
+        show_header_toggle: false
+        entities:
+          - entity: sensor.zigbee2mqtt_bridge_state
+          - entity: sensor.zigbee2mqtt_version
+          - entity: sensor.coordinator_revision
+          - entity: sensor.coordinator_type
+          - entity: input_select.zigbee2mqtt_log_level
+          - type: divider
+          - entity: switch.zigbee2mqtt_main_join
+          - entity: input_number.zigbee2mqtt_join_minutes
+          - entity: timer.zigbee_permit_join
+          - type: divider
+          - entity: input_text.zigbee2mqtt_old_name
+          - entity: input_text.zigbee2mqtt_new_name
+          - entity: script.zigbee2mqtt_rename
+          - type: divider
+          - entity: input_text.zigbee2mqtt_remove
+          - entity: script.zigbee2mqtt_remove

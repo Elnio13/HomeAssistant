@@ -15,7 +15,7 @@
 - platform: command_line
   name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
-  unit_of_measurement: "°C"
+  #unit_of_measurement: "°C"
   value_template: "{{ value | multiply(0.001) }}"
   scan_interval: 60
 
@@ -32,12 +32,12 @@
 - platform: command_line
   name: HA Init
   command: 'cat /config/home-assistant.log | grep -o "initialized[[:space:]]in[[:space:]][0-9]\+.[0-9]\+" | grep -o "[0-9]\+.[0-9]\+$" || echo -1'
-  unit_of_measurement: "сек"
+  #unit_of_measurement: "сек"
   scan_interval: 180
 
 - platform: uptime
   name: ha_uptime
-  unit_of_measurement: minutes
+  #unit_of_measurement: minutes
   scan_interval: 3600
 
 - platform: template
@@ -55,4 +55,4 @@
     - name: DBsize
       query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1024 / 1024, 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
       column: "value"
-      unit_of_measurement: MB
+      #unit_of_measurement: MB

@@ -32,6 +32,7 @@
     data:
       message: "**Папа дома!**"
       title: "_tracker_"
+      
 - alias: "PAPA is now not home"
   trigger:
     platform: state

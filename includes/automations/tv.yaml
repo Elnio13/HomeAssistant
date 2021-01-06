@@ -1,5 +1,5 @@
-- id: TV Kuchen ON
-  alias: TV Kuchen ON
+- alias: TV Kuchen ON
+#  alias: TV Kuchen ON
   trigger:
     - platform: state
       entity_id: media_player.tv_kuchen
@@ -11,8 +11,8 @@
         entity_id: media_player.tv_kuchen
         source: "vTuner"
 
-- id: TV Kuchen OFF
-  alias: TV Kuchen OFF
+- alias: TV Kuchen OFF
+#  alias: TV Kuchen OFF
   trigger:
     - platform: template
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.tv_kuchen_off', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
@@ -31,8 +31,8 @@
         entity_id: media_player.tv_kuchen
         command: system/turnOff
 
-- id: TV Lounge OFF
-  alias: TV Lounge OFF
+- alias: TV Lounge OFF
+#  alias: TV Lounge OFF
   trigger:
     - platform: template
       value_template: "{{ states('sensor.time') == (state_attr('input_datetime.tv_lounge_off', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"

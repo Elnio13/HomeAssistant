@@ -53,6 +53,36 @@ cards:
             tap_action:
               action: more-info
 
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.kitchen_water_leak
+            state_not: "off"
+        card:
+          type: custom:button-card
+          entity: binary_sensor.kitchen_water_leak
+          show_name: true
+          name: Течь на кухне
+          icon: mdi:duck
+          color: red
+          state:
+            - value: "OFF"
+              color: grey
+
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.wc_water_leak
+            state_not: "off"
+        card:
+          type: custom:button-card
+          entity: binary_sensor.wc_water_leak
+          show_name: true
+          name: Течь в ванной
+          icon: mdi:duck
+          color: red
+          state:
+            - value: "OFF"
+              color: grey
+
       - type: custom:weather-card
         show_header_toggle: false
         entity: weather.gismeteo
@@ -84,14 +114,22 @@ cards:
                 color: red
 
           - type: custom:mini-graph-card
-            name: "SSD"
-            icon: mdi:micro-sd
-            hour24: true
-            line_color: red
+            name: "Мощность"
             entities:
-              - sensor.disk_use_percent
+              - entity: sensor.power_meter_power
+            hour24: true
+            #line_color: blue
             hours_to_show: 24
-            points_per_hour: 4
+            points_per_hour: 60
+            show:
+              legend: false
+            color_thresholds:
+              - value: 0.15
+                color: rgb(28, 128, 199)
+              - value: 0.8
+                color: orange
+              - value: 1.2
+                color: red
 
       - type: horizontal-stack
         cards:
@@ -308,6 +346,43 @@ cards:
                   button: "ENTER"
 
             - type: custom:button-card
+              icon: mdi:arrow-up-bold-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "CHANNELUP"
+
+            - type: custom:button-card
+              icon: mdi:arrow-down-bold-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "CHANNELDOWN"
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_lounge
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
               icon: mdi:window-minimize
               show_name: false
               styles:
@@ -321,7 +396,6 @@ cards:
                 service_data:
                   entity_id: media_player.tv_lounge
                   button: "RED"
-
             - type: custom:button-card
               icon: mdi:window-minimize
               show_name: false
@@ -336,6 +410,35 @@ cards:
                 service_data:
                   entity_id: media_player.tv_lounge
                   button: "BLUE"
+
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: green
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "GREEN"
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: yellow
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  button: "YELLOW"
 
       - type: conditional
         conditions:
@@ -610,6 +713,43 @@ cards:
                   button: "ENTER"
 
             - type: custom:button-card
+              icon: mdi:arrow-up-bold-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "CHANNELUP"
+
+            - type: custom:button-card
+              icon: mdi:arrow-down-bold-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              show_name: false
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "CHANNELDOWN"
+
+      - type: conditional
+        conditions:
+          - entity: media_player.tv_kuchen
+            state: "on"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
               icon: mdi:window-minimize
               show_name: false
               styles:
@@ -623,7 +763,6 @@ cards:
                 service_data:
                   entity_id: media_player.tv_kuchen
                   button: "RED"
-
             - type: custom:button-card
               icon: mdi:window-minimize
               show_name: false
@@ -638,6 +777,36 @@ cards:
                 service_data:
                   entity_id: media_player.tv_kuchen
                   button: "BLUE"
+
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: green
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "GREEN"
+            - type: custom:button-card
+              icon: mdi:window-minimize
+              show_name: false
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: yellow
+              tap_action:
+                action: call-service
+                service: webostv.button
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  button: "YELLOW"
+
 
       - type: conditional
         conditions:
@@ -820,7 +989,6 @@ cards:
               - value: 40
                 color: red
 
-
       - type: horizontal-stack
         cards:
           - type: picture-glance
@@ -849,7 +1017,7 @@ cards:
               - value: 25
                 color: red
             hour24: true
-#            line_color: red
+            #            line_color: red
             hours_to_show: 24
             points_per_hour: 60
             show:
@@ -928,14 +1096,14 @@ cards:
               name: true
               legend: false
 
-#            hour24: true
-#            hours_to_show: 24
-#            points_per_hour: 60
-#            line_color: red
-#            font_size: 90
-#            show:
-#              icon: true
-#              name: true
+          #            hour24: true
+          #            hours_to_show: 24
+          #            points_per_hour: 60
+          #            line_color: red
+          #            font_size: 90
+          #            show:
+          #              icon: true
+          #              name: true
 
           - type: custom:mini-graph-card
             name: "Балкон влажность"
@@ -956,7 +1124,6 @@ cards:
                 color: green
               - value: 40
                 color: red
-
 
       - type: horizontal-stack
         cards:

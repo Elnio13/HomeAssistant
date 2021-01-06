@@ -286,6 +286,70 @@ cards:
         - type: horizontal-stack
           cards:
             - type: custom:button-card
+              icon: mdi:video-input-hdmi
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "HDMI 1"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  source: HDMI 1
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size:
+                80%
+                #name: "Tvigle"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  source: Tvigle
+            - type: custom:button-card
+              icon: mdi:television-box
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "LG Channels"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  source: LG Channels
+            - type: custom:button-card
+              icon: mdi:video-input-antenna
+              styles:
+                card:
+                  - background-color: "#022027"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "Live TV"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_lounge
+                  source: Live TV
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
               color_type: blank-card
             - type: custom:button-card
               icon: mdi:volume-minus
@@ -677,6 +741,69 @@ cards:
                 service_data:
                   entity_id: media_player.tv_kuchen
                   button: "CHANNELDOWN"
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              icon: mdi:video-input-hdmi
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "HDMI1"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  source: HDMI-1
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "vTuner"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  source: vTuner
+            - type: custom:button-card
+              icon: mdi:movie-open-outline
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "Megogo"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  source: Megogo
+            - type: custom:button-card
+              icon: mdi:video-input-antenna
+              styles:
+                card:
+                  - background-color: "#1a162a"
+                icon:
+                  - color: rgb(28, 128, 199)
+              size: 80%
+              #name: "LiveTV"
+              tap_action:
+                action: call-service
+                service: media_player.select_source
+                service_data:
+                  entity_id: media_player.tv_kuchen
+                  source: LiveTV
 
         - type: horizontal-stack
           cards:

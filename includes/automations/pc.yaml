@@ -2,8 +2,8 @@
 ### жрет 5-12 Вт энергии постоянно принтер WiFi, БП ПК и пр
 ### Как только нагрузка падает ниже  10 Вт, отключаем все!
 ### Экономия 100р в год, но зато не фонят
-- id: PC balkoon OFF
-  alias: PC balkoon OFF
+- alias: PC balkoon OFF
+#  alias: PC balkoon OFF
   trigger:
     - platform: numeric_state
       entity_id: sensor.digma_100s_pc_power

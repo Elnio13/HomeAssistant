@@ -1,5 +1,5 @@
-- id: Edifire 2700 ON
-  alias: Edifire 2700 ON
+- alias: Edifire 2700 ON
+#  alias: Edifire 2700 ON
   trigger:
     - platform: state
       entity_id: media_player.tv_lounge
@@ -14,8 +14,8 @@
 #        title: "Edifire On"
 #        message: "Питание розетки включено"
 
-- id: Edifire 2700 OFF
-  alias: Edifire 2700 OFF
+- alias: Edifire 2700 OFF
+#  alias: Edifire 2700 OFF
   trigger:
     - platform: state
       entity_id: media_player.tv_lounge

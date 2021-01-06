@@ -60,7 +60,7 @@
   baseoid: 1.3.6.1.2.1.25.3.3.1.2.1
   name: rb3011_cpu_1
   accept_errors: true
-  unit_of_measurement: "%"
+  #unit_of_measurement: "%"
   scan_interval: 60
 
 - platform: snmp
@@ -71,7 +71,7 @@
   baseoid: 1.3.6.1.2.1.25.3.3.1.2.2
   name: rb3011_cpu_2
   accept_errors: true
-  unit_of_measurement: "%"
+  #unit_of_measurement: "%"
   scan_interval: 60
 
 - platform: snmp
@@ -103,7 +103,7 @@
   name: rb3011_temperature
   accept_errors: true
   value_template: "{{((value | int) / 10) | int}}"
-  unit_of_measurement: "°C"
+  #unit_of_measurement: "°C"
   scan_interval: 600
 
 # SNMP V3 работает через жопу!!!!
@@ -653,125 +653,125 @@
   sensors:
     rb3011_used_mem:
       value_template: "{{ (100*(states.sensor.rb3011_used_memory.state)|float/(states.sensor.rb3011_total_memory.state)|float)|round(2) }}"
-      unit_of_measurement: "%"
+      #unit_of_measurement: "%"
 
     rb3011_used_hdd:
       value_template: "{{ (100*(states.sensor.rb3011_used_hdd_space.state)|float/(states.sensor.rb3011_total_hdd_space.state)|float)|round(2) }}"
-      unit_of_measurement: "%"
+      #unit_of_measurement: "%"
 
     routeros_latest_release:
       value_template: "{{ state_attr('sensor.routeros_latest', 'entries') | regex_findall_index('[\\d\\.]+', index=0, ignorecase=False) }}"
 
     rb3011_eth1_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth1_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth1_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth1_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth1_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth2_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth2_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth2_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth2_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth2_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth2_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth3_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth3_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth3_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth3_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth3_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth3_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth4_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth4_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth4_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth4_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth4_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth4_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth5_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth5_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth5_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth5_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth5_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth5_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth6_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth6_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth6_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth6_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth6_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth6_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth7_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth7_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth7_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth7_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth7_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth7_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth8_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth8_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth8_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth8_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth8_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth8_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth9_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth9_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth9_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth9_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth9_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth9_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth10_rx:
       value_template: "{{ (state_attr('sensor.rb3011_eth10_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth10_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_eth10_tx:
       value_template: "{{ (state_attr('sensor.rb3011_eth10_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_eth10_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
       ###############################
 
     rb3011_wifi_kuchen_5_rx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_kuchen_5_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_kuchen_5_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_kuchen_5_tx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_kuchen_5_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_kuchen_5_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_kuchen_24_rx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_kuchen_24_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_kuchen_24_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_kuchen_24_tx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_kuchen_24_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_kuchen_24_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_lounge_5_rx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_lounge_5_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_lounge_5_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_lounge_5_tx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_lounge_5_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_lounge_5_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_lounge_24_rx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_lounge_24_in_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_lounge_24_in_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"
 
     rb3011_wifi_lounge_24_tx:
       value_template: "{{ (state_attr('sensor.rb3011_wifi_lounge_24_out_stats','change_rate')|float * 8 * (state_attr('sensor.rb3011_wifi_lounge_24_out_stats', 'sampling_size') - 1) / 1024 / 1024)|round(2) }}"
-      unit_of_measurement: "Mbps"
+      #unit_of_measurement: "Mbps"

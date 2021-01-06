@@ -24,3 +24,4 @@ views:
   - !include includes/lovelace/3d.yaml
   - !include includes/lovelace/covid.yaml
   - !include includes/lovelace/settings.yaml
+  - !include includes/lovelace/zigbee.yaml

@@ -1,0 +1,120 @@
+- alias: Aqara WC ON
+  #  alias: Aqara WC ON
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.wc_move_occupancy
+      to: "on"
+  condition:
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.wc_light_left
+        - switch.wc_light_right
+#    - delay: "0:00:30"
+#    - choose:
+#      - conditions:
+#        - condition: state
+#          entity_id: binary_sensor.wc_door_contact
+#          state: "on"
+#        sequence:
+#          - service: switch.turn_off
+#            entity_id:
+#              - switch.wc_light_left
+#              - switch.wc_light_right
+
+- alias: Aqara WC OFF
+  #  alias: Aqara WC OFF
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.wc_door_contact
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.wc_move_occupancy
+      to: "off"
+  condition:
+    - condition: state
+      entity_id: binary_sensor.wc_door_contact
+      state: "on"
+  action:
+    - delay: "0:00:05" # Ждем 5 сек и проверяем еще раз. Может уже кто-то забежал?
+    - choose:
+      - conditions:
+        - condition: state
+          entity_id: binary_sensor.wc_door_contact
+          state: "on"
+        sequence:
+          - service: switch.turn_off
+            entity_id:
+              - switch.wc_light_left
+              - switch.wc_light_right
+
+- alias: Aqara Hallway ON
+  #  alias: Aqara Hallway ON
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hallway_door_contact
+      to: "on"
+  condition:
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.hallway_light
+    - delay: "0:03:00"
+    - service: switch.turn_off
+      entity_id:
+        - switch.hallway_light
+
+- alias: Terrarium light ON button
+  #  alias: Terrarium light ON button
+  trigger:
+    - platform: state
+      entity_id: sensor.button_action
+      to: "single"
+  condition:
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.terrarium_master_lamp
+
+- alias: Terrarium light OFF button
+  #  alias: Terrarium light OFF button
+  trigger:
+    - platform: state
+      entity_id: sensor.button_action
+      to: "double"
+  condition:
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.terrarium_master_lamp
+
+- alias: Terrarium TV OFF button
+  #  alias: Terrarium TV OFF button
+  trigger:
+    - platform: state
+      entity_id: sensor.button_action
+      to: "triple"
+  condition:
+  action:
+    - service: webostv.button
+      data:
+        entity_id: media_player.tv_lounge
+        button: "BACK"
+    - delay: "0:0:05"
+    - service: webostv.command
+      data:
+        entity_id: media_player.tv_lounge
+        command: system/turnOff
+
+- alias: WC light key
+  #  alias: WC light key
+  trigger:
+    - platform: state
+      entity_id: sensor.key_action
+      to: "single"
+  condition:
+  action:
+    - service: switch.toggle
+      entity_id:
+        - switch.wc_light_left
+        - switch.wc_light_right

@@ -33,3 +33,27 @@
       data:
         title: "Протечка воды!!!"
         message: "Течет вода из аквариума в спальне"
+
+- alias: "Water Leak Kitchen"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_water_leak
+      to: "on"
+  action:
+    - service: notify.telegram
+      data:
+        title: "Протечка воды!!!"
+        message: "Течет вода на кухне"
+
+- alias: "Water Leak WC"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.wc_water_leak
+      to: "on"
+  action:
+    - service: notify.telegram
+      data:
+        title: "Протечка воды!!!"
+        message: "Течет вода в туалете"

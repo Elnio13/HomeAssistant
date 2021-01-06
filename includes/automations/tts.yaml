@@ -1,4 +1,4 @@
-#- id: Скажи холодно
+#- alias: Скажи холодно
 #  alias: Скажи холодно
 #  mode: restart
 #  trigger:
