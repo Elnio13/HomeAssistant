@@ -17,6 +17,7 @@ views:
   - !include includes/lovelace/home.yaml
   - !include includes/lovelace/media.yaml
   - !include includes/lovelace/vacuum.yaml
+  - !include includes/lovelace/zigbee.yaml
   - !include includes/lovelace/energy.yaml
   - !include includes/lovelace/system.yaml
   - !include includes/lovelace/network.yaml
@@ -24,4 +25,4 @@ views:
   - !include includes/lovelace/3d.yaml
   - !include includes/lovelace/covid.yaml
   - !include includes/lovelace/settings.yaml
-  - !include includes/lovelace/zigbee.yaml
+

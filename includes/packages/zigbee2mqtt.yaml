@@ -21,7 +21,7 @@ input_number:
     max: 5
     step: 1
     mode: slider
-    
+
 # Input text to input Zigbee2MQTT friendly_name for scripts
 input_text:
   zigbee2mqtt_old_name:
@@ -85,13 +85,32 @@ sensor:
     value_template: "{{ value_json.coordinator.type }}"
     icon: mdi:chip
 
+# PIR сенсоры    
+binary_sensor:
+  - platform: mqtt
+    name: Move Sensor Binary
+    state_topic: "zigbee2mqtt/0x00158d0003cff1a2"
+    value_template: "{{ value_json.occupancy }}"
+    #force_update: true ### Плохой вариант, нужно брать это значение из mqtt напрямую
+    off_delay: 30
+    payload_off: False
+    payload_on: True
+
+  - platform: mqtt
+    name: WC PIR
+    state_topic: "zigbee2mqtt/WC move"
+    value_template: "{{ value_json.occupancy }}"
+    #force_update: true
+    off_delay: 30
+    payload_off: False
+    payload_on: True
 
 # Switch for enabling joining
 switch:
   - platform: mqtt
     name: "Zigbee2MQTT Main join"
     state_topic: "zigbee2mqtt/bridge/info"
-    value_template: '{{ value_json.permit_join }}'
+    value_template: "{{ value_json.permit_join }}"
     command_topic: "zigbee2mqtt/bridge/request/permit_join"
     payload_on: "true"
     payload_off: "false"
@@ -141,7 +160,7 @@ automation:
     alias: Zigbee Device Joined Notification
     trigger:
       platform: mqtt
-      topic: 'zigbee2mqtt/bridge/event'
+      topic: "zigbee2mqtt/bridge/event"
     condition:
       condition: template
       value_template: '{{trigger.payload_json.type == "device_interview" and trigger.payload_json.data.status == "successful" and trigger.payload_json.data.supported}}'
@@ -150,7 +169,6 @@ automation:
         data_template:
           title: Device joined the Zigbee2MQTT network
           message: "Name: {{trigger.payload_json.data.friendly_name}},
-                    Vendor: {{trigger.payload_json.data.definition.vendor}},
-                    Model: {{trigger.payload_json.data.definition.model}},
-                    Description: {{trigger.payload_json.data.definition.description}}"
-
+            Vendor: {{trigger.payload_json.data.definition.vendor}},
+            Model: {{trigger.payload_json.data.definition.model}},
+            Description: {{trigger.payload_json.data.definition.description}}"
