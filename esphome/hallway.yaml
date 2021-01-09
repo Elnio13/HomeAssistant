@@ -55,9 +55,9 @@ binary_sensor:
     on_press:
       then:
 ### Если есть кто дома и пылик не убирается, зажечь подсветку
-### Подсветка в некоторых условиях слепит пылик
+### Подсветка в некоторых условиях слепит пылик and (id(${plug_name}_ha_xiaomi_vacuum_cleaner_cleaning).state != "cleaning") )
         - lambda: |-
-            if ( (id(${plug_name}_ha_device_tracker_parents).state == "home") and (id(${plug_name}_ha_xiaomi_vacuum_cleaner_cleaning).state != "cleaning") ) {
+            if ( id(${plug_name}_ha_device_tracker_parents).state == "home" ) {
               auto call =  id(${plug_name}_Light).turn_on();
               call.perform();
             } 

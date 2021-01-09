@@ -1,18 +1,14 @@
 ### Нужно отслеживать каждое изменение PIR сенсора. Желательно это сделать напрямую из топика mqtt
 ### https://www.zigbee2mqtt.io/integration/home_assistant.html
 ### https://github.com/home-assistant/core/issues/20358
+### Очень удачное решение!
 - alias: Aqara WC ON
   trigger:
-    #    - platform: state
-    #      entity_id: binary_sensor.wc_move_occupancy
-    #      entity_id:  binary_sensor.wc_pir
-    #      to: "on"
     - platform: mqtt
       topic: "zigbee2mqtt/WC move"
   condition:
     condition: template
     value_template: "{{ trigger.payload_json.occupancy == true }}"
-
   action:
     - service: switch.turn_on
       entity_id:
@@ -21,7 +17,8 @@
 
 ### опять же выкрутасы с PIR сенсором, нужно организовать задержку на выключение
 ### Можно получать этот статус с самого сенсора, но тогда = 1 мин
-### Здесь создан бинарный сенсор, время перехода которого задается вручную = 30сек
+### Значение берем со своего бинарного сенсора, время перехода которого задается вручную = 10сек
+### самое удачное решение!!!
 - alias: Aqara WC OFF
   trigger:
     - platform: state
@@ -35,23 +32,20 @@
       entity_id: binary_sensor.wc_door_contact
       state: "on"
   action:
-    ### Добавление дополнительных условий приведет к неотключению совсем
-    - service: switch.turn_off
-      entity_id:
-        - switch.wc_light_left
-        - switch.wc_light_right
-
-#    - delay: "0:00:05" # Ждем 5 сек и проверяем еще раз. Может уже кто-то забежал?
-#    - choose:
-#      - conditions:
-#        - condition: state
-#          entity_id: binary_sensor.wc_door_contact
-#          state: "on"
-#        sequence:
-#          - service: switch.turn_off
-#            entity_id:
-#              - switch.wc_light_left
-#              - switch.wc_light_right
+    - delay: "0:00:15" # Ждем 15 сек и проверяем еще раз. Может уже кто-то забежал? Время жизни бинарного сенсора + 5 сек для верности
+    - choose:
+      - conditions:
+        - condition: state
+          entity_id: binary_sensor.wc_door_contact
+          state: "on"
+        - condition: state
+          entity_id: binary_sensor.wc_pir
+          state: "off"
+        sequence:
+          - service: switch.turn_off
+            entity_id:
+              - switch.wc_light_left
+              - switch.wc_light_right
 
 - alias: Aqara Hallway ON
   trigger:
@@ -88,7 +82,6 @@
         - light.terrarium_master_lamp
 
 - alias: Terrarium light OFF button
-  #  alias: Terrarium light OFF button
   trigger:
     - platform: state
       entity_id: sensor.button_action
@@ -100,7 +93,6 @@
         - light.terrarium_master_lamp
 
 - alias: Terrarium TV OFF button
-  #  alias: Terrarium TV OFF button
   trigger:
     - platform: state
       entity_id: sensor.button_action
@@ -118,7 +110,6 @@
         command: system/turnOff
 
 - alias: WC light key
-  #  alias: WC light key
   trigger:
     - platform: state
       entity_id: sensor.key_action

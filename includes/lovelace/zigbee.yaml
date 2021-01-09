@@ -3,15 +3,25 @@ icon: "mdi:zigbee"
 cards:
   - type: vertical-stack
     cards:
+#      - type: entities
+#        entities:
+#          - sensor.lumi_illuminance
+#      - type: horizontal-stack
+#        cards:
+#          - type: light
+#            entity: light.lumi_light
+#          - type: light
+#            entity: light.lumi_light
+
       - type: entities
         entities:
-          - sensor.lumi_illuminance
-      - type: horizontal-stack
-        cards:
-          - type: light
-            entity: light.lumi_light
-          - type: light
-            entity: light.lumi_light
+          - entity: sensor.btn0_0x38839a5cdde8
+            name: Button
+          - entity: sensor.illuminance_0x38839a5cdde8
+            name: Illuminance
+      - type: light
+        name: Light
+        entity: light.light_0x38839a5cdde8
 
       - type: entities
         show_header_toggle: false
@@ -33,11 +43,13 @@ cards:
         entities:
           - sensor.wc_move_linkquality
           - binary_sensor.wc_move_occupancy
+          - binary_sensor.wc_pir
           - sensor.wc_move_battery
       - type: entities
         entities:
           - sensor.0x00158d0003cff1a2_linkquality
           - binary_sensor.0x00158d0003cff1a2_occupancy
+          - binary_sensor.sensor_pir
           - sensor.0x00158d0003cff1a2_battery
       - type: entities
         entities:
@@ -82,19 +94,19 @@ cards:
         title: Zigbee2MQTT
         show_header_toggle: false
         entities:
-          - entity: sensor.zigbee2mqtt_bridge_state
-          - entity: sensor.zigbee2mqtt_version
-          - entity: sensor.coordinator_revision
-          - entity: sensor.coordinator_type
-          - entity: input_select.zigbee2mqtt_log_level
+          -  sensor.zigbee2mqtt_bridge_state
+          -  sensor.zigbee2mqtt_version
+          -  sensor.coordinator_revision
+          -  sensor.coordinator_type
+          -  input_select.zigbee2mqtt_log_level
           - type: divider
-          - entity: switch.zigbee2mqtt_main_join
-          - entity: input_number.zigbee2mqtt_join_minutes
-          - entity: timer.zigbee_permit_join
+          -  switch.zigbee2mqtt_main_join
+          -  input_number.zigbee2mqtt_join_minutes
+          -  timer.zigbee_permit_join
           - type: divider
-          - entity: input_text.zigbee2mqtt_old_name
-          - entity: input_text.zigbee2mqtt_new_name
-          - entity: script.zigbee2mqtt_rename
+          -  input_text.zigbee2mqtt_old_name
+          -  input_text.zigbee2mqtt_new_name
+          -  script.zigbee2mqtt_rename
           - type: divider
-          - entity: input_text.zigbee2mqtt_remove
-          - entity: script.zigbee2mqtt_remove
+          -  input_text.zigbee2mqtt_remove
+          -  script.zigbee2mqtt_remove

@@ -86,13 +86,18 @@ sensor:
     icon: mdi:chip
 
 # PIR сенсоры    
+### Из коробки PIR сенсор Xiaomi ооочень тормозной, обновляет данные раз в минуту!
+### PIR сенсоры нужно перевести в сервисный режим, запаяв один контакт на плате.
+### В сервисном режиме сенсор становится болеее отзывчивым, обновляет данные не реже 1 раза в 5 сек
+### И бинарные сенсоры, в этом случае, тоже нужны свои, т.к. Clear с сенсора тоже придет через минуту.
+
 binary_sensor:
   - platform: mqtt
-    name: Move Sensor Binary
+    name: Sensor PIR
     state_topic: "zigbee2mqtt/0x00158d0003cff1a2"
     value_template: "{{ value_json.occupancy }}"
     #force_update: true ### Плохой вариант, нужно брать это значение из mqtt напрямую
-    off_delay: 30
+    off_delay: 10 ### Значение должно быть больше 5 сек!!!
     payload_off: False
     payload_on: True
 
@@ -101,7 +106,7 @@ binary_sensor:
     state_topic: "zigbee2mqtt/WC move"
     value_template: "{{ value_json.occupancy }}"
     #force_update: true
-    off_delay: 30
+    off_delay: 10 ### Значение должно быть больше 5 сек!!!
     payload_off: False
     payload_on: True
 
