@@ -19,8 +19,6 @@ system_health:
 history:
 sun:
 
-lovelace: !include includes/lovelace.yaml
-
 logger:
   default: info
 
@@ -45,8 +43,6 @@ logger:
 #      - media_player
 #      - weather
 
-recorder: !include includes/db.yaml
-
 frontend:
   themes: !include_dir_merge_named themes
 
@@ -62,6 +58,11 @@ octoprint:
   number_of_tools: 1
   bed: true
 
+#mikrotik:
+#  host: !secret mikrotik_ip
+#  username: !secret mikrotik_user
+#  password: !secret mikrotik_pass
+
 device_tracker:
   - platform: snmp
     host: !secret mikrotik_ip
@@ -73,7 +74,7 @@ device_tracker:
     #priv_protocol: !secret snmp_priv_protocol
     baseoid: 1.3.6.1.4.1.14988.1.1.1.5.1.1
     interval_seconds: 12
-    consider_home: 120
+    consider_home: 20
     new_device_defaults:
       track_new_devices: false
 
@@ -125,11 +126,6 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_bot_chat_id
 
-mikrotik:
-  host: !secret mikrotik_ip
-  username: !secret mikrotik_user
-  password: !secret mikrotik_pass
-
 vacuum:
   - platform: xiaomi_miio
     host: !secret xiaomi_vacuum_ip
@@ -140,6 +136,9 @@ weather:
 #  - platform: yandex_weather
 #    api_key: !secret yandex_weather_api_key
 
+
+recorder: !include includes/db.yaml
+lovelace: !include includes/lovelace.yaml
 switch: !include_dir_merge_list includes/switches
 sensor: !include_dir_merge_list includes/sensors
 binary_sensor: !include_dir_merge_list includes/binary_sensors

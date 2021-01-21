@@ -43,7 +43,7 @@ cards:
               legend: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/6/
+              navigation_path: /lovelace/7/
 
           - type: custom:mini-graph-card
             name: "Мощность"

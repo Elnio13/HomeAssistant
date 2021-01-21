@@ -3,110 +3,166 @@ icon: "mdi:zigbee"
 cards:
   - type: vertical-stack
     cards:
-#      - type: entities
-#        entities:
-#          - sensor.lumi_illuminance
-#      - type: horizontal-stack
-#        cards:
-#          - type: light
-#            entity: light.lumi_light
-#          - type: light
-#            entity: light.lumi_light
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: sensor.btn0_0x38839a5cdde8
+                    name: Button
+                  - entity: sensor.illuminance_0x38839a5cdde8
+                    name: Illuminance
 
-      - type: entities
-        entities:
-          - entity: sensor.btn0_0x38839a5cdde8
-            name: Button
-          - entity: sensor.illuminance_0x38839a5cdde8
-            name: Illuminance
-      - type: light
-        name: Light
-        entity: light.light_0x38839a5cdde8
+              - type: entities
+                entities:
+                  - switch.hallway_light
+                  - sensor.hallway_light_action
+                  - sensor.hallway_light_linkquality
 
-      - type: entities
-        show_header_toggle: false
-        entities:
-          - switch.hallway_light
-          - sensor.hallway_light_linkquality
+          - type: light
+            name: Light
+            entity: light.light_0x38839a5cdde8
 
-      - type: entities
-        show_header_toggle: false
-        entities:
-          - switch.wc_light_left
-          - sensor.wc_light_linkquality
-          - switch.wc_light_right
-          - sensor.wc_light_temperature
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - sensor.sofa_light_action
+              - switch.sofa_light_left
+              - sensor.sofa_light_linkquality
+              - switch.sofa_light_right
+              - sensor.sofa_light_temperature
 
-  - type: vertical-stack
-    cards:
-      - type: entities
-        entities:
-          - sensor.wc_move_linkquality
-          - binary_sensor.wc_move_occupancy
-          - binary_sensor.wc_pir
-          - sensor.wc_move_battery
-      - type: entities
-        entities:
-          - sensor.0x00158d0003cff1a2_linkquality
-          - binary_sensor.0x00158d0003cff1a2_occupancy
-          - binary_sensor.sensor_pir
-          - sensor.0x00158d0003cff1a2_battery
-      - type: entities
-        entities:
-          - binary_sensor.wc_door_contact
-          - sensor.wc_door_linkquality
-          - sensor.wc_door_battery
-      - type: entities
-        entities:
-          - binary_sensor.hallway_door_contact
-          - sensor.hallway_door_linkquality
-          - sensor.hallway_door_battery
+          - type: entities
+            entities:
+              - sensor.bedroom_light_action
+              - switch.bedroom_light_left
+              - sensor.bedroom_light_linkquality
+              - switch.bedroom_light_right
+              - sensor.bedroom_light_temperature
+
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - switch.wc_light
+              - sensor.wc_light_action
+              - sensor.wc_light_linkquality
+
+          - type: entities
+            entities:
+              - switch.wc_fan
+              - sensor.wc_fan_action
+              - sensor.wc_fan_linkquality
 
   - type: vertical-stack
     cards:
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - sensor.wc_move_linkquality
+              - binary_sensor.wc_move_occupancy
+              - binary_sensor.wc_pir
+              - sensor.wc_move_battery
+
+          - type: entities
+            entities:
+              - sensor.sensor_move_linkquality
+              - binary_sensor.sensor_move_occupancy
+              - binary_sensor.sensor_pir
+              - sensor.sensor_move_battery
+
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - binary_sensor.wc_door_contact
+              - sensor.wc_door_linkquality
+              - sensor.wc_door_battery
+          - type: entities
+            entities:
+              - binary_sensor.hallway_door_contact
+              - sensor.hallway_door_linkquality
+              - sensor.hallway_door_battery
+
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - sensor.wc_temp_humidity
+              - sensor.wc_temp_temperature
+              - sensor.wc_temp_linkquality
+              - sensor.wc_temp_battery
+
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - sensor.kitchen_linkquality
+              - binary_sensor.kitchen_water_leak
+              - sensor.kitchen_battery
+
+          - type: entities
+            entities:
+              - sensor.wc_linkquality
+              - binary_sensor.wc_water_leak
+              - sensor.wc_battery
+
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - sensor.key_action
+              - sensor.key_linkquality
+              - sensor.key_battery
+
+          - type: entities
+            entities:
+              - sensor.button_action
+              - sensor.button_linkquality
+              - sensor.button_battery
+
       - type: entities
-        entities:
-          - sensor.kitchen_linkquality
-          - binary_sensor.kitchen_water_leak
-          - sensor.kitchen_battery
-
-
-      - type: entities
-        entities:
-          - sensor.wc_linkquality
-          - binary_sensor.wc_water_leak
-          - sensor.wc_battery
-
-
-      - type: entities
-        entities:
-          - sensor.key_action
-          - sensor.key_linkquality
-          - sensor.key_battery
-
-      - type: entities
-        entities:
-          - sensor.button_action
-          - sensor.button_linkquality
-          - sensor.button_battery
-
-      - type: entities
-        title: Zigbee2MQTT
+#        title: Zigbee2MQTT
         show_header_toggle: false
         entities:
-          -  sensor.zigbee2mqtt_bridge_state
-          -  sensor.zigbee2mqtt_version
-          -  sensor.coordinator_revision
-          -  sensor.coordinator_type
-          -  input_select.zigbee2mqtt_log_level
-          - type: divider
-          -  switch.zigbee2mqtt_main_join
-          -  input_number.zigbee2mqtt_join_minutes
-          -  timer.zigbee_permit_join
-          - type: divider
-          -  input_text.zigbee2mqtt_old_name
-          -  input_text.zigbee2mqtt_new_name
-          -  script.zigbee2mqtt_rename
-          - type: divider
-          -  input_text.zigbee2mqtt_remove
-          -  script.zigbee2mqtt_remove
+          - sensor.zigbee2mqtt_bridge_state
+          - sensor.zigbee2mqtt_version
+          - sensor.coordinator_revision
+          - sensor.coordinator_type
+          - type: weblink
+            name: Zigbee2MQTT
+            icon: mdi:link
+            url: http://192.168.10.50:8090
+          - type: weblink
+            name: OpenWrt
+            icon: mdi:link
+            url: http://192.168.10.50
+          - type: weblink
+            name: LumiMQTT
+            icon: mdi:link
+            url: https://github.com/openlumi/lumimqtt
+          - type: weblink
+            name: xiaomi-gateway-openwrt
+            icon: mdi:link
+            url: https://github.com/openlumi/xiaomi-gateway-openwrt/blob/master/README.md
+            
+
+
+#          - input_select.zigbee2mqtt_log_level
+#          - type: divider
+#          - switch.zigbee2mqtt_main_join
+#          - input_number.zigbee2mqtt_join_minutes
+#          - timer.zigbee_permit_join
+#          - type: divider
+#          - input_text.zigbee2mqtt_old_name
+#          - input_text.zigbee2mqtt_new_name
+#          - script.zigbee2mqtt_rename
+#          - type: divider
+#          - input_text.zigbee2mqtt_remove
+#          - script.zigbee2mqtt_remove

@@ -94,7 +94,7 @@ sensor:
 binary_sensor:
   - platform: mqtt
     name: Sensor PIR
-    state_topic: "zigbee2mqtt/0x00158d0003cff1a2"
+    state_topic: "zigbee2mqtt/Sensor Move"
     value_template: "{{ value_json.occupancy }}"
     #force_update: true ### Плохой вариант, нужно брать это значение из mqtt напрямую
     off_delay: 10 ### Значение должно быть больше 5 сек!!!

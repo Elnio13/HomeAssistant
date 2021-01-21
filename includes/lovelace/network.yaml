@@ -153,7 +153,6 @@ cards:
             toggle: true
             name: WAN
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth1_rx
                 name: Rx
@@ -166,8 +165,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth2
+            secondary_info: <desk_serg>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth2_rx
                 name: false
@@ -178,8 +177,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth3
+            secondary_info: <PS4>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth3_rx
                 name: false
@@ -190,8 +189,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth4
+            secondary_info: <mik_bed>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth4_rx
                 name: false
@@ -202,8 +201,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth5
+            secondary_info: <mik_kitch>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth5_rx
                 name: false
@@ -214,8 +213,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth6
+            secondary_info: <cam>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth6_rx
                 name: false
@@ -226,8 +225,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth7
+            secondary_info: <desk_balk>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth7_rx
                 name: false
@@ -239,7 +238,6 @@ cards:
             toggle: true
             name: eth8
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth8_rx
                 name: false
@@ -250,8 +248,8 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth9
+            secondary_info: <HA>
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth9_rx
                 name: false
@@ -263,7 +261,6 @@ cards:
             toggle: true
             name: eth10
             state_color: true
-            #secondary_info: last-changed
             entities:
               - entity: sensor.rb3011_eth10_rx
                 name: false

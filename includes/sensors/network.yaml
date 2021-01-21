@@ -16,7 +16,7 @@
   baseoid: 1.3.6.1.4.1.14988.1.1.17.1.1.4.1
   name: rb3011_firmware
   accept_errors: true
-  scan_interval: 86400
+  scan_interval: 21600
 
 - platform: snmp
   host: !secret mikrotik_ip

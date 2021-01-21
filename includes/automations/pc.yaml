@@ -6,9 +6,11 @@
 #  alias: PC balkoon OFF
   trigger:
     - platform: numeric_state
-      entity_id: sensor.digma_100s_pc_power
+#      entity_id: sensor.digma_100s_pc_power
+      entity_id: sensor.hiper_iot04_4_power
       below: 10
   condition:
   action:
     - service: switch.turn_off
-      entity_id: switch.digma_100s_pc_relay
+#      entity_id: switch.digma_100s_pc_relay
+      entity_id: switch.hiper_iot04_4_relay

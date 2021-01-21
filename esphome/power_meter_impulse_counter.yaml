@@ -93,8 +93,8 @@ binary_sensor:
       mode: INPUT_PULLUP
     name: '${plug_name}_blink'
     on_click:
-      - min_length: 100ms
-        max_length: 250ms
+      - min_length: 80ms
+        max_length: 200ms
         then:
           - lambda: id(${plug_name}_blink) += 1;
 

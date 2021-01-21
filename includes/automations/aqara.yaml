@@ -2,24 +2,28 @@
 ### https://www.zigbee2mqtt.io/integration/home_assistant.html
 ### https://github.com/home-assistant/core/issues/20358
 ### Очень удачное решение!
-- alias: Aqara WC ON
+- alias: WC Light ON
   trigger:
     - platform: mqtt
       topic: "zigbee2mqtt/WC move"
+#    - platform: state
+#      entity_id: binary_sensor.sensor_pir
+#      to: "on"
   condition:
-    condition: template
-    value_template: "{{ trigger.payload_json.occupancy == true }}"
+    - condition: template
+      value_template: "{{ trigger.payload_json.occupancy == true }}"
   action:
     - service: switch.turn_on
       entity_id:
-        - switch.wc_light_left
-        - switch.wc_light_right
+        - switch.wc_light
+#        - switch.wc_light_right
+#        - switch.wc_fan
 
 ### опять же выкрутасы с PIR сенсором, нужно организовать задержку на выключение
 ### Можно получать этот статус с самого сенсора, но тогда = 1 мин
 ### Значение берем со своего бинарного сенсора, время перехода которого задается вручную = 10сек
 ### самое удачное решение!!!
-- alias: Aqara WC OFF
+- alias: WC Light OFF
   trigger:
     - platform: state
       entity_id: binary_sensor.wc_door_contact
@@ -27,6 +31,9 @@
     - platform: state
       entity_id: binary_sensor.wc_pir
       to: "off"
+#    - platform: state
+#      entity_id: binary_sensor.sensor_pir
+#      to: "off"
   condition:
     - condition: state
       entity_id: binary_sensor.wc_door_contact
@@ -34,20 +41,91 @@
   action:
     - delay: "0:00:15" # Ждем 15 сек и проверяем еще раз. Может уже кто-то забежал? Время жизни бинарного сенсора + 5 сек для верности
     - choose:
-      - conditions:
-        - condition: state
-          entity_id: binary_sensor.wc_door_contact
-          state: "on"
-        - condition: state
-          entity_id: binary_sensor.wc_pir
-          state: "off"
-        sequence:
-          - service: switch.turn_off
-            entity_id:
-              - switch.wc_light_left
-              - switch.wc_light_right
+        - conditions:
+            - condition: state
+              entity_id: binary_sensor.wc_door_contact
+              state: "on"
+            - condition: state
+              entity_id: binary_sensor.wc_pir
+              state: "off"
+#            - condition: state
+#              entity_id: binary_sensor.sensor_pir
+#              state: "off"
+          sequence:
+            - service: switch.turn_off
+              entity_id:
+                - switch.wc_light
+#                - switch.wc_light_right
 
-- alias: Aqara Hallway ON
+##################################################
+- alias: WC Fan ON
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.wc_pir
+      to: "on"
+#    - platform: state
+#      entity_id: binary_sensor.sensor_pir
+#      to: "on"
+    - platform: numeric_state
+      entity_id: sensor.wc_temp_humidity
+      above: 40
+  condition:
+    - condition: time
+      after: "06:00:00"
+      before: "00:00:00"
+    - condition: template
+      value_template: "{{ trigger.payload_json.occupancy == true }}"
+
+#    - condition: or
+#      conditions:
+#        - condition: template
+#          value_template: "{{ trigger.payload_json.occupancy == true }}"
+#        - condition: state
+#          entity_id: binary_sensor.sensor_pir
+#          state: "on"
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.wc_fan
+
+- alias: WC Fan OFF
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.wc_pir
+      to: "off"
+#    - platform: state
+#      entity_id: binary_sensor.sensor_pir
+#      to: "off"
+    - platform: numeric_state
+      entity_id: sensor.wc_temp_humidity
+      below: 40
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.wc_temp_humidity
+      below: 40
+    - condition: state
+      entity_id: binary_sensor.wc_door_contact
+      state: "on"
+  action:
+    - delay: "0:00:15" # Ждем 15 сек и проверяем еще раз. Может уже кто-то забежал? Время жизни бинарного сенсора + 5 сек для верности
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: binary_sensor.wc_door_contact
+              state: "on"
+            - condition: state
+              entity_id: binary_sensor.wc_pir
+              state: "off"
+#            - condition: state
+#              entity_id: binary_sensor.sensor_pir
+#              state: "off"
+          sequence:
+            - service: switch.turn_off
+              entity_id:
+                - switch.wc_fan
+
+#######################################################
+- alias: Hallway Light ON
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_door_contact
@@ -58,7 +136,7 @@
       entity_id:
         - switch.hallway_light
 
-- alias: Aqara Hallway OFF
+- alias: Hallway Light OFF
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_door_contact
@@ -70,33 +148,57 @@
       entity_id:
         - switch.hallway_light
 
-- alias: Terrarium light ON button
+########################################################
+- alias: Terrarium Light toggle button
   trigger:
     - platform: state
       entity_id: sensor.button_action
       to: "single"
   condition:
   action:
-    - service: light.turn_on
+    - service: light.toggle
       entity_id:
         - light.terrarium_master_lamp
 
-- alias: Terrarium light OFF button
+- alias: Terrarium Light OFF button
   trigger:
     - platform: state
       entity_id: sensor.button_action
       to: "double"
   condition:
   action:
-    - service: light.turn_off
+    - service: switch.toggle
       entity_id:
-        - light.terrarium_master_lamp
+        - switch.sofa_light_right
+
+- alias: Terrarium Light OFF button
+  trigger:
+    - platform: state
+      entity_id: sensor.button_action
+      to: "triple"
+  condition:
+  action:
+    - service: switch.toggle
+      entity_id:
+        - switch.sofa_light_left
+
+- alias: Terrarium Light OFF button
+  trigger:
+    - platform: state
+      entity_id: sensor.button_action
+      to: "quadruple"
+  condition:
+  action:
+    - service: switch.toggle
+      entity_id:
+        - switch.bedroom_light_left
+        - switch.bedroom_light_right
 
 - alias: Terrarium TV OFF button
   trigger:
     - platform: state
       entity_id: sensor.button_action
-      to: "triple"
+      to: "hold"
   condition:
   action:
     - service: webostv.button
@@ -109,14 +211,39 @@
         entity_id: media_player.tv_lounge
         command: system/turnOff
 
-- alias: WC light key
+################################################
+- alias: WC Light ON key
   trigger:
     - platform: state
       entity_id: sensor.key_action
       to: "single"
   condition:
   action:
-    - service: switch.toggle
+    - service: switch.turn_on
       entity_id:
-        - switch.wc_light_left
-        - switch.wc_light_right
+        - switch.wc_light
+#        - switch.wc_light_right
+
+- alias: WC Fan ON key
+  trigger:
+    - platform: state
+      entity_id: sensor.key_action
+      to: "double"
+  condition:
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.wc_fan
+
+- alias: WC Light&Fan OFF key
+  trigger:
+    - platform: state
+      entity_id: sensor.key_action
+      to: "hold"
+  condition:
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.wc_fan
+        - switch.wc_light
+#        - switch.wc_light_right
