@@ -4,20 +4,18 @@
 ### Очень удачное решение!
 - alias: WC Light ON
   trigger:
-    - platform: mqtt
-      topic: "zigbee2mqtt/WC move"
-#    - platform: state
-#      entity_id: binary_sensor.sensor_pir
-#      to: "on"
+#    - platform: mqtt
+#      topic: "zigbee2mqtt/WC move"
+    - platform: state
+      entity_id: binary_sensor.wc_pir
+      to: "on"
   condition:
-    - condition: template
-      value_template: "{{ trigger.payload_json.occupancy == true }}"
+#    - condition: template
+#      value_template: "{{ trigger.payload_json.occupancy == true }}"
   action:
     - service: switch.turn_on
       entity_id:
         - switch.wc_light
-#        - switch.wc_light_right
-#        - switch.wc_fan
 
 ### опять же выкрутасы с PIR сенсором, нужно организовать задержку на выключение
 ### Можно получать этот статус с самого сенсора, но тогда = 1 мин
@@ -31,9 +29,6 @@
     - platform: state
       entity_id: binary_sensor.wc_pir
       to: "off"
-#    - platform: state
-#      entity_id: binary_sensor.sensor_pir
-#      to: "off"
   condition:
     - condition: state
       entity_id: binary_sensor.wc_door_contact
@@ -48,14 +43,10 @@
             - condition: state
               entity_id: binary_sensor.wc_pir
               state: "off"
-#            - condition: state
-#              entity_id: binary_sensor.sensor_pir
-#              state: "off"
           sequence:
             - service: switch.turn_off
               entity_id:
                 - switch.wc_light
-#                - switch.wc_light_right
 
 ##################################################
 - alias: WC Fan ON
@@ -63,9 +54,6 @@
     - platform: state
       entity_id: binary_sensor.wc_pir
       to: "on"
-#    - platform: state
-#      entity_id: binary_sensor.sensor_pir
-#      to: "on"
     - platform: numeric_state
       entity_id: sensor.wc_temp_humidity
       above: 40
@@ -73,16 +61,6 @@
     - condition: time
       after: "06:00:00"
       before: "00:00:00"
-    - condition: template
-      value_template: "{{ trigger.payload_json.occupancy == true }}"
-
-#    - condition: or
-#      conditions:
-#        - condition: template
-#          value_template: "{{ trigger.payload_json.occupancy == true }}"
-#        - condition: state
-#          entity_id: binary_sensor.sensor_pir
-#          state: "on"
   action:
     - service: switch.turn_on
       entity_id:
@@ -93,9 +71,6 @@
     - platform: state
       entity_id: binary_sensor.wc_pir
       to: "off"
-#    - platform: state
-#      entity_id: binary_sensor.sensor_pir
-#      to: "off"
     - platform: numeric_state
       entity_id: sensor.wc_temp_humidity
       below: 40
@@ -116,9 +91,6 @@
             - condition: state
               entity_id: binary_sensor.wc_pir
               state: "off"
-#            - condition: state
-#              entity_id: binary_sensor.sensor_pir
-#              state: "off"
           sequence:
             - service: switch.turn_off
               entity_id:
