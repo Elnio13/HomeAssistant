@@ -6,7 +6,7 @@ cards:
       - type: custom:xiaomi-vacuum-card
         entity: vacuum.xiaomi_vacuum_cleaner
         vendor: xiaomi
-        name: "Xiaomi Vacuum"
+        name: false
         buttons: true
         labels:
           status: "Состояние"
@@ -42,6 +42,7 @@ cards:
     cards:
       - type: custom:valetudo-map-card
         entity: sensor.xiaomi_map
+        title: false
         rotate: 0
         map_scale: 1.9
         crop:
@@ -50,6 +51,14 @@ cards:
           left: 150
           right: 90
         min_height: 0
+#        map_scale: 1.9
+#        rotate: 0
+#        crop:
+#          top: 0
+#          bottom: 0
+#          left: 0
+#          right: 0
+#        min_height: 0
         show_floor: false
         background_color: transparent
 

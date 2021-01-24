@@ -1,5 +1,6 @@
+### Edifire 2700 хавает из розетки постоянно около 20вт, даже когда не используется
+### Включаем Edifire 2700 вместе с телевизором
 - alias: Edifire 2700 ON
-#  alias: Edifire 2700 ON
   trigger:
     - platform: state
       entity_id: media_player.tv_lounge
@@ -14,18 +15,20 @@
 #        title: "Edifire On"
 #        message: "Питание розетки включено"
 
+
+### Выключаем Edifire 2700 когда телевизор выключается
 - alias: Edifire 2700 OFF
-#  alias: Edifire 2700 OFF
   trigger:
     - platform: state
       entity_id: media_player.tv_lounge
       to: "off"
   condition:
-    #- condition: state
-    #  entity_id: media_player.tv_lounge
-    #  state: "off"
   action:
-    - delay: "0:0:10" ## Исключаем дребезг. ХЗ откуда он берется!!!
+#    - service: notify.telegram
+#      data:
+#        title: "Edifire Off"
+#        message: "WiFi у телека отключился"
+    - delay: "00:01:00" ### Исключаем дребезг, в момент обновления состояния entity: media_player
     - choose:
         - conditions:
             - condition: state
@@ -34,12 +37,4 @@
           sequence:
             - service: switch.turn_off
               entity_id: switch.hiper_iot04_edifire2700_relay
-
-#    - service: switch.turn_off
-#      entity_id: switch.hiper_iot04_edifire2700_relay
-
-#    - service: notify.telegram
-#      data:
-#        title: "Edifire Off"
-#        message: "Питание розетки отключено"
 
