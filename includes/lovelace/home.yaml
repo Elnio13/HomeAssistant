@@ -989,6 +989,27 @@ cards:
               - value: 40
                 color: red
 
+      - type: entities
+        entities:
+          - entity: fan.xiaomi_miio_device
+            type: custom:multiple-entity-row
+            toggle: true
+            name: Увлажнитель
+            state_color: true
+            secondary_info: 
+                attribute: mode
+            entities:
+              - attribute: humidity
+                name: влажность
+                unit: '%'
+              - attribute: temperature
+                name: температура
+                unit: '°C'
+              - attribute: depth
+                name: глубина
+                unit: 'mm'
+
+
       - type: horizontal-stack
         cards:
           - type: picture-glance
@@ -1133,3 +1154,23 @@ cards:
           - type: thermostat
             entity: climate.floor_balkoon
             name: "Пол на балконе"
+
+#      - type: entities
+#        entities:
+#          - entity: fan.xiaomi_miio_device
+#            type: custom:multiple-entity-row
+#            toggle: true
+#            name: Увлажнитель
+#            state_color: true
+#            secondary_info: 
+#                attribute: mode
+#            entities:
+#              - attribute: humidity
+#                name: humidity
+#                unit: '%'
+#              - attribute: temperature
+#                name: temperature
+#                unit: '°C'
+#              - attribute: depth
+#                name: depth
+#                unit: 'mm'

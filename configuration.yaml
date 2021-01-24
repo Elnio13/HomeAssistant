@@ -9,7 +9,7 @@ homeassistant:
   packages: !include_dir_named includes/packages
 
 #python_script:
-mobile_app:
+#mobile_app:
 
 updater:
   reporting: false
@@ -96,6 +96,16 @@ camera:
 
 wake_on_lan:
 
+fan:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_smartmi_ip
+    token: !secret xiaomi_smartmi_token
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_ip
+    token: !secret xiaomi_vacuum_token
+
 media_player:
   - platform: sox
     name: Roborock
@@ -112,8 +122,6 @@ tts:
     voice: 'elena' # Optional, default is 'anna' (russian)
     volume: 40 # Optional, 0..100
   
-webostv: !include includes/webostv.yaml
-
 notify:
   - name: telegram
     platform: telegram
@@ -126,36 +134,23 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_bot_chat_id
 
-vacuum:
-  - platform: xiaomi_miio
-    host: !secret xiaomi_vacuum_ip
-    token: !secret xiaomi_vacuum_token
-
 weather:
   - platform: gismeteo
 #  - platform: yandex_weather
 #    api_key: !secret yandex_weather_api_key
 
-
+webostv: !include includes/webostv.yaml
 recorder: !include includes/db.yaml
 lovelace: !include includes/lovelace.yaml
 switch: !include_dir_merge_list includes/switches
 sensor: !include_dir_merge_list includes/sensors
 binary_sensor: !include_dir_merge_list includes/binary_sensors
-#light:          !include_dir_merge_list includes/lights
 climate: !include_dir_merge_list includes/climate
 automation: !include_dir_merge_list includes/automations
 group: !include includes/groups.yaml
-#media_player:   !include includes/media_player.yaml
-#yeelight:       !include includes/yeelight.yaml
 script: !include includes/scripts.yaml
-
-#script: !include_dir_merge_list includes/scripts
 input_boolean: !include includes/input_boolean.yaml
 input_number: !include includes/input_number.yaml
 input_datetime: !include includes/input_datetime.yaml
 input_select: !include includes/input_select.yaml
 input_text: !include includes/input_text.yaml
-#panel_iframe:   !include includes/panel_iframe.yaml
-#timer:          !include includes/timer.yaml
-#scene:          !include includes/scenes.yaml
