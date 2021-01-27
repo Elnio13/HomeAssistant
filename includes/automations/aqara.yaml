@@ -1,7 +1,6 @@
 ### Нужно отслеживать каждое изменение PIR сенсора. Желательно это сделать напрямую из топика mqtt
 ### https://www.zigbee2mqtt.io/integration/home_assistant.html
 ### https://github.com/home-assistant/core/issues/20358
-### Очень удачное решение!
 - alias: WC Light ON
   trigger:
 #    - platform: mqtt
@@ -56,7 +55,7 @@
       to: "on"
     - platform: numeric_state
       entity_id: sensor.wc_temp_humidity
-      above: 40
+      above: 45
   condition:
     - condition: time
       after: "06:00:00"
@@ -73,11 +72,11 @@
       to: "off"
     - platform: numeric_state
       entity_id: sensor.wc_temp_humidity
-      below: 40
+      below: 45
   condition:
     - condition: numeric_state
       entity_id: sensor.wc_temp_humidity
-      below: 40
+      below: 45
     - condition: state
       entity_id: binary_sensor.wc_door_contact
       state: "on"
