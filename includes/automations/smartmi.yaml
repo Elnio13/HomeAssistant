@@ -1,0 +1,12 @@
+- alias: Smartmi Humidifier 2 low level
+  trigger:
+    - platform: numeric_state
+      entity_id: fan.xiaomi_miio_device
+      value_template: "{{ state.attributes.depth }}"
+      below: 50
+  condition:
+  action:
+    - service: notify.telegram
+      data:
+        title: "Smartmi Humidifier 2 low level"
+        message: "Просто добавь воды!"
