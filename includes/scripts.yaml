@@ -140,7 +140,6 @@ vacuum_reset_sensor:
         command: reset_consumable
         params: sensor_dirty_time
 
-
 write_energy_indicator:
   sequence:
     - service: input_number.set_value
@@ -154,3 +153,21 @@ write_energy_indicator:
 #    data_template:
 #      entity_id: sensor.power_meter_indicator_imp_imp
 #      state: "{{ states.input_number.power_meter_indicator.state | float * 3200.0 }}"
+
+yandex_tts1:
+  alias: TTS зависит от настройки "Режим звука"!
+  sequence:
+    - service: tts.yandex_station_say
+      entity_id: media_player.yandex_station_ff98f029b718c14a5be213b8
+      data_template:
+        message: Температура в комнате {{ states("sensor.terrarium_master_bme280_temperature")|round }} градуса.
+
+# TTS не зависит от настройки "Режим звука"! и всегда будет произносить фразу
+yandex_tts2:
+  alias: TTS не зависит от настройки "Режим звука"
+  sequence:
+    - service: media_player.play_media
+      entity_id: media_player.yandex_station_ff98f029b718c14a5be213b8
+      data:
+        media_content_id: Мамуле привет!
+        media_content_type: text

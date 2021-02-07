@@ -1109,6 +1109,7 @@ cards:
                 color: orange
               - value: 25
                 color: red
+            font_size: 90
             hour24: true
             hours_to_show: 24
             points_per_hour: 60
@@ -1156,6 +1157,11 @@ cards:
             name: "Пол на балконе"
 
 #      - type: entities
+#        entities:
+#          - entity: sensor.cert_expiry_timestamp_elnio_duckdns_org_4443
+
+
+            #      - type: entities
 #        entities:
 #          - entity: fan.xiaomi_miio_device
 #            type: custom:multiple-entity-row

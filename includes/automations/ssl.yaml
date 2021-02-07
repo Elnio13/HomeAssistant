@@ -1,0 +1,25 @@
+- alias: SSL Expiried
+  trigger:
+    - platform: numeric_state
+      entity_id:  sensor.ssl_expiried
+#      value_template: "{{ state.attributes.state }}"
+      below: 30
+  condition:
+  action:
+    - service: notify.telegram
+      data:
+        title: "SSL expriried less that 30 days"
+        message: "Продли сертификат!"
+
+- alias: SSL not Valid
+  trigger:
+    - platform: state
+      entity_id:  sensor.cert_expiry_timestamp_elnio_duckdns_org_4443
+      attribute: is_valid
+      to: false
+  condition:
+  action:
+    - service: notify.telegram
+      data:
+        title: "SSL not Valid"
+        message: "Продли сертификат!"

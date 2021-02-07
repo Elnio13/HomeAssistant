@@ -113,19 +113,27 @@ exclude:
     - sensor.test_uptime_sensor
     - binary_sensor.test
   domains:
-    - automation
-#    - binary_sensor
-    - camera
-    - device_tracker
-    - input_boolean
-    - input_select
-    - light
-    - media_player
-    - person
-    - script
-#    - sensor
-    - sun
-    - switch
-    - vacuum
-    - weather
+    - automation 
+    - binary_sensor 
+    - camera 
+    - climate 
+    - device_tracker 
+    - fan 
+    - group 
+    - input_boolean 
+    - input_datetime 
+    - input_number 
+    - input_select 
+    - input_text 
+    - light 
+    - media_player 
+    - person 
+    - script 
+#    - sensor 
+    - sun 
+    - switch 
+    - timer 
+#    - utility_meter 
+    - vacuum 
+    - weather 
     - zone

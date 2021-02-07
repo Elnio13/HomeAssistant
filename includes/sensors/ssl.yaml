@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    ssl_expiried:
+      friendly_name: SSL истекает через (дней)
+      icon_template: mdi:calendar-clock
+      value_template: "{{ (( as_timestamp(states.sensor.cert_expiry_timestamp_elnio_duckdns_org_4443.state) - as_timestamp(now()) ) / 86400) | int }}"

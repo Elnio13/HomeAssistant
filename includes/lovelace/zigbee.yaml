@@ -70,10 +70,10 @@ cards:
 
           - type: entities
             entities:
-              - sensor.sensor_move_linkquality
-              - binary_sensor.sensor_move_occupancy
-              - binary_sensor.sensor_pir
-              - sensor.sensor_move_battery
+              - sensor.wc_floor_move_linkquality
+              - binary_sensor.wc_floor_move_occupancy
+              - binary_sensor.wc_floor_pir
+              - sensor.wc_floor_move_battery
 
       - type: horizontal-stack
         cards:

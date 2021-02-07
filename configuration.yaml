@@ -7,9 +7,46 @@ homeassistant:
   time_zone: !secret home_timezone
   customize: !include_dir_merge_named includes/customizations
   packages: !include_dir_named includes/packages
+  auth_mfa_modules:
+    - type: notify
+      include:
+        - notify.notify
+        - notify.telegram
+      message: "hello"
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret home_ip
+    - !secret proxy_ip
+  ip_ban_enabled: true
+  login_attempts_threshold: 2
+
+yandex_station: ### Управление колонкой
+
+yandex_smart_home: ### Алиса управляет устройствами
+  filter:
+    include_entities:
+      - media_player.tv_lounge
+      - media_player.tv_kuchen
+      - fan.xiaomi_miio_device
+      - light.terrarium_bedroom_lamp
+      - light.terrarium_bedroom_pomp
+      - light.terrarium_master_lamp
+      - light.terrarium_master_pomp
+      - switch.bedroom_light_left
+      - switch.bedroom_light_right
+      - switch.sofa_light_left
+      - switch.sofa_light_right
+      - switch.wc_fan
+      - switch.wc_light
+      - switch.hallway_light
+      - vacuum.xiaomi_vacuum_cleaner
+      - climate.floor_bathroom
+      - climate.floor_balkoon
 
 #python_script:
-#mobile_app:
+mobile_app:
 
 updater:
   reporting: false
@@ -48,7 +85,7 @@ frontend:
 
 auto_backup:
   auto_purge: true
-  backup_timeout: 10000  # 40 minutes, needs to be converted to seconds.
+  backup_timeout: 10000 # 40 minutes, needs to be converted to seconds.
   keep_days: 7
 
 octoprint:
@@ -73,8 +110,8 @@ device_tracker:
     #auth_protocol: !secret snmp_auth_protocol
     #priv_protocol: !secret snmp_priv_protocol
     baseoid: 1.3.6.1.4.1.14988.1.1.1.5.1.1
-    interval_seconds: 12
-    consider_home: 20
+    interval_seconds: 17
+    consider_home: 60
     new_device_defaults:
       track_new_devices: false
 
@@ -107,21 +144,23 @@ vacuum:
     token: !secret xiaomi_vacuum_token
 
 media_player:
+  #  - platform: yandex_station
   - platform: sox
     name: Roborock
     host: !secret xiaomi_vacuum_ip
     port: 7777 # Optional
 
-tts:
-  - platform: rhvoice
-    host: !secret host_tts
-    port: 8080 # Optional
-    format: 'mp3' # Optional, wav|mp3|opus|flac
-    pitch: 30 # Optional, 0..100
-    rate: 50 # Optional, 0..100
-    voice: 'elena' # Optional, default is 'anna' (russian)
-    volume: 40 # Optional, 0..100
-  
+tts: ### Синтезатор речи
+#  - platform: yandex_station
+#  - platform: rhvoice
+#    host: !secret host_tts
+#    port: 8080 # Optional
+#    format: 'mp3' # Optional, wav|mp3|opus|flac
+#    pitch: 30 # Optional, 0..100
+#    rate: 50 # Optional, 0..100
+#    voice: 'elena' # Optional, default is 'anna' (russian)
+#    volume: 40 # Optional, 0..100
+
 notify:
   - name: telegram
     platform: telegram

@@ -93,6 +93,11 @@ cards:
               - value: 30
                 color: red
 
+      - type: entities
+        entities:
+          - entity: sensor.cert_expiry_timestamp_elnio_duckdns_org_4443
+          - entity: sensor.ssl_expiried
+
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -260,6 +265,7 @@ cards:
             type: custom:multiple-entity-row
             toggle: true
             name: eth10
+            secondary_info: <TV>
             state_color: true
             entities:
               - entity: sensor.rb3011_eth10_rx

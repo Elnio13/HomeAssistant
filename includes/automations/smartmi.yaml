@@ -10,3 +10,14 @@
       data:
         title: "Smartmi Humidifier 2 low level"
         message: "Просто добавь воды!"
+    - choose:
+        - conditions:
+            - condition: time
+              after: "06:00:00"
+              before: "23:00:00"
+          sequence:
+            - service: media_player.play_media
+              entity_id: media_player.yandex_station_ff98f029b718c14a5be213b8
+              data:
+                media_content_id: Добавьте воды в увлажнитель!
+                media_content_type: text
